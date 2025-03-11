@@ -159,7 +159,7 @@ def benchmark(test_strings, repeats=1):
     print(f"Total Original Time: {results['Original']['total_time']:.6f} sec")
     print(f"Total Enhanced Time: {results['Enhanced']['total_time']:.6f} sec")
     
-    # Calculate speedup
+    # Calculate speedu
     original_time = results["Original"]["total_time"]
     enhanced_time = results["Enhanced"]["total_time"]
     

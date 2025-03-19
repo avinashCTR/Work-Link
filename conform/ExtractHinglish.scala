@@ -1,20 +1,21 @@
 package ai.couture.obelisk.search.etl.jiomart.conform
 
-import ai.couture.obelisk.commons.io.{DFToParquet, ParquetToDF}
+import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF}
+import ai.couture.obelisk.commons.io.HdfsUtils.{getListOfFiles, copy, rename}
 import ai.couture.obelisk.commons.utils.BaseBlocks
 import ai.couture.obelisk.search.Constants._
 import ai.couture.obelisk.search.Schemas.{categorySchemaFloat, categoryStructFloat}
 import org.apache.spark.sql.expressions.{UserDefinedFunction, Window}
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types.IntegerType
+import org.apache.spark.sql.types.{FloatType, IntegerType, StringType}
 import org.apache.spark.sql.{DataFrame, Row}
 
-object Hinglish extends BaseBlocks {
+object ExtractHinglish extends BaseBlocks {
 
   var synonyms,hinglish: DataFrame = _
 
   def load(): Unit = {
-    synonyms = ParquetToDF.getDF(setInputPath("synonyms"))
+    synonyms = CSVToDF.getDF(setInputPath("synonyms"))
   }
 
   def doTransformations(): Unit = {
@@ -28,6 +29,15 @@ object Hinglish extends BaseBlocks {
   }
 
   def save(): Unit = {
-    DFToParquet.DFToParquet(hinglish, setOutputPath("hinglish"))
+
+    var base_path = setOutputPath("hinglish", "Hinglish")
+    
+    DFToCSV.putDF(base_path,hinglish)
+
+    var part_file_name = getListOfFiles(base_path)
+    .filter(_.getName != "_SUCCESS").map(x=>x.toString.split("/").last).toSeq.head
+
+    rename(base_path+"/"+part_file_name, base_path+"/"+"HinglishVariants.csv")
+    
   }
 }

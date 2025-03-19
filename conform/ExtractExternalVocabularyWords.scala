@@ -1,20 +1,21 @@
 package ai.couture.obelisk.search.etl.jiomart.conform
 
-import ai.couture.obelisk.commons.io.{DFToParquet, ParquetToDF}
+import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF,DFToParquet}
+import ai.couture.obelisk.commons.io.HdfsUtils.{getListOfFiles, copy, rename}
 import ai.couture.obelisk.commons.utils.BaseBlocks
 import ai.couture.obelisk.search.Constants._
 import ai.couture.obelisk.search.Schemas.{categorySchemaFloat, categoryStructFloat}
 import org.apache.spark.sql.expressions.{UserDefinedFunction, Window}
 import org.apache.spark.sql.functions._
-import org.apache.spark.sql.types.IntegerType
+import org.apache.spark.sql.types.{FloatType, IntegerType, StringType}
 import org.apache.spark.sql.{DataFrame, Row}
 
-object ExternalVocabularyWords extends BaseBlocks {
+object ExtractExternalVocabularyWords extends BaseBlocks {
 
   var synonyms, external: DataFrame = _
 
   def load(): Unit = {
-    synonyms = ParquetToDF.getDF(setInputPath("synonyms"))
+    synonyms = CSVToDF.getDF(setInputPath("synonyms"))
   }
 
   def doTransformations(): Unit = {
@@ -32,6 +33,6 @@ object ExternalVocabularyWords extends BaseBlocks {
   }
 
   def save(): Unit = {
-    DFToParquet.DFToParquet(external, setOutputPath("external_vocabulary_words"))
+    DFToParquet.putDF(setOutputPath("external_vocabulary_words", "ExternalVocabularyWords"), external)
   }
 }

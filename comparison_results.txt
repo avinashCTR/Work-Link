@@ -1,0 +1,75 @@
+Input Text: avinash
+Is Simple: False
+
+Recursive Implementation Time: 0.000047 seconds
+Original Implementation Time: 0.000138 seconds
+
+Are Outputs Equal: True
+
+Recursive Variants:
+avinash
+awinnasskh
+avinnaskh
+awynnassh
+awynnaskh
+avynash
+avynaskh
+awynaskh
+awynassh
+awynash
+avynnasskh
+awinassh
+avynnassh
+awinnash
+avynnaskh
+avynassh
+awinnassh
+awinasskh
+awinaskh
+awinnaskh
+avinasskh
+avynnash
+awynnash
+avynasskh
+avinnasskh
+awinash
+avinnash
+awynasskh
+awynnasskh
+avinnassh
+avinaskh
+avinassh
+
+Original Variants:
+avinash
+avinaskh
+avinassh
+avinasskh
+avinnash
+avinnaskh
+avinnassh
+avinnasskh
+avynash
+avynaskh
+avynassh
+avynasskh
+avynnash
+avynnaskh
+avynnassh
+avynnasskh
+awinash
+awinaskh
+awinassh
+awinasskh
+awinnash
+awinnaskh
+awinnassh
+awinnasskh
+awynash
+awynaskh
+awynassh
+awynasskh
+awynnash
+awynnaskh
+awynnassh
+awynnasskh

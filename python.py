@@ -1,32 +1,216 @@
-import itertools
 import time
-from collections import defaultdict
+import itertools
 
+class PhoneticsGeneratorRecursive:
+    # Recursive implementation (your code)
+    arr_rules = {
+        "1": ["l", "I"],
+        "l": ["1", "ll"],
+        "I": ["1"],
+        "6": ["b"],
+        "b": ["6"],
+        "0": ["O", "o"],
+        "O": ["0"],
+        "o": ["0", "ou"],
+        "y": ["i", "j"],
+        "i": ["y"],
+        "c": ["ck"],
+        "k": ["ck"],
+        "f": ["ph"],
+        "ph": ["f"],
+        "g": ["dzh"],
+        "dzh": ["g", "j"],
+        "j": ["dzh"],
+        "h": ["kh"],
+        "kh": ["h"],
+        "d": ["dd"],
+        "dd": ["d"],
+        "ll": ["l"],
+        "n": ["nn"],
+        "nn": ["n"],
+        "m": ["mm"],
+        "mm": ["m"],
+        "s": ["ss"],
+        "ss": ["s"],
+        "t": ["tt"],
+        "tt": ["t"],
+        "x": ["ks", "kz", "gz", "gs"],
+        "ks": ["x"],
+        "kz": ["x"],
+        "gz": ["x"],
+        "gs": ["x"],
+        "qu": ["kw", "kv"],
+        "q": ["c"],
+        "kw": ["qu"],
+        "ee": ["i"],
+        "ea": ["i"],
+        "ts": ["c"],
+        "ew": ["ju"],
+        "w": ["v"],
+        "v": ["w"],
+        "u": ["yu", "oo", "ju"],
+        "oo": ["u"],
+        "ju": ["u"],
+        "ng": ["n"]
+    }
+
+
+    def generate(self, text, is_simple):
+        text = text.lower()
+        all_variants = set()
+        
+        if is_simple:
+            # Non-recursive fast path for simple mode
+            for offset in range(1, 4):
+                for i in range(len(text) - offset + 1):
+                    key = text[i:i+offset]
+                    if key in self.arr_rules:
+                        for replacement in self.arr_rules[key]:
+                            all_variants.add(text[:i] + replacement + text[i+offset:])
+            return list(all_variants)
+        else:
+            # Fast recursive implementation with limited depth
+            MAX_SUBSTITUTIONS = 2  # Reduced from unlimited
+            text_list = list(text)
+            
+            def helper(index, subs_left, current):
+                if index >= len(text_list):
+                    all_variants.add(''.join(current))
+                    return
+                
+                # Option 1: Make substitution (if allowed)
+                if subs_left > 0:
+                    for offset in range(1, 4):
+                        if index + offset > len(text_list):
+                            continue
+                        key = ''.join(current[index:index+offset])
+                        if key in self.arr_rules:
+                            for replacement in self.arr_rules[key]:
+                                new_current = current[:index] + list(replacement) + current[index+offset:]
+                                helper(index + len(replacement), subs_left-1, new_current)
+                
+                # Option 2: Skip substitution
+                helper(index + 1, subs_left, current)
+
+            helper(0, MAX_SUBSTITUTIONS, text_list.copy())
+            return list(all_variants)
 
 class PhoneticsGenerator:
     arr_rules = {
-        "1": ["l", "I"], "l": ["1", "ll"], "I": ["1"], "6": ["b"], "b": ["6"],
-        "0": ["O", "o"], "O": ["0"], "o": ["0", "ou"], "y": ["i", "j"],
-        "i": ["y"], "c": ["ck"], "k": ["ck"], "f": ["ph"], "ph": ["f"],
-        "g": ["dzh"], "dzh": ["g", "j"], "j": ["dzh"], "h": ["kh"], "kh": ["h"],
-        "d": ["dd"], "dd": ["d"], "ll": ["l"], "n": ["nn"], "nn": ["n"],
-        "m": ["mm"], "mm": ["m"], "s": ["ss"], "ss": ["s"], "t": ["tt"],
-        "tt": ["t"], "x": ["ks", "kz", "gz", "gs"], "ks": ["x"], "kz": ["x"],
-        "gz": ["x"], "gs": ["x"], "qu": ["kw", "kv"], "q": ["c"], "kw": ["qu"],
-        "ee": ["i"], "ea": ["i"], "ts": ["c"], "ew": ["ju"], "w": ["v"],
-        "v": ["w"], "u": ["yu", "oo", "ju"], "oo": ["u"], "ju": ["u"], "ng": ["n"]
-    }
+        "1": ["l", "I"],
+        "l": ["1", "ll"],
+        "I": ["1"],
+        "6": ["b"],
+        "b": ["6"],
+        "0": ["O", "o"],
+        "O": ["0"],
+        "o": ["0", "ou"],
+        "y": ["i", "j"],
+        "i": ["y"],
+        "c": ["ck"],
+        "k": ["ck"],
+        "f": ["ph"],
+        "ph": ["f"],
+        "g": ["dzh"],
+        "dzh": ["g", "j"],
+        "j": ["dzh"],
+        "h": ["kh"],
+        "kh": ["h"],
+        "d": ["dd"],
+        "dd": ["d"],
+        "ll": ["l"],
+        "n": ["nn"],
+        "nn": ["n"],
+        "m": ["mm"],
+        "mm": ["m"],
+        "s": ["ss"],
+        "ss": ["s"],
+        "t": ["tt"],
+        "tt": ["t"],
+        "x": ["ks", "kz", "gz", "gs"],
+        "ks": ["x"],
+        "kz": ["x"],
+        "gz": ["x"],
+        "gs": ["x"],
+        "qu": ["kw", "kv"],
+        "q": ["c"],
+        "kw": ["qu"],
+        "ee": ["i"],
+        "ea": ["i"],
+        "ts": ["c"],
+        "ew": ["ju"],
+        "w": ["v"],
+        "v": ["w"],
+        "u": ["yu", "oo", "ju"],
+        "oo": ["u"],
+        "ju": ["u"],
+        "ng": ["n"]}
+
+    # @staticmethod
+    # def apply_rule(gen, rule, src, offset):
+    #     return src[:gen['pos']+offset] + \
+    #            rule[1] + \
+    #            src[gen['pos']+offset+len(rule[0]): len(src)]
 
     def generate(self, text, is_simple):
         all_variants = []
+        # arr_gens = []  # Array for generations
 
-        if is_simple:
+        # Checks for presence of pattern in arr_rules starting at position i and adds it to the generator list
+        text = text.lower()
+        # for i in range(len(text)):
+        #     for key in self.arr_rules:
+        #         arr_rules_len = len(key)
+        #         if key == text[i: i + arr_rules_len]:
+        #             for rules in self.arr_rules[key]:
+        #                 temp = {'z': 2, 'pos': i, 'rule': rules}
+        #                 arr_gens.append(temp)
+        #
+        # n = len(arr_gens)
+
+        # Generates only 1 rule variation
+        if is_simple:  # Use simple algorithm
+            # for i in range(n):
+            #     all_variants.append(
+            #         self.apply_rule(
+            #             arr_gens[i], self.arr_rules[arr_gens[i]['rule']],
+            #             text, 0
+            #         )
+            #     )
             for offset in range(1, 4):
                 for i in range(len(text) - offset + 1):
                     if text[i:i + offset] in self.arr_rules:
                         for value in self.arr_rules[text[i:i + offset]]:
                             all_variants.append(text[:i] + value + text[i + offset:])
-        else:
+
+        else:  # Use COMBINE, more complex algorithm
+            # for(f=0; f<Math.pow(2,n)-1; f++) #commented part /*&&
+            # all_variants.length<6
+            # for f in range(2 ** n - 1):
+            #     i = 0  # Bit index
+            #     var_str = text
+            #     while arr_gens[i]['z'] == 1:
+            #         arr_gens[i]['z'] = 0  # Modeling of next digit transfer
+            #         # while adding
+            #         log2 = log2[:i] + '0' + log2[i + 1:]
+            #         i += 1
+            #     arr_gens[i]['z'] = 1
+            #     log2 = log2[:i] + '1' + log2[i + 1:]
+            #     bits = log2.count("1")
+            #     offset = 0
+            #
+            #     for t in range(n):
+            #         # if 1 - apply rule
+            #         if arr_gens[t]['z'] == 1 and arr_gens[t]['rule']:
+            #             length = len(self.arr_rules[arr_gens[t]['rule']][1])
+            #             var_str = self.apply_rule(
+            #                 arr_gens[i],
+            #                 self.arr_rules[arr_gens[t]['rule']],
+            #                 var_str, offset
+            #             )
+            #             if length > 1 and bits > 1:
+            #                 offset += length - 1
+            #     all_variants.add(var_str)
             variants = [[x] for x in list(text)]
             for offset in range(1, 4):
                 for i in range(len(text) - offset + 1):
@@ -34,197 +218,59 @@ class PhoneticsGenerator:
                         variants = variants[:i] + [["".join(p) for p in itertools.product(*variants[i:i + offset])] +
                                                    self.arr_rules[text[i:i + offset]]] + variants[i + offset:]
             all_variants = ["".join(p) for p in itertools.product(*variants)]
-        
-        return set(all_variants)
-
-
-class EnhancedPhoneticsGenerator:
-    def __init__(self):
-        self.arr_rules = PhoneticsGenerator.arr_rules
-        
-        # Pre-compute max key length for optimization
-        self.max_key_length = max(len(key) for key in self.arr_rules)
-        
-        # Index rules by first character for faster lookup
-        self.indexed_rules = defaultdict(list)
-        for key in self.arr_rules:
-            if key:
-                self.indexed_rules[key[0]].append(key)
-
-    def generate_simple(self, text):
-        """Generate variants using simple substitution approach."""
-        result = set()
-        
-        # Only consider substitutions up to max key length
-        for i in range(len(text)):
-            # Only check keys that start with this character
-            if text[i] not in self.indexed_rules:
-                continue
-                
-            for key in self.indexed_rules[text[i]]:
-                end = i + len(key)
-                if end <= len(text) and text[i:end] == key:
-                    for replacement in self.arr_rules[key]:
-                        result.add(text[:i] + replacement + text[end:])
-        
-        # Add the original text if no variants were found
-        if not result and text:
-            result.add(text)
-            
-        return result
-
-    def generate_complex(self, text):
-        """Generate variants using a more thorough combinatorial approach."""
-        # Identify all possible substitutions for each position
-        variants = []
-        for i in range(len(text)):
-            char_variants = [text[i]]  # Start with the original character
-            
-            # Check all possible keys starting with this character
-            if text[i] in self.indexed_rules:
-                for key in self.indexed_rules[text[i]]:
-                    end = i + len(key)
-                    if end <= len(text) and text[i:end] == key:
-                        # Add all possible replacements for this key
-                        for replacement in self.arr_rules[key]:
-                            # Skip multi-character replacements for now - they need special handling
-                            if len(replacement) == 1 and replacement not in char_variants:
-                                char_variants.append(replacement)
-            
-            variants.append(char_variants)
-            
-        # Handle multi-character replacements
-        # This is a simplified approach that doesn't handle all complex cases
-        # but is more efficient than the original algorithm
-        result = set(["".join(p) for p in itertools.product(*variants)])
-        
-        # Now handle multi-character replacements
-        additional_variants = set()
-        for i in range(len(text)):
-            if text[i] in self.indexed_rules:
-                for key in self.indexed_rules[text[i]]:
-                    end = i + len(key)
-                    if end <= len(text) and text[i:end] == key and len(key) > 1:
-                        for replacement in self.arr_rules[key]:
-                            for variant in result:
-                                if i < len(variant) and variant[i:i+len(key)] == key:
-                                    new_variant = variant[:i] + replacement + variant[i+len(key):]
-                                    additional_variants.add(new_variant)
-        
-        result.update(additional_variants)
-        return result
-
-    def generate(self, text, is_simple):
-        """Generate phonetic variants of the input text."""
-        if is_simple:
-            return self.generate_simple(text)
-        else:
-            return self.generate_complex(text)
-
-
-def benchmark(test_strings, repeats=1):
-    generator1 = PhoneticsGenerator()
-    generator2 = EnhancedPhoneticsGenerator()
-
-    print(f"Benchmarking performance with {repeats} repeats...\n")
-
-    results = {
-        "Original": {"total_time": 0, "times": []},
-        "Enhanced": {"total_time": 0, "times": []}
-    }
-
-    for r in range(repeats):
-        for word in test_strings:
-            # Test Original
-            start_time = time.time()
-            result1 = generator1.generate(word, False)
-            original_time = time.time() - start_time
-            results["Original"]["total_time"] += original_time
-            results["Original"]["times"].append(original_time)
-
-            # Test Enhanced
-            start_time = time.time()
-            result2 = generator2.generate(word, False)
-            enhanced_time = time.time() - start_time
-            results["Enhanced"]["total_time"] += enhanced_time
-            results["Enhanced"]["times"].append(enhanced_time)
-
-            if r == 0:  # Only print detailed comparison for first run
-                print(f"Word: {word}")
-                print(f"Original Time: {original_time:.6f} sec - {len(result1)} variants")
-                print(f"Enhanced Time: {enhanced_time:.6f} sec - {len(result2)} variants")
-                print("-" * 40)
-
-    print("\nSummary:")
-    print(f"Total Original Time: {results['Original']['total_time']:.6f} sec")
-    print(f"Total Enhanced Time: {results['Enhanced']['total_time']:.6f} sec")
-    
-    # Calculate speedu
-    original_time = results["Original"]["total_time"]
-    enhanced_time = results["Enhanced"]["total_time"]
-    
-    print(f"\nSpeedup (Enhanced vs Original): {original_time/enhanced_time:.2f}x")
-
-
-def verify_outputs(test_strings):
-    generator1 = PhoneticsGenerator()
-    generator2 = EnhancedPhoneticsGenerator()
-
-    print("\nVerifying outputs...\n")
-    
-    matches = 0
-    total = len(test_strings)
-
-    for word in test_strings:
-        output1 = set(generator1.generate(word, False))
-        output2 = set(generator2.generate(word, False))
-
-        if output1 == output2:
-            print(f"✅ Outputs match for '{word}' - {len(output1)} variants")
-            matches += 1
-        else:
-            print(f"❌ Mismatch for '{word}'")
-            
-            # Show output sizes
-            print(f"  Original: {len(output1)} variants")
-            print(f"  Enhanced: {len(output2)} variants")
-            
-            # Analyze the differences
-            only_in_1 = output1 - output2
-            only_in_2 = output2 - output1
-            
-            if only_in_1:
-                print(f"\n  Only in Original ({len(only_in_1)} items):")
-                print("  " + str(list(only_in_1)[:5]) + ("..." if len(only_in_1) > 5 else ""))
-            
-            if only_in_2:
-                print(f"\n  Only in Enhanced ({len(only_in_2)} items):")
-                print("  " + str(list(only_in_2)[:5]) + ("..." if len(only_in_2) > 5 else ""))
-            
-            print("-" * 40)
-
-    # Summary
-    print("\nSummary:")
-    print(f"Total words tested: {total}")
-    print(f"Implementations match: {matches} ({matches/total*100:.1f}%)")
+        all_variants = list(all_variants)
+        return all_variants
 
 
 if __name__ == "__main__":
-    test_strings = [
-        "nightt", "hello", "phonetix", "quick", "success", "bottle",  # Original ones
-        "happy", "jumbo", "tough", "cycle", "knight", "physics",  # Common tricky words
-        "bubble", "tunnel", "sizzle", "giraffe", "dizzy", "sphinx",  # Repeating letters, phonetic shifts
-        "quizz", "check", "who", "whale", "rhythm", "xylophone",  # Edge cases with silent letters
-        "llama", "ketchup", "yacht", "tsunami", "queue", "psychology",  # Words with unusual phonetics
-        "khaki", "fjord", "mnemonic", "pneumonia", "czar", "gnarl",  # Rare/uncommon sounds
-        "beef", "chief", "seize", "bizarre", "rogue", "debt",  # Silent and confusing letters
-        "yummy", "jigsaw", "espresso", "adjourn", "luxury", "azure",  # Uncommon letter combinations
-        "schooner", "knapsack", "cough", "enough", "though", "through"  # GH sound variations
+    test_cases = [
+        "world",
+        "hello", "world", "phonetics", "generator", "recursive", "simple", "complex",
+        "test", "example", "python", "programming", "language", "rules", "variants",
+        "comparison", "performance", "optimization", "algorithm", "implementation",
+        "function", "method", "class", "object", "inheritance", "polymorphism",
+        "encapsulation", "abstraction", "data", "structure", "array", "list", "tuple",
+        "dictionary", "set", "string", "integer", "float", "boolean", "loop", "condition",
+        "recursion", "iteration", "branching", "syntax", "semantics", "debugging",
+        "testing", "validation", "verification", "execution", "compilation", "interpretation",
+        "module", "package", "library", "framework", "tool", "utility", "application",
+        "software", "hardware", "network", "protocol", "security", "encryption", "decryption",
+        "authentication", "authorization", "database", "query", "index", "transaction",
+        "backup", "restore", "cloud", "storage", "virtualization", "container", "orchestration",
+        "deployment", "integration", "continuous", "delivery", "pipeline", "monitoring",
+        "logging", "tracing", "metrics", "alerting", "scaling", "load", "balancing", "cache",
+        "performance", "optimization", "latency", "throughput", "availability", "reliability",
+        "resilience", "fault", "tolerance", "recovery", "disaster", "recovery", "business",
+        "continuity", "compliance", "regulation", "governance", "risk", "management", "audit",
+        "certification", "accreditation", "standardization", "framework", "methodology",
+        "process", "procedure", "practice", "guideline", "recommendation", "requirement",
+        "specification", "architecture", "design", "implementation", "testing", "deployment",
+        "maintenance", "support", "documentation", "training", "knowledge", "transfer",
+        "communication", "collaboration", "coordination", "cooperation", "teamwork", "leadership",
     ]
-    
-    # Uncomment to run benchmark with multiple repeats (time-consuming)
-    # benchmark(test_strings, repeats=10)
-    
-    # For quick test:
-    benchmark(test_strings, repeats=1)
-    verify_outputs(test_strings)
+
+    total_recursive_time = 0
+    total_original_time = 0
+
+    for test_case in test_cases:
+        print(f"Testing with input: {test_case}")
+        start_time = time.time()
+        recursive_variants = PhoneticsGeneratorRecursive().generate(test_case, is_simple=False)
+        total_recursive_time += time.time() - start_time
+
+        start_time = time.time()
+        original_variants = PhoneticsGenerator().generate(test_case, is_simple=False)
+        total_original_time += time.time() - start_time
+
+    print(f"Total Recursive Time: {total_recursive_time:.6f} seconds")
+    print(f"Total Original Time: {total_original_time:.6f} seconds")
+    print(f"Speedup: {total_original_time / total_recursive_time:.2f}x")
+
+    # Compare the results
+    for test_case in test_cases:
+        recursive_variants = PhoneticsGeneratorRecursive().generate(test_case, is_simple=False)
+        original_variants = PhoneticsGenerator().generate(test_case, is_simple=False)
+        if set(recursive_variants) != set(original_variants):
+            print(f"the difference in set length for {test_case} is {len(set(recursive_variants)) - len(set(original_variants))}")
+            # print(f"the set from recursive is {set(recursive_variants)}")
+            # print(f"the set from original is {set(original_variants)}")

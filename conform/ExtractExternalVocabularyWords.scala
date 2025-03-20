@@ -1,6 +1,6 @@
 package ai.couture.obelisk.search.etl.jiomart.conform
 
-import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF,DFToParquet}
+import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF,DFToParquet,ParquetToDF}
 import ai.couture.obelisk.commons.io.HdfsUtils.{getListOfFiles, copy, rename}
 import ai.couture.obelisk.commons.utils.BaseBlocks
 import ai.couture.obelisk.search.Constants._
@@ -15,7 +15,7 @@ object ExtractExternalVocabularyWords extends BaseBlocks {
   var synonyms, external: DataFrame = _
 
   def load(): Unit = {
-    synonyms = CSVToDF.getDF(setInputPath("synonyms"))
+    synonyms = ParquetToDF.getDF(setInputPath("synonyms"))
   }
 
   def doTransformations(): Unit = {

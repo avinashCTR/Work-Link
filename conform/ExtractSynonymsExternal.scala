@@ -1,6 +1,6 @@
 package ai.couture.obelisk.search.etl.jiomart.conform
 
-import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF,ParquetToDF}
+import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF,ParquetToDF,DFToParquet}
 import ai.couture.obelisk.commons.io.HdfsUtils.{getListOfFiles, copy, rename}
 import ai.couture.obelisk.commons.utils.BaseBlocks
 import ai.couture.obelisk.search.Constants._
@@ -15,14 +15,19 @@ object ExtractSynonymsExternal extends BaseBlocks {
   var synonyms, external: DataFrame = _
 
   def load(): Unit = {
-    synonyms = CSVToDF.getDF(setInputPath("synonyms"))
+    synonyms = ParquetToDF.getDF(setInputPath("synonyms"))
   }
 
   def doTransformations(): Unit = {
     external = synonyms
     .filter(col("variant").isin(Seq("SYNONYMS", "HINGLISH SYNONYMS", "SUBSTITUTE"):_*))
-    .filter(col("keyword").isNotNull).select(col("keyword").as("token"),  col("synonyms"))
-    .union(synonyms.filter(col("keyword").isNull).select(col("synonyms").as("token"),  col("synonyms")))
+
+    external = external
+    .filter(col("keyword").isNotNull)
+    .select(col("keyword").as("token"),  col("synonyms"))
+    .union(external.filter(col("keyword").isNull).select(col("synonyms").as("token"),  col("synonyms")))
+    .withColumn("token", lower(col("token")))
+    .withColumn("synonyms", lower(col("synonyms")))
     .coalesce(1)
   }
 
@@ -41,6 +46,6 @@ object ExtractSynonymsExternal extends BaseBlocks {
     rename(base_path+"/"+part_file_name, base_path+"/"+"External Synonyms.csv")
 
     // copy the file to Synonyms folder
-    copy(base_path+"/"+"External Synonyms.csv",base_synonyms + "/Synonyms"+"/"+"External Synonyms.csv")
+    copy(base_path+"/"+"External Synonyms.csv",base_synonyms +"/"+"External Synonyms.csv")
   }
 }

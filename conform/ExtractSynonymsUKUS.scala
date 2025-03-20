@@ -1,6 +1,6 @@
 package ai.couture.obelisk.search.etl.jiomart.conform
 
-import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF}
+import ai.couture.obelisk.commons.io.{DFToCSV,CSVToDF,DFToParquet,ParquetToDF}
 import ai.couture.obelisk.commons.io.HdfsUtils.{getListOfFiles, copy, rename}
 import ai.couture.obelisk.commons.utils.BaseBlocks
 import ai.couture.obelisk.search.Constants._
@@ -15,7 +15,7 @@ object ExtractSynonymsUKUS extends BaseBlocks {
   var synonyms, ukus: DataFrame = _
 
   def load(): Unit = {
-    synonyms = CSVToDF.getDF(setInputPath("synonyms"))
+    synonyms = ParquetToDF.getDF(setInputPath("synonyms"))
   }
 
   def doTransformations(): Unit = {
@@ -36,8 +36,8 @@ object ExtractSynonymsUKUS extends BaseBlocks {
     var part_file_name = getListOfFiles(base_path)
     .filter(_.getName != "_SUCCESS").map(x=>x.toString.split("/").last).toSeq.head
 
-    rename(base_path+"/"+part_file_name, base_path+"/"+"uk-to-us-eng.tsv")
+    rename(base_path+"/"+part_file_name, base_path+"/"+"uk-to-us-eng.csv")
 
-    copy(base_path+"/"+"uk-to-us-eng.tsv", base_synonyms +"/Synonyms"+"/"+"uk-to-us-eng.tsv")
+    copy(base_path+"/"+"uk-to-us-eng.csv", base_synonyms+"/"+"uk-to-us-eng.csv")
   }
 }

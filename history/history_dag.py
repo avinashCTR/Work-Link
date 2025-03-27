@@ -8,7 +8,7 @@ ColdCacheQueries = CoutureSparkOperator(
                        "topk": 100000},
     input_base_dir_path="",
     output_base_dir_path="",
-    input_filenames_dict={"history_data":"/data1/searchengine/rawdata/historydata/jiomart/dump/query_level_data"},
+    input_filenames_dict={"history_data":"/data1/searchengine/rawdata/historydata/jiomart/dump/query_level_data/date"},
     output_filenames_dict={"cold_cache_queries": "ColdCacheQueries"},
     dag=Dag,
     description=''

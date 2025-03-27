@@ -20,7 +20,6 @@ ParseCleanAndNormaliseHistoryData = CoutureSparkOperator(
     class_path=classPath,
     code_artifact=code_artifact,
     method_args_dict={"search_term_column": "search_term",
-                      "type_of_data": "query_level_data",
                       "freq_column": "total_searches"},
     input_base_dir_path=dirPathProcessedHistory,
     output_base_dir_path=dirPathProcessedHistory,

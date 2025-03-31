@@ -31,13 +31,15 @@ ParseCleanAndNormaliseHistoryData = CoutureSparkOperator(
 
 PreProcessHistory = CoutureSparkOperator(
     task_id='PreProcessHistory',
-    application=classPath,
+    method_id='PreProcessHistoryData',
+    class_path=classPath,
     code_artifact=code_artifact,
     method_args_dict={
         "search_term_column":"search_term",
         "freq_column":"product_unique_list_view",
         "counts_coulumn":"product_unique_list_clicks",
-        "product_id_column":"sku"
+        "product_id_column":"sku",
+        "vertical_column":"product_vertical"
     },
     input_base_dir_path="",
     output_base_dir_path="",

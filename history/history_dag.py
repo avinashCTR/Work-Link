@@ -51,3 +51,21 @@ PreProcessHistory = CoutureSparkOperator(
     dag=Dag,
     description=''
 )
+
+NormalizeQueryHistoryData = CoutureSparkOperator(
+    task_id='NormalizeQueryHistory',
+    method_id='NormalizeQueryHistoryData',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={
+        "search_term_column":"search_term",
+    },
+    input_base_dir_path="",
+    output_base_dir_path="",
+    input_filenames_dict={"search_term_data":""},
+    output_filenames_dict={"history_normalized_archive": "ColdCacheQueries",
+    "history_normalized_data":"asdasdasd"
+    },
+    dag=Dag,
+    description=''
+)

@@ -82,7 +82,29 @@ GetShortQueries = CoutureSparkOperator(
     input_base_dir_path=dirPathProcessedHistory,
     output_base_dir_path=dirPathProcessedHistory,
     input_filenames_dict={"history_data_grouped": "rawHistoryDataParquetFiles"},
-    output_filenames_dict={"short_queries": "HistoryMergedShortQueries"},
+    output_filenames_dict={"short_queries": "HistoryMergedShortQueries","short_queries_archive":"HistoryMergedShortQueries/archive"},
+    dag=Dag,
+    description=''
+)
+
+PreProcessDataScienceHistoryData = CoutureSparkOperator(
+    task_id='PreProcessDataScienceHistoryData',
+    method_id='PreProcessDataScienceHistoryData',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={
+        "search_term_column":"search_term",
+        "freq_column":"product_unique_list_view",
+        "counts_coulumn":"product_unique_list_clicks",
+        "product_id_column":"sku",
+        "vertical_column":"product_vertical",
+        "quantity_column":"unique_adds_to_cart"
+    },
+    input_base_dir_path=dirPathProcessedHistory,
+    output_base_dir_path=dirPathProcessedHistory,
+    input_filenames_dict={"query_product_interactions":"/data1/archive/",
+    "query_position_data":"/data1/archive/"},
+    output_filenames_dict={"DataSciencePreProcessed": "HistoryMergedShortQueries","short_queries_archive":"HistoryMergedShortQueries/archive"},
     dag=Dag,
     description=''
 )

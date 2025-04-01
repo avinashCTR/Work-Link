@@ -72,7 +72,7 @@ NormalizeQueryHistoryData = CoutureSparkOperator(
 
 GetShortQueries = CoutureSparkOperator(
     task_id='GetShortQueries',
-    method_id='GetShortQueries',
+    method_id='GetShortQueriesHistoryData',
     class_path=classPath,
     code_artifact=code_artifact,
     method_args_dict={"search_term_column": "query",

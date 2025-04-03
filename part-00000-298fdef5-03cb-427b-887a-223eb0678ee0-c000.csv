@@ -1,0 +1,923 @@
+query,mistake,edit-distance,mistake_type
+kurta sets,kurta se ts,1,space-mistake
+girls,girrls,1,double-letter
+shirts for men,shirts for mmen,1,double-letter
+footwear for women,footwear ffor women,1,double-letter
+shoes men,hoes men,1,missing-char
+crop tops,crip tops,1,keyboard-confusion
+panties,paanties,1,double-letter
+watches for men,watches fr men,1,missing-char
+adidas shoes,adiidas shoes,1,extra-char
+leggings for women,leggings for wonen,1,keyboard-confusion
+baby girl dress,babygirl dress,1,missing-char
+sweatshirts for men,sweeatshirts for men,1,double-letter
+lee cooper for men,le cooper for men,1,missing-char
+tracksuit,hracksuit,1,keyboard-confusion
+men t shirt,men t shurt,1,keyboard-confusion
+men sandals,men wandals,1,keyboard-confusion
+sunglasses for men,sungllasses for men,1,double-letter
+chinos for men,chinos fof men,1,keyboard-confusion
+rare rabbit for men,rare rzbbit for men,1,keyboard-confusion
+fig tops,fig toos,1,keyboard-confusion
+jean for women,jean for woomen,1,double-letter
+mens t shirts,menst shirts,1,space-mistake
+kids jeans,kids jeqns,1,keyboard-confusion
+formal pant for men,formal pannt for men,1,double-letter
+loafers men,loafeds men,1,keyboard-confusion
+skechers shoes,scechers shoes,1,phonetic-error
+women saree,women sare,1,missing-char
+avasaa kurti,avasaa curti,1,phonetic-error
+slides men,slidesmen,1,space-mistake
+baby bedding furniture,baby bedding futniture,1,keyboard-confusion
+boys t shirt,boys a shirt,1,predictive-text
+puma jacket,pumajacket,1,space-mistake
+slip ons,slipp ons,1,double-letter
+sweatshirt women,sweatshirtwomen,1,space-mistake
+dnmx shirts for women,dnmx shirts for wommen,1,double-letter
+sportswear,sportswwear,1,double-letter
+american eagle,amerian eagle,1,missing-char
+lehenga choli,lehenba choli,1,keyboard-confusion
+puma sandals,iuma sandals,1,keyboard-confusion
+kids sweater,kids sweager,1,keyboard-confusion
+snitch men in shirts,snitch men in shits,1,missing-char
+torn jeans for women,torn jeans tor women,1,keyboard-confusion
+jwellery,hwellery,1,keyboard-confusion
+shoulder bags,sshoulder bags,1,double-letter
+block heels for women,block heels forwomen,1,missing-char
+trolley bag,trolle bag,1,missing-char
+jean tops for women,jean tops fkr women,1,keyboard-confusion
+denim shirts,denim shirs,1,missing-char
+baby girl frock,baby girl frocc,1,phonetic-error
+sho,ssho,1,extra-char
+organza sarees for women,organza sarees fo women,1,missing-char
+saree mall for women,saree mall fo r women,1,space-mistake
+hopscotch,hopzcotch,1,phonetic-error
+pallazo,psllazo,1,keyboard-confusion
+men wallet,m en wallet,1,space-mistake
+puffer jacket women,puffer jackt women,1,missing-char
+pants men,pantsmen,1,space-mistake
+styli for women,styli for womenn,1,double-letter
+sandel for women,sanndel for women,1,extra-char
+soft toys,sof toys,1,missing-char
+nike court vision,nikee court vision,1,double-letter
+women shrug,womenshrug,1,space-mistake
+underwear,underwer,1,missing-char
+gulmohar,gulmoohar,1,double-letter
+pure cotton sarees,pure cottton sarees,1,double-letter
+winter wear for men,winter wear for men,1,space-mistake
+puma track pants for men,puma rack pants for men,1,missing-char
+black shirts,black shirrts,1,double-letter
+formal pants women,formal pants womeen,1,extra-char
+yellow dresses for women,yellow dresses forr women,1,double-letter
+denim jeans for men,denim jeanns for men,1,double-letter
+fyre rose,ryre rose,1,keyboard-confusion
+and tops,and ops,1,missing-char
+dnmx jeans women,dnmx jeanz women,1,phonetic-error
+jaipur kurti,jaipur kuurti,1,double-letter
+asics shoes men,asics shoes me n,1,space-mistake
+indian terrain shirts,indian terrajn shirts,1,keyboard-confusion
+nail polish for women,nail polish for wommen,1,double-letter
+laptop bags for women,laptop bags for wo men,1,space-mistake
+sart,art,1,missing-char
+slit dress,slit ddess,1,keyboard-confusion
+adidas sandals for men,adidassandals for men,1,space-mistake
+gym bags,gym babs,1,keyboard-confusion
+compus shoes,comps shoes,1,missing-char
+kurtas sets for women,kurtas sets fr women,1,missing-char
+men belts,men bels,1,missing-char
+hoodie men,hoodiie men,1,double-letter
+mufti jeans,mmufti jeans,1,extra-char
+headwear,hheadwear,1,extra-char
+short kurti women,short kurti wmen,1,missing-char
+ladies shoe,ladies she,1,missing-char
+gorgone,gorgonne,1,double-letter
+hoodies for girls,hoodiies for girls,1,double-letter
+cargo jeans,caggo jeans,1,keyboard-confusion
+shimmer leggings,shimmer legings,1,missing-char
+women kurthi,omen kurthi,1,missing-char
+plazoo pants,olazoo pants,1,keyboard-confusion
+blackberrys for men,bllackberrys for men,1,extra-char
+rare rabit,rare fabit,1,keyboard-confusion
+mosquito net,mosquito nt,1,missing-char
+full sleeve t shirt men,full sleeve t shirt mmen,1,extra-char
+embellished saree,embellishedsaree,1,space-mistake
+carlton london for men,car lton london for men,1,space-mistake
+black shirt men,black shirt ken,1,keyboard-confusion
+couple watch,couplf watch,1,keyboard-confusion
+lip stick for women,lio stick for women,1,keyboard-confusion
+mvmt for men,mvmt for mn,1,missing-char
+bootcut for women,bootcut foor women,1,double-letter
+performax shorts for men,performaxx shorts for men,1,extra-char
+linen shirts,linen shirtss,1,extra-char
+gym vest,bym vest,1,keyboard-confusion
+cantabil,canttabil,1,double-letter
+co ord for women,co ord for womenn,1,double-letter
+double bed sheet,dohble bed sheet,1,keyboard-confusion
+sleeveless t shirt,slefveless t shirt,1,keyboard-confusion
+nightsuit sets for boys,nightuit sets for boys,1,missing-char
+co ord set,coord set,1,space-mistake
+cargo jogger,cargo jogger,1,space-mistake
+muji,mujji,1,double-letter
+white leggings for women,whitw leggings for women,1,keyboard-confusion
+avaasa straight kurta,avawsa straight kurta,1,keyboard-confusion
+printed t shirt for men,printed t shirt fot men,1,keyboard-confusion
+oversized for men tshirt,oversized for men tshirh,1,keyboard-confusion
+capri,caapri,1,extra-char
+lenin sarees,lenin sareed,1,keyboard-confusion
+kazo for women,kazofor women,1,space-mistake
+kurthies for women,kurthiez for women,1,phonetic-error
+formal trousers men,formql trousers men,1,keyboard-confusion
+formal for women,firmal for women,1,keyboard-confusion
+one piece dresses,one piece drexses,1,keyboard-confusion
+pink n blue for girls,pinkn blue for girls,1,space-mistake
+winter kurti,wintee kurti,1,keyboard-confusion
+fashion bags,fashion bzgs,1,keyboard-confusion
+long shrug for women,long hrug for women,1,missing-char
+puma ferrari shoes,pma ferrari shoes,1,missing-char
+baby girl tshirt,baby gi rl tshirt,1,space-mistake
+ripped jeans women,ripped ueans women,1,keyboard-confusion
+reversible jackets,reversible jacets,1,missing-char
+kids sports shoes,kidssports shoes,1,space-mistake
+ateesa for women,ateesa for wojen,1,keyboard-confusion
+smart watches for women,smart watches for womenn,1,extra-char
+sports leggings,sprts leggings,1,missing-char
+boots for girls,boots for birls,1,keyboard-confusion
+crocs for girls,crocs for gils,1,missing-char
+short tops women,short hops women,1,keyboard-confusion
+ciffon saree,cifffon saree,1,double-letter
+branded shirts for men,branded shirts foor men,1,extra-char
+shirts mens,shhirts mens,1,double-letter
+dress materials for women,dress materials for womeen,1,double-letter
+ketch shirt,ketch shit,1,missing-char
+gap men in tshirts,gap men in ttshirts,1,double-letter
+shorts boys,shorhs boys,1,keyboard-confusion
+freehand,freehaand,1,double-letter
+new born baby girl,newborn baby girl,1,space-mistake
+black skirts for women,black skirs for women,1,missing-char
+co ord sets women,co ord setss women,1,extra-char
+infant shoes,imfant shoes,1,keyboard-confusion
+kurtas under 400,kurtas uunder 400,1,double-letter
+long jacket women,longg jacket women,1,extra-char
+mothercare for boys,mothercre for boys,1,missing-char
+white tank top,whitee tank top,1,extra-char
+blue kurta,blue kurtq,1,keyboard-confusion
+overshirt,oveershirt,1,extra-char
+shirt for mens,shirt for men s,1,space-mistake
+co ord sets,co oord sets,1,double-letter
+aviraa for women,avirza for women,1,keyboard-confusion
+furniture,furnture,1,missing-char
+cotton bed sheet,cotton bed zheet,1,phonetic-error
+sarees cotton,sare es cotton,1,space-mistake
+leatherkraft,leagherkraft,1,keyboard-confusion
+hand bags women,band bags women,1,keyboard-confusion
+mens denim jacket,mens denim jcket,1,missing-char
+partywear tops,partywear topz,1,phonetic-error
+black crop tops,glack crop tops,1,keyboard-confusion
+black jeggings for women,black jfggings for women,1,keyboard-confusion
+flower vase,flower vvase,1,extra-char
+mens sandels,menns sandels,1,double-letter
+kids trousers,kids tousers,1,missing-char
+levis shirt for men,levi shirt for men,1,missing-char
+bed sheet,bbed sheet,1,double-letter
+kutas,kutaz,1,phonetic-error
+brown shirt,brown ehirt,1,keyboard-confusion
+muji for women,muj for women,1,missing-char
+maternity pants,maternity ppants,1,double-letter
+women kurtha sets,women kurthw sets,1,keyboard-confusion
+kaftan kurti,kaftan kuryi,1,keyboard-confusion
+adidas flip flops,adiidas flip flops,1,double-letter
+avvasa kurthi,avvaza kurthi,1,phonetic-error
+frocks girls,frocks birls,1,keyboard-confusion
+hoppipola,hoppipooa,1,keyboard-confusion
+jack and jones jeans men,jack andd jones jeans men,1,double-letter
+georgette kurti,georgette curti,1,phonetic-error
+barrels and oil for women,bbarrels and oil for women,1,double-letter
+girls round,girls roind,1,keyboard-confusion
+clutch for women,clutchfor women,1,space-mistake
+tie and dye,tie and dyye,1,double-letter
+men check shirt,men chheck shirt,1,extra-char
+black gown,lack gown,1,missing-char
+adidas sneaker,adidas sjeaker,1,keyboard-confusion
+trauser for men,trauzer for men,1,phonetic-error
+puma black shoes for men,puma blac k shoes for men,1,space-mistake
+collar tshirt for women,coplar tshirt for women,1,keyboard-confusion
+v neck tshirt for women,v neck tzhirt for women,1,phonetic-error
+power shoes,powe r shoes,1,space-mistake
+high neck t shirt,highneck t shirt,1,space-mistake
+ucb jeans,ucbjeans,1,space-mistake
+us polo jacket men,us polo jacket meh,1,keyboard-confusion
+levi tshirt for women,lev i tshirt for women,1,space-mistake
+kids wear for girls,kids wear for gir.s,1,keyboard-confusion
+embroidered top,embroirered top,1,keyboard-confusion
+high neck tops for women,high neck topz for women,1,keyboard-confusion
+aks kurta set,aks kurta seet,1,extra-char
+altair for men,altair formen,1,missing-char
+nike sneakers women,nikee sneakers women,1,double-letter
+kid shoes,kid shoez,1,keyboard-confusion
+plazoos,plazols,1,keyboard-confusion
+baby girl t shirts,baby girl t sshirts,1,double-letter
+cord sets for women,cord eets for women,1,keyboard-confusion
+cotton skirts for women,cootton skirts for women,1,double-letter
+girls shirt,girls short,1,keyboard-confusion
+women black top,womeen black top,1,double-letter
+women long coats,wpmen long coats,1,keyboard-confusion
+black sports shoes,black spots shoes,1,missing-char
+bangels,bangls,1,missing-char
+t shirt combo,t shirrt combo,1,extra-char
+allen solly for men shirt,allen solly for meen shirt,1,double-letter
+gas men in shirts,gas men in sjirts,1,keyboard-confusion
+yellow chimes,yellowchimes,1,space-mistake
+johnplayer jeans,jjohnplayer jeans,1,double-letter
+sleeveless tshirts,sleeeless tshirts,1,missing-char
+grey shoes,ggrey shoes,1,extra-char
+difference of opinion,differenc e of opinion,1,space-mistake
+avvasa kurties,vvasa kurties,1,missing-char
+flipflop for women,flipflop for w omen,1,space-mistake
+hunkmoller,huncmoller,1,phonetic-error
+mandarin collar,mandarin collsr,1,keyboard-confusion
+chiken kurti,hiken kurti,1,missing-char
+straight fit pants,strqight fit pants,1,keyboard-confusion
+fur,furr,1,extra-char
+bras bralettes for girls,bras braletttes for girls,1,double-letter
+aavasa kurthis for women,aavasa kuurthis for women,1,double-letter
+white sweatshirt,white xweatshirt,1,keyboard-confusion
+full sleve t shirt,full sleve t shir,1,missing-char
+fig frocks,figg frocks,1,double-letter
+gap boys,gap bys,1,missing-char
+women sweat shirt,qomen sweat shirt,1,keyboard-confusion
+tissu for women,tissufor women,1,space-mistake
+home kitchen wall art,homekitchen wall art,1,space-mistake
+avaasa cotton kurta,avaasa cotton urta,1,missing-char
+spyker shirts,spymer shirts,1,keyboard-confusion
+prada,praada,1,extra-char
+woman suit,wkman suit,1,keyboard-confusion
+green tshirts for men,yreen tshirts for men,1,keyboard-confusion
+winter dress for women,winterdress for women,1,space-mistake
+one pieces,one piees,1,missing-char
+us polo tshirts for men,uspolo tshirts for men,1,space-mistake
+rose gold earrings,rose god earrings,1,missing-char
+angrakha kurtas for women,angrakhakurtas for women,1,space-mistake
+shoes womens,shoes wimens,1,keyboard-confusion
+inddus,inddu,1,missing-char
+black track pants for men,black track pants for me,1,missing-char
+and women,and womenn,1,extra-char
+faux fur jacket,faux fur javket,1,keyboard-confusion
+sports pants,spports pants,1,extra-char
+disney tshirts for men,disney tshirtss for men,1,double-letter
+buda jeans shoes for men,bda jeans shoes for men,1,missing-char
+zip front jacket,zip frront jacket,1,extra-char
+formal shirts for mens,formal shiets for mens,1,keyboard-confusion
+woodland sandal,wwoodland sandal,1,extra-char
+layered kurti,layeredd kurti,1,extra-char
+lenin saree,lenin sarree,1,extra-char
+yellow dresses,gellow dresses,1,keyboard-confusion
+white palazo,white palazo,1,space-mistake
+bandhej saree,bandhej sarer,1,keyboard-confusion
+white sports shoes,white spotts shoes,1,keyboard-confusion
+women long t shirt,women lonng t shirt,1,extra-char
+jordan shoe,jorrdan shoe,1,double-letter
+lengha choli,lengha chpli,1,keyboard-confusion
+chanderi saree,chanderi satee,1,keyboard-confusion
+winter jackets women,winter jackeets women,1,double-letter
+jogger jeans men,jogger jeanz men,1,phonetic-error
+men night pants,men night pantx,1,keyboard-confusion
+light blue jeans men,light blue jeans mmen,1,double-letter
+tubes corsets for women,tubes corsefs for women,1,keyboard-confusion
+girls shorts top sets,girks shorts top sets,1,keyboard-confusion
+steel water bottle,steel water bottle,1,space-mistake
+cheppals for women,cheppals for womsn,1,keyboard-confusion
+pine republic for men,pije republic for men,1,keyboard-confusion
+bodycon for women,bo dycon for women,1,space-mistake
+teamsprit for men,teamsprit for mrn,1,keyboard-confusion
+kazo tops,kkazo tops,1,double-letter
+t shirt pyjama for women,tshirt pyjama for women,1,space-mistake
+adorly boots,adoly boots,1,missing-char
+oxfords for men,oxfords for me n,1,space-mistake
+artificial flowers,artificial f.owers,1,keyboard-confusion
+armani exchange men,armni exchange men,1,missing-char
+potli bag,pottli bag,1,extra-char
+adidas sweatshirt,adidas swatshirt,1,missing-char
+forever 52,foorever 52,1,double-letter
+lives jeans,.ives jeans,1,keyboard-confusion
+salwar suit set for women,salwar suuit set for women,1,double-letter
+capri for men,capri for mfn,1,keyboard-confusion
+men jens,men jems,1,keyboard-confusion
+henley,hhenley,1,double-letter
+oxford shoes,oford shoes,1,missing-char
+muflar,mufiar,1,keyboard-confusion
+go colors leggings,go coloors leggings,1,double-letter
+t shirt puma,shirt puma,1,missing-char
+tshirt combo,tshirt c ombo,1,space-mistake
+smocked tops,smicked tops,1,keyboard-confusion
+overcoat for men,ovvercoat for men,1,double-letter
+avaasa kurties for women,avaasa urties for women,1,missing-char
+bottom wear for girls,bottom wear for girlw,1,keyboard-confusion
+sleper,zleper,1,phonetic-error
+mens white shirts,mens whitf shirts,1,keyboard-confusion
+nike air max 90,nikke air max 90,1,extra-char
+vertusy,verrtusy,1,double-letter
+white pants women,dhite pants women,1,keyboard-confusion
+umbro shorts,umbroshorts,1,space-mistake
+snitch men,snitch nen,1,keyboard-confusion
+maternity maxi dress,materrnity maxi dress,1,double-letter
+kids shoes for girls,kids shoes for girks,1,keyboard-confusion
+lee cooper black jeans,lfe cooper black jeans,1,keyboard-confusion
+sandals for infants,sandaals for infants,1,double-letter
+jeans jackets for women,jeansjackets for women,1,space-mistake
+red dresses,ded dresses,1,keyboard-confusion
+dnmx women top,dnnx women top,1,keyboard-confusion
+home decore,home dedore,1,keyboard-confusion
+clear heels,clearheels,1,space-mistake
+baggy pants for men,baggy pantz for men,1,phonetic-error
+casio vintage watch,casoo vintage watch,1,keyboard-confusion
+black t shirts for men,back t shirts for men,1,missing-char
+lounge shorts for women,lounge shorts for womdn,1,keyboard-confusion
+campus ladies shoes,campusladies shoes,1,space-mistake
+floral print kurtas,floral prinnt kurtas,1,extra-char
+party shirt,paarty shirt,1,extra-char
+truebrown,trruebrown,1,extra-char
+tops fig,ops fig,1,missing-char
+cut shoe,cut sshoe,1,double-letter
+women woolen kurti,women woolrn kurti,1,keyboard-confusion
+kurtisets,kurtsets,1,missing-char
+simran gold,simran gld,1,missing-char
+frock for baby,froc for baby,1,missing-char
+loafer socks,loafeer socks,1,double-letter
+carlton london footwear,carltonlondon footwear,1,space-mistake
+sandles men,sandlew men,1,keyboard-confusion
+fila men shoes,bila men shoes,1,keyboard-confusion
+maroon kurti,maroon kuryi,1,keyboard-confusion
+aayu all about you,aayyu all about you,1,extra-char
+avassa kurties,vassa kurties,1,missing-char
+teamspirit trackpants,teamspirit tracckpants,1,double-letter
+collection of kids,cllection of kids,1,missing-char
+women anarkali kurta,wmen anarkali kurta,1,missing-char
+gents wallet,gents walldt,1,keyboard-confusion
+campus shoos,cammpus shoos,1,extra-char
+velvet kurti,velvet krti,1,missing-char
+wrangler tshirts for men,wrangler tshirts cor men,1,keyboard-confusion
+winter sweater for women,winnter sweater for women,1,extra-char
+veja,veeja,1,extra-char
+sandal for girls,sandal for ggirls,1,extra-char
+men formal trouser,men formal trrouser,1,extra-char
+chicken,fhicken,1,keyboard-confusion
+footwear for ladies,footwe ar for ladies,1,space-mistake
+high west jeans,high wesr jeans,1,keyboard-confusion
+playday for boys,playday for b oys,1,space-mistake
+nike running,nike rnning,1,missing-char
+stud earrings for women,syud earrings for women,1,keyboard-confusion
+calvin klein sweatshirt,falvin klein sweatshirt,1,keyboard-confusion
+monte carlo sweatshirt,monte caarlo sweatshirt,1,double-letter
+ph poshakhub for women,ph poshakhub for womenn,1,double-letter
+wired bra,wird bra,1,missing-char
+baggy tshirt for women,baggy tshirt fr women,1,missing-char
+woodland sneakers for men,woodland sneakers or men,1,missing-char
+women sports leggings,women sportss leggings,1,double-letter
+mens ethnic,mens ethnnic,1,double-letter
+woollen,woollek,1,keyboard-confusion
+woolen coat,woolenn coat,1,double-letter
+hanky,hancy,1,phonetic-error
+women gym pants,women vym pants,1,keyboard-confusion
+mrinalika fashion,mrinaika fashion,1,missing-char
+fit and flare dresses,fit and lare dresses,1,missing-char
+leather shoes for women,leather shoes for woen,1,missing-char
+muji for home kitchen,mmuji for home kitchen,1,extra-char
+womens sarees,womens sareez,1,keyboard-confusion
+ginger dresses,ginnger dresses,1,double-letter
+ful,full,1,double-letter
+cotton frock for kids,cotton frlck for kids,1,keyboard-confusion
+show piece,sho piece,1,missing-char
+trendyol men,trrendyol men,1,extra-char
+girl kids dress,girl kids dress,1,space-mistake
+full hand t shirt,full ha nd t shirt,1,space-mistake
+partywear kurta,partywear ktrta,1,keyboard-confusion
+puma t shirts men,puma t shirts mn,1,missing-char
+black necklace,black ecklace,1,missing-char
+combo t shirts,combo t shirtw,1,keyboard-confusion
+grey formal pant,greyy formal pant,1,extra-char
+women skechers shoes,women skecheers shoes,1,extra-char
+sharara kurti,sharara kurtj,1,keyboard-confusion
+heels woman,heelswoman,1,space-mistake
+house of begum,house of begu,1,missing-char
+pink shirts,piink shirts,1,double-letter
+us polo t shirts men,us polo t shirs men,1,missing-char
+puma flip flop for men,puma flip flop for menn,1,extra-char
+catwalk wedges,ctwalk wedges,1,missing-char
+fur jacket women,fur jackett women,1,extra-char
+puma shoes bmw,puma shooes bmw,1,extra-char
+plus size shirt,llus size shirt,1,keyboard-confusion
+rio treggins,rrio treggins,1,extra-char
+boys cargo pants,boys cargo paants,1,extra-char
+women leather jacket,women keather jacket,1,keyboard-confusion
+slingbag,slinggag,1,keyboard-confusion
+womens handbags,womens handbaggs,1,double-letter
+chinese collar,chinese ollar,1,missing-char
+night lounge wear,night llunge wear,1,keyboard-confusion
+party wear frocks,party wear frofks,1,keyboard-confusion
+viscose kurtas for women,viscosekurtas for women,1,space-mistake
+short skirt,short skkirt,1,extra-char
+gloves,hloves,1,keyboard-confusion
+womens blazer,aomens blazer,1,keyboard-confusion
+ketch shirt for men,ketchshirt for men,1,space-mistake
+wine colour saree,wine colkur saree,1,keyboard-confusion
+altheory sneakers for men,altheory sneacers for men,1,phonetic-error
+blue formal shirt,blue formal shiry,1,keyboard-confusion
+puma sweatshirt men,puma sw eatshirt men,1,space-mistake
+men half pant,men halv pant,1,keyboard-confusion
+avasa kurtha for women,avasa kurtha for w omen,1,space-mistake
+black sandals for girls,black sandals for gidls,1,keyboard-confusion
+kurti avassa,kurti av assa,1,space-mistake
+spunk tshirt,spunc tshirt,1,phonetic-error
+artificial plants,artificial ppants,1,keyboard-confusion
+mischief monkey for men,mizchief monkey for men,1,phonetic-error
+urban hug for women,urban hug fr women,1,missing-char
+kanjivaram silk sarees,kanjivaramsilk sarees,1,space-mistake
+campus shoes for womens,campus shoes for wommens,1,double-letter
+sports bra padded,sportsbra padded,1,space-mistake
+sweetshirt men,sweettshirt men,1,double-letter
+cotton tunic,ccotton tunic,1,double-letter
+kamarband,kamarbannd,1,double-letter
+fashor sets,fadhor sets,1,keyboard-confusion
+women white in tops,women whiue in tops,1,keyboard-confusion
+overshirt men,overshi rt men,1,space-mistake
+antaran for women,antaran fir women,1,keyboard-confusion
+black bodycon dress,blacc bodycon dress,1,phonetic-error
+sugar lips for women,sugar lips forr women,1,double-letter
+brown loafers,brown lafers,1,missing-char
+hushh and fig,huhh and fig,1,missing-char
+flared kurtis for women,flaredkurtis for women,1,space-mistake
+ck women,ck wojen,1,keyboard-confusion
+chudi material,chudi maaterial,1,extra-char
+comisole,comizole,1,keyboard-confusion
+office pants for women,officepants for women,1,space-mistake
+stylobug for girls,styylobug for girls,1,double-letter
+without lace shoes,without lace shooes,1,double-letter
+carlton london shoes,carlton london shoees,1,double-letter
+divyank,divyankk,1,double-letter
+full sleeves for men,full sleeves for me,1,missing-char
+man pant,mn pant,1,missing-char
+t shirt for men under 200,tt shirt for men under 200,1,extra-char
+long anarkali,long abarkali,1,keyboard-confusion
+dye,dyt,1,keyboard-confusion
+cartain,cwrtain,1,keyboard-confusion
+western kurtis,westen kurtis,1,missing-char
+marvel tshirts for boys,marvel tshirts for bo ys,1,space-mistake
+t shirt us polo,t shit us polo,1,missing-char
+kg frendz for boys,kg frrendz for boys,1,double-letter
+pinafore for women,pnafore for women,1,missing-char
+man trouser,mantrouser,1,missing-char
+nike court vision mid,nike cour vision mid,1,missing-char
+long skirts for girls,long skirtsfor girls,1,missing-char
+night gown women,niight gown women,1,double-letter
+short for man,short for mann,1,extra-char
+jeans for kids boys,jeans for kids booys,1,extra-char
+flatforms,flatforrms,1,extra-char
+shirt kurtas for women,shirt kurtas vor women,1,keyboard-confusion
+zigo,igo,1,missing-char
+jack and jones men shirts,jack and ones men shirts,1,missing-char
+shiffon sari,shiffon sar,1,missing-char
+long skirt for girls,long skirt for girls,1,space-mistake
+jutis for women,jutiis for women,1,extra-char
+women lehnga choli,women lehnga chooli,1,double-letter
+ven husen,vven husen,1,double-letter
+tommy hilfiger jeans,tommy hilfiiger jeans,1,extra-char
+the vanca,the vancca,1,double-letter
+adidas for men t shirt,adidass for men t shirt,1,double-letter
+sports shoes for men puma,sports shos for men puma,1,missing-char
+anime t shirts,anime t shirtts,1,extra-char
+gogals,ggogals,1,double-letter
+campus sliper,campus slipeer,1,extra-char
+lounge sets for women,loungesets for women,1,space-mistake
+legings,legingz,1,phonetic-error
+rare rabbit jackets,rare rabbbit jackets,1,double-letter
+indya saree,indya saee,1,missing-char
+boot women,boor women,1,keyboard-confusion
+man bag,msn bag,1,keyboard-confusion
+wrist watches for men,wrist atches for men,1,missing-char
+slim fit shorts,slim ffit shorts,1,extra-char
+white sneaker for men,white ssneaker for men,1,extra-char
+sweater for baby boy,sweater foor baby boy,1,double-letter
+moschino for women,moschino forr women,1,double-letter
+office shoes for men,officeshoes for men,1,space-mistake
+netpaly shirts for men,netpaly shirtts for men,1,double-letter
+sequence,sequennce,1,double-letter
+team spirit tops,teamspirit tops,1,space-mistake
+beach curve,bewch curve,1,keyboard-confusion
+asian shoes men,sian shoes men,1,missing-char
+kurta suit for women,kurta suit dor women,1,keyboard-confusion
+watch for man,watch fog man,1,keyboard-confusion
+long coat woman,long coat oman,1,missing-char
+global desi kurti,global ddesi kurti,1,double-letter
+celio shirts,celio shirfs,1,keyboard-confusion
+bevogue for women,bevogue for womenn,1,double-letter
+men sleeveless tshirt,men sleveless tshirt,1,missing-char
+loofer shoes,loofer shoew,1,keyboard-confusion
+silver bracelets for men,silver bracelets for en,1,missing-char
+superdry men tshirts,superdrry men tshirts,1,extra-char
+pyjamas shorts for girls,pyjamas shorts for grls,1,missing-char
+tommy hilfiger t shirts,tomny hilfiger t shirts,1,keyboard-confusion
+sparks shoes,sparksshoes,1,space-mistake
+puma slip on,puuma slip on,1,double-letter
+addidas sport shoes,addidas sport shes,1,missing-char
+milton lunch box,milton lunchh box,1,extra-char
+dhuni by avaasa,ddhuni by avaasa,1,double-letter
+women black boots,women black bots,1,missing-char
+printed pyjamas for women,priinted pyjamas for women,1,double-letter
+white crop tops for women,dhite crop tops for women,1,keyboard-confusion
+madame sweater,madame sweaater,1,double-letter
+boat neck kurta,boat neck kuurta,1,double-letter
+tissue silk saree,tisssue silk saree,1,extra-char
+vastrado for women,vastrado for wojen,1,keyboard-confusion
+women white kurti,women wite kurti,1,missing-char
+pink t shirt for men,pink t shit for men,1,missing-char
+joogers,jooges,1,missing-char
+perfomax t shirt for men,perfomax t zhirt for men,1,phonetic-error
+chikankari short kurti,chikaankari short kurti,1,double-letter
+lofers shoes,lofers sshoes,1,double-letter
+women loose tshirt,women loosr tshirt,1,keyboard-confusion
+baby girls tops,baby girls toops,1,homophone
+one pice dress,onee pice dress,1,double-letter
+campas shose,camas shose,1,missing-char
+cotton shirt women,cotton shirt wommen,1,extra-char
+nike tshirt women,nike tzhirt women,1,phonetic-error
+avaasa pant for women,avaasapant for women,1,space-mistake
+fig stole,fig ztole,1,phonetic-error
+red tape running shoes,red tape runnng shoes,1,missing-char
+heavy padded bra,heavy paddd bra,1,missing-char
+sleeper man,sldeper man,1,keyboard-confusion
+white joggers,whitf joggers,1,keyboard-confusion
+avaasa a line kurtis,avaasa a linekurtis,1,missing-char
+sports pants for men,sports ants for men,1,missing-char
+allensolly shirt,alensolly shirt,1,missing-char
+neon heels,neon herls,1,keyboard-confusion
+superdry slides for men,superdry zlides for men,1,keyboard-confusion
+pregnancy wear,ppregnancy wear,1,double-letter
+women slips,wom en slips,1,space-mistake
+latin quaters,latin quatters,1,double-letter
+rio top women,rio topp women,1,double-letter
+man boot,an boot,1,missing-char
+combo t shirt for men,combo t zhirt for men,1,phonetic-error
+kids pajama,kids pjama,1,missing-char
+laptop handbags for women,laptop handbags for woomen,1,double-letter
+roadster shirts,roadste r shirts,1,space-mistake
+slim fit jacket,slim fitjacket,1,missing-char
+bumzee for girls,bumzee for girlz,1,phonetic-error
+baby stroller,baby sttroller,1,double-letter
+ti shirt,t shirt,1,missing-char
+women cotton tshirt,women cotton shirt,1,missing-char
+anarkali kurtha set,anarkali kurttha set,1,extra-char
+full shirt men,fulll shirt men,1,extra-char
+t shirt full sleeve men,shirt full sleeve men,1,missing-char
+javeri pearls,javeri pearlz,1,keyboard-confusion
+yuv,yuvv,1,extra-char
+altheory jacket,aaltheory jacket,1,double-letter
+anarkali suit women,anarkalk suit women,1,keyboard-confusion
+purple kurtas,purple kuras,1,missing-char
+woman long top,womanlong top,1,space-mistake
+half zip,haalf zip,1,extra-char
+meternity kurtas,meternity curtas,1,phonetic-error
+heel women,heel xomen,1,keyboard-confusion
+blue beauty for women,boue beauty for women,1,keyboard-confusion
+ucb tshirt men,ucb twhirt men,1,keyboard-confusion
+kid girl,kid irl,1,missing-char
+jerseys,jerdeys,1,keyboard-confusion
+kurthi suit set,kurthi suit sset,1,double-letter
+fancy bra,fancy ba,1,missing-char
+kg frendz jeans,kg frendzz jeans,1,extra-char
+checked skirt,checkedskirt,1,space-mistake
+period panties,period paanties,1,double-letter
+denim frocks,denimm frocks,1,extra-char
+clarks sneakers for men,cclarks sneakers for men,1,extra-char
+dmnx tshirts,dmnxtshirts,1,space-mistake
+shoe puma,shoe pumaa,1,extra-char
+kids sandel,kids saandel,1,double-letter
+brown boots for women,brown bootd for women,1,keyboard-confusion
+asics jacket,asics jacket,1,space-mistake
+casual pants women,cawual pants women,1,keyboard-confusion
+mens cotton kurta,menns cotton kurta,1,double-letter
+platform heels women,platform heels woen,1,missing-char
+night gawn,nivht gawn,1,keyboard-confusion
+women duppata,women dduppata,1,double-letter
+superdry men shirts,superdry menn shirts,1,double-letter
+slippers for men,slippers for msm,2,keyboard-confusion
+flats,f.wts,2,keyboard-confusion
+trousers,torusers,2,reversed-letters
+jackets coats for men,jackehs doats for men,2,keyboard-confusion
+buda jeans co,bkca jeans co,2,keyboard-confusion
+women sports shoes,women xporrs shoes,2,keyboard-confusion
+sandals women,sandsls qomen,2,keyboard-confusion
+avassa kurta,svassa kurtw,2,keyboard-confusion
+girls jeans,girlx jeana,2,keyboard-confusion
+nike sneakers for men,nice sneacers for men,2,phonetic-error
+white men in shirts,whits men in sbirts,2,keyboard-confusion
+siyahi kurtas for women,eiyahi kurtas for womfn,2,keyboard-confusion
+party dress,party derss,2,reversed-letters
+white t shirt,white g short,2,keyboard-confusion
+jeans for woman,jaens for woman,2,reversed-letters
+nike tshirts for men,nike tsgirts for nen,2,keyboard-confusion
+awasa kurti,awasa murtk,2,keyboard-confusion
+fig bra,fkg gra,2,keyboard-confusion
+embroidered kurta,ekbroidered kurha,2,keyboard-confusion
+jeans and pants,jeans and oantx,2,keyboard-confusion
+kurta pant set for women,kurra pant sst for women,2,keyboard-confusion
+lee cooper men in tshirts,lee cooper men in tzhirtz,2,phonetic-error
+straight kurti,straig kurti,2,skipping-letters
+green kurti,greeh kurto,2,keyboard-confusion
+men trouser,men trouesr,2,reversed-letters
+nike white shoes,nike white sheos,2,reversed-letters
+black skirt,boack skort,2,keyboard-confusion
+crop,cp,2,skipping-letters
+trendyol,tremdykl,2,keyboard-confusion
+women long tops,wonen lobg tops,2,keyboard-confusion
+puma hoodies,pumah oodies,2,reversed-letters
+women wallets,women walksts,2,keyboard-confusion
+nike shose,nike zhoze,2,phonetic-error
+women western dresses,womsn western eresses,2,keyboard-confusion
+chunky heels,chunky ehels,2,reversed-letters
+flip flops women,flip flopx womsn,2,keyboard-confusion
+tanks camis for women,tankz camiz for women,2,phonetic-error
+orgenza saree,orgfnza safee,2,keyboard-confusion
+dillinger for men,dilljnger for ken,2,keyboard-confusion
+jeans jacket for men,jeans jacket form en,2,reversed-letters
+girl shorts,gir lshorts,2,reversed-letters
+jeans boys,jeanz boyz,2,phonetic-error
+jacket mens,ajcket mens,2,reversed-letters
+proline for men,prole for men,2,skipping-letters
+knighthood,knighthlpd,2,keyboard-confusion
+fitted bedsheet,fittde bedsheet,2,reversed-letters
+casual pants for women,casual pantd for woken,2,keyboard-confusion
+shoes for men campus,shkes for men campks,2,keyboard-confusion
+indie closet,indie clisey,2,keyboard-confusion
+puma sliders for men,puma sliders for emn,2,reversed-letters
+louis philippe jeans,louid philippe jeanz,2,keyboard-confusion
+chokar set,chokqr wet,2,keyboard-confusion
+globus for women,globus of women,2,predictive-text
+bath robe,hath robw,2,keyboard-confusion
+puma chappal,puma chappla,2,reversed-letters
+puma tshirt men,puma tsihrt men,2,reversed-letters
+max bags,nax bays,2,keyboard-confusion
+nightwear set,nighywear zet,2,keyboard-confusion
+oversized for men t shirt,overzized for men t zhirt,2,phonetic-error
+woodland slippers,aoodland slippdrs,2,keyboard-confusion
+women jecket,wen jecket,2,skipping-letters
+leecooper jeans,leecooper jenas,2,reversed-letters
+nike women sneakers,nice women sneacers,2,phonetic-error
+wall art for home kitchen,wall ary for home kitfhen,2,keyboard-confusion
+flap pockets,flal plckets,2,keyboard-confusion
+andamen men in shirts,amdqmen men in shirts,2,keyboard-confusion
+shoes casual,shoee dasual,2,keyboard-confusion
+svrna,srvna,2,reversed-letters
+johnplayers shirts,johhplayers shigts,2,keyboard-confusion
+black tshirt women,black tshkrh women,2,keyboard-confusion
+armani exchange shoes,amrani exchange shoes,2,reversed-letters
+suit set women,zuit zet women,2,phonetic-error
+armani tshirt,armani tshiey,2,keyboard-confusion
+mandarin collar shirt,mandarinc ollar shirt,2,reversed-letters
+purple top,purlle yop,2,keyboard-confusion
+messenger bag,messenger bga,2,reversed-letters
+sheer curtains,eheer furtains,2,keyboard-confusion
+toffy house for girls,toffy house fot girla,2,keyboard-confusion
+womens sports shoes,womens soprts shoes,2,reversed-letters
+cutecumber,cutedumbrr,2,keyboard-confusion
+avasa leggings for women,avasa legginsg for women,2,reversed-letters
+mochi women footwear,mochi women footwe,2,skipping-letters
+being human jeans,beinh human jeabs,2,keyboard-confusion
+campus shose for men,campjs shlse for men,2,keyboard-confusion
+hunkemoller,uunmemoller,2,keyboard-confusion
+suit for girls,suit fro girls,2,reversed-letters
+loafers shoes men,loafers ehofs men,2,keyboard-confusion
+dnmx pant,dmjx pant,2,keyboard-confusion
+ladies sweter,ladies swteer,2,reversed-letters
+kids girls shorts,kidgirls shorts,2,skipping-letters
+gap tshirt men,gap tshirmen,2,skipping-letters
+avaasa dresses,avaasa drezsws,2,keyboard-confusion
+avaasa women kurtas,avaasa women krutas,2,reversed-letters
+frocks for woman,frocks for owman,2,reversed-letters
+dnmx hoodies,dnmx hodoies,2,reversed-letters
+t shirts for ladies,of shirts for ladies,2,predictive-text
+kids boys tshirt,kids noya tshirt,2,keyboard-confusion
+ketch men in tshirts,ketch men in tzhirtz,2,phonetic-error
+plazzo kurta set,plazzo kueta srt,2,keyboard-confusion
+chino shorts for men,chino shorts fo rmen,2,reversed-letters
+brown jacket,brn jacket,2,skipping-letters
+allen solly men shirts,aklen solly mrn shirts,2,keyboard-confusion
+leather boot,lfatger boot,2,keyboard-confusion
+urbano fashion for men,urbano faauion for men,2,keyboard-confusion
+jeans shirt men,jeans shitr men,2,reversed-letters
+kashmiri shawl,kzshmigi shawl,2,keyboard-confusion
+hoodies tracks for men,hoodies tracks dor mem,2,keyboard-confusion
+women bra panty,women a panty,2,skipping-letters
+red tshirt for women,eed tshirt dor women,2,keyboard-confusion
+sneakers for men puma,sneakers for jen pima,2,keyboard-confusion
+kurti palazzo set,kurgi palazzl set,2,keyboard-confusion
+shirt boy,sjiet boy,2,keyboard-confusion
+mens puma shoes,mens puam shoes,2,reversed-letters
+electronic,elecgronjc,2,keyboard-confusion
+avasa mix match kurtas,avasa mix mwtch khrtas,2,keyboard-confusion
+pointed toe pumps,pointed toe pum,2,skipping-letters
+mens sweat shirts,mens sweat hsirts,2,reversed-letters
+high rise pants for women,high rise pts for women,2,skipping-letters
+kurta set under 600,kyrta set knder 600,2,keyboard-confusion
+flat sandal,flat sands.,2,keyboard-confusion
+plazzoo,plzazoo,2,reversed-letters
+avaasa blue kurta,avaaza blue curta,2,phonetic-error
+green crop top,gresn crop tol,2,keyboard-confusion
+kurta sets under 500,kurt asets under 500,2,reversed-letters
+timex,tkmec,2,keyboard-confusion
+puma white sneaker,puma white sneakre,2,reversed-letters
+wildhorn men in wallets,wildhorn men in walts,2,skipping-letters
+grocery,groce,2,skipping-letters
+black high neck,black gigh ndck,2,keyboard-confusion
+western one piece,western onep iece,2,reversed-letters
+10 years girls dress,10 years grils dress,2,reversed-letters
+baby boy tshirts,baby bpu tshirts,2,keyboard-confusion
+fur slippers,vut slippers,2,keyboard-confusion
+women rings,women irngs,2,reversed-letters
+saree with blouse,saree iwth blouse,2,reversed-letters
+indie picks kurti,indie piccs curti,2,phonetic-error
+western dress for kids,western dress dof kids,2,keyboard-confusion
+mulmul cotton saree,mulmlu cotton saree,2,reversed-letters
+winter shoes for women,wintre shoes for women,2,reversed-letters
+sam for women,sam for eonen,2,keyboard-confusion
+winter women,winger womem,2,keyboard-confusion
+dresstive for women,dresstibe tor women,2,keyboard-confusion
+sketchers kids,sketcehrs kids,2,reversed-letters
+bnarsi saree,bnrasi saree,2,reversed-letters
+high top sneaker,high top snker,2,skipping-letters
+champion for men,championf or men,2,reversed-letters
+shirt for men under 500,shirt fir men unser 500,2,keyboard-confusion
+performax shoes women,performax zhoez women,2,phonetic-error
+women night lounge wear,women night louneg wear,2,reversed-letters
+short nighty for women,shor tnighty for women,2,reversed-letters
+platforms,p.atfkrms,2,keyboard-confusion
+wide pants,we pants,2,skipping-letters
+velvet suits for women,evlvet suits for women,2,reversed-letters
+toteteca,otteteca,2,reversed-letters
+valentine gift,valentine gitf,2,reversed-letters
+georgette frocks,geortetfe frocks,2,keyboard-confusion
+underwear for girls,inderwear for girps,2,keyboard-confusion
+saree cover,dafee cover,2,keyboard-confusion
+women sports tshirt,women sprots tshirt,2,reversed-letters
+lable ritu kumar,lzble ditu kumar,2,keyboard-confusion
+white kurta sets,dhite kjrta sets,2,keyboard-confusion
+performax men jacket,performad men jackeg,2,keyboard-confusion
+chelsa boots,chelza bootz,2,phonetic-error
+levis for men t shirt,levis for men g syirt,2,keyboard-confusion
+black running shoes,black runnin gshoes,2,reversed-letters
+straight leg jeans,ztraight leg jeanz,2,phonetic-error
+ruffled top,rfufled top,2,reversed-letters
+coller t shirt for men,coller t shirt flr ken,2,keyboard-confusion
+sports jacket men,sprots jacket men,2,reversed-letters
+tshirts for men polo,tzhirtz for men polo,2,phonetic-error
+ajio shoes,ajio zhoez,2,phonetic-error
+crew neck tshirts,crsw heck tshirts,2,keyboard-confusion
+boot shoes,obot shoes,2,reversed-letters
+fusion set,fusionet,2,skipping-letters
+sparx white shoes,spsrx whute shoes,2,keyboard-confusion
+kurta with trouser,kurta with trkusdr,2,keyboard-confusion
+aavassa kurti,aavasda kudti,2,keyboard-confusion
+max girls,max hirlx,2,keyboard-confusion
+ginger slippers,gihger sliplers,2,keyboard-confusion
+adidas jersey,adis jersey,2,skipping-letters
+reebok running shoes,reebok running zhoez,2,phonetic-error
+high rise leggings,jigh risd leggings,2,keyboard-confusion
+kids shirts boys,kuds shirts bots,2,keyboard-confusion
+saubhagya for women,saubhagya for aoken,2,keyboard-confusion
+winter dresses for girls,winter dresess for girls,2,reversed-letters
+men half shirt,mej hqlf shirt,2,keyboard-confusion
+teamsprit men,teamsrpit men,2,reversed-letters
+white polo,white lklo,2,keyboard-confusion
+rs puma,rs puam,2,reversed-letters
+tissue for women,ssue for women,2,skipping-letters
+shoes for me,shoesor me,2,skipping-letters
+sports shoes nike,sportz shoes nije,2,keyboard-confusion
+trenches swings for women,trenchss swings for womej,2,keyboard-confusion
+wrist watches for women,wrizt watchez for women,2,phonetic-error
+kids footware,kidz footwage,2,keyboard-confusion
+throw,turos,2,keyboard-confusion
+colour block shoes,coloid block shoes,2,keyboard-confusion
+kappa women,kalpa womej,2,keyboard-confusion
+miss players for women,misw plauers for women,2,keyboard-confusion
+boots for kids,bootz for kidz,2,phonetic-error
+pencil pants,pecnil pants,2,reversed-letters
+long sweatshirt,lobg sweatsbirt,2,keyboard-confusion
+short kurta set,sohrt kurta set,2,reversed-letters
+women black sneakers,women blacks neakers,2,reversed-letters
+xxxl shirts,cxxl shidts,2,keyboard-confusion
+teamspirit pants for men,teamspirit oants dor men,2,keyboard-confusion
+red colour kurti,red coloue ourti,2,keyboard-confusion
+mens bottomwear,mesn bottomwear,2,reversed-letters
+netpl,nstll,2,keyboard-confusion
+adidas for men slippers,adidas for men sluppsrs,2,keyboard-confusion
+nail,bai.,2,keyboard-confusion
+leather bag for women,laether bag for women,2,reversed-letters
+fressia fabrics,fressia fbarics,2,reversed-letters
+t shirt women under 200,the shirt women under 200,2,predictive-text
+reebok tshirt,reebok tshitr,2,reversed-letters
+disel,diesl,2,reversed-letters
+avaasa set women,vaaasa set women,2,reversed-letters
+collar,co.laf,2,keyboard-confusion
+full sleeve men t shirt,full sleeve meh t shidt,2,keyboard-confusion
+cotton trouser for men,xotton trousee for men,2,keyboard-confusion
+kids pants girls,kids psnts hirls,2,keyboard-confusion
+crocs shoes for women,crocss hoes for women,2,reversed-letters
+slippers for men,slippers for msm,2,keyboard-confusion
+flats,f.wts,2,keyboard-confusion
+trousers,torusers,2,reversed-letters
+jackets coats for men,jackehs doats for men,2,keyboard-confusion
+buda jeans co,bkca jeans co,2,keyboard-confusion
+women sports shoes,women xporrs shoes,2,keyboard-confusion
+sandals women,sandsls qomen,2,keyboard-confusion
+avassa kurta,svassa kurtw,2,keyboard-confusion
+girls jeans,girlx jeana,2,keyboard-confusion
+nike sneakers for men,nice sneacers for men,2,phonetic-error
+white men in shirts,whits men in sbirts,2,keyboard-confusion
+siyahi kurtas for women,eiyahi kurtas for womfn,2,keyboard-confusion
+party dress,party derss,2,reversed-letters
+white t shirt,white g short,2,keyboard-confusion
+jeans for woman,jaens for woman,2,reversed-letters
+nike tshirts for men,nike tsgirts for nen,2,keyboard-confusion
+awasa kurti,awasa murtk,2,keyboard-confusion
+fig bra,fkg gra,2,keyboard-confusion
+embroidered kurta,ekbroidered kurha,2,keyboard-confusion
+jeans and pants,jeans and oantx,2,keyboard-confusion
+kurta pant set for women,kurra pant sst for women,2,keyboard-confusion
+lee cooper men in tshirts,lee cooper men in tzhirtz,2,phonetic-error
+straight kurti,straig kurti,2,skipping-letters
+green kurti,greeh kurto,2,keyboard-confusion
+men trouser,men trouesr,2,reversed-letters
+nike white shoes,nike white sheos,2,reversed-letters
+black skirt,boack skort,2,keyboard-confusion
+crop,cp,2,skipping-letters
+trendyol,tremdykl,2,keyboard-confusion
+women long tops,wonen lobg tops,2,keyboard-confusion
+puma hoodies,pumah oodies,2,reversed-letters
+women wallets,women walksts,2,keyboard-confusion
+nike shose,nike zhoze,2,phonetic-error
+women western dresses,womsn western eresses,2,keyboard-confusion
+chunky heels,chunky ehels,2,reversed-letters
+flip flops women,flip flopx womsn,2,keyboard-confusion
+tanks camis for women,tankz camiz for women,2,phonetic-error
+orgenza saree,orgfnza safee,2,keyboard-confusion
+dillinger for men,dilljnger for ken,2,keyboard-confusion
+jeans jacket for men,jeans jacket form en,2,reversed-letters
+girl shorts,gir lshorts,2,reversed-letters
+jeans boys,jeanz boyz,2,phonetic-error
+jacket mens,ajcket mens,2,reversed-letters
+proline for men,prole for men,2,skipping-letters
+knighthood,knighthlpd,2,keyboard-confusion
+fitted bedsheet,fittde bedsheet,2,reversed-letters
+casual pants for women,casual pantd for woken,2,keyboard-confusion
+shoes for men campus,shkes for men campks,2,keyboard-confusion
+indie closet,indie clisey,2,keyboard-confusion
+puma sliders for men,puma sliders for emn,2,reversed-letters
+louis philippe jeans,louid philippe jeanz,2,keyboard-confusion
+chokar set,chokqr wet,2,keyboard-confusion
+globus for women,globus of women,2,predictive-text
+bath robe,hath robw,2,keyboard-confusion
+puma chappal,puma chappla,2,reversed-letters
+puma tshirt men,puma tsihrt men,2,reversed-letters
+max bags,nax bays,2,keyboard-confusion
+nightwear set,nighywear zet,2,keyboard-confusion
+oversized for men t shirt,overzized for men t zhirt,2,phonetic-error
+woodland slippers,aoodland slippdrs,2,keyboard-confusion
+women jecket,wen jecket,2,skipping-letters
+leecooper jeans,leecooper jenas,2,reversed-letters
+nike women sneakers,nice women sneacers,2,phonetic-error
+wall art for home kitchen,wall ary for home kitfhen,2,keyboard-confusion
+flap pockets,flal plckets,2,keyboard-confusion
+andamen men in shirts,amdqmen men in shirts,2,keyboard-confusion
+shoes casual,shoee dasual,2,keyboard-confusion
+svrna,srvna,2,reversed-letters
+johnplayers shirts,johhplayers shigts,2,keyboard-confusion
+black tshirt women,black tshkrh women,2,keyboard-confusion
+armani exchange shoes,amrani exchange shoes,2,reversed-letters
+suit set women,zuit zet women,2,phonetic-error
+armani tshirt,armani tshiey,2,keyboard-confusion
+mandarin collar shirt,mandarinc ollar shirt,2,reversed-letters
+purple top,purlle yop,2,keyboard-confusion
+messenger bag,messenger bga,2,reversed-letters
+casual shoes for men,casual shoes for a,3,predictive-text
+superdry shirts for men,superdry shirts and men,3,predictive-text
+dnmx shirts men,dnmx shirts a,3,predictive-text
+red shoes,of shoes,3,predictive-text
+shoes for man,sesor man,4,skipping-letters
+avaasa set for women,avaast for women,4,skipping-letters
+tishirt for women,shirt for won,4,skipping-letters
+kurtipedia for women,kuipedia f women,4,skipping-letters
+pajamas for women,pajam f women,4,skipping-letters
+women tops under 200,women ps uer 200,4,skipping-letters
+froks,of,4,predictive-text
+watches for boys,wches foroys,4,skipping-letters
+women denim jacket,women dem jaet,4,skipping-letters
+kids sweatshirt,of sweatshirt,4,predictive-text
+casual dress for women,casual dress for the,4,predictive-text
+shoes adidas,shoeidas,4,skipping-letters
+kanjivaram,kaivam,4,skipping-letters
+kids boys shirts,kidz boyz zhirtz,4,phonetic-error
+gray jeans,gy jes,4,skipping-letters
+jockey,of,5,predictive-text
+women palazzo,women a,6,predictive-text
+kurta set for womens,kurta set for a,6,predictive-text
+branded shoes,a shoes,6,predictive-text
+arrow shirts,arrow of,6,predictive-text

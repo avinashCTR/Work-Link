@@ -1,0 +1,639 @@
+query,mistake,edit-distance,mistake_type
+sarees,ssrees,1,keyboard-confusion
+ethnic wear,ethnic wer,1,missing-char
+dupattas,dupathas,1,keyboard-confusion
+kurtis tunics,kurtis tuniccs,1,extra-char
+sarees for women,saarees for women,1,extra-char
+laptop bags,laptoop bags,1,extra-char
+trousers,troussers,1,double-letter
+blazer for men,blazer or men,1,missing-char
+teamspirit for women,teamspirit for wommen,1,double-letter
+night wear for women,night wear forr women,1,extra-char
+night dress for women,nihht dress for women,1,keyboard-confusion
+mens t shirts,mens t shiirts,1,extra-char
+skirt for women,skirrt for women,1,double-letter
+puma t shirt,puma t shirg,1,keyboard-confusion
+women bra,women brra,1,double-letter
+women flat sandals,women flat sndals,1,missing-char
+sportswear,sportsweear,1,extra-char
+skechers shoes for women,skechers shoes fr women,1,missing-char
+western top for women,estern top for women,1,missing-char
+formal shirts men,fformal shirts men,1,double-letter
+men lower,meen lower,1,double-letter
+blezer,blezsr,1,keyboard-confusion
+levi jeans for women,levi jean for women,1,missing-char
+jackets women,jackeets women,1,double-letter
+stationery organisers,stationery organiserrs,1,extra-char
+kimayra,kimaura,1,keyboard-confusion
+avaasa for women,vaasa for women,1,missing-char
+dnmx tshirt for women,dnx tshirt for women,1,missing-char
+anarkali set,anarkaki set,1,keyboard-confusion
+t shirt boys,t shirt boyd,1,keyboard-confusion
+rings for men,rings or men,1,missing-char
+adidas tshirts for men,adidas tshirts foor men,1,double-letter
+kurta bottom set,kjrta bottom set,1,keyboard-confusion
+teamsprit,teamspriit,1,extra-char
+women crop tops,womdn crop tops,1,keyboard-confusion
+aavasa leggings,aavasa keggings,1,keyboard-confusion
+white shoe,whitee shoe,1,double-letter
+sleeveless tops,sleeveeless tops,1,double-letter
+women wedges,womeh wedges,1,keyboard-confusion
+being human for men,being yuman for men,1,keyboard-confusion
+nighties for women,nightiies for women,1,extra-char
+winter jackets for men,winter jacketts for men,1,double-letter
+flip flop for men,flipp flop for men,1,double-letter
+black dress for women,black drezs for women,1,keyboard-confusion
+john players shirt,john playegs shirt,1,keyboard-confusion
+dhuni,ddhuni,1,double-letter
+fyre rose for women,fyre rose for wonen,1,keyboard-confusion
+pullovers for men,pulloovers for men,1,extra-char
+womens dresses,women dresses,1,missing-char
+track,rack,1,missing-char
+black jacket,black jackeet,1,extra-char
+laptop bags for women,lapto bags for women,1,missing-char
+shorts for kids,shorts for lids,1,keyboard-confusion
+plazzo for women,plazzo for woen,1,missing-char
+ketch shirts for men,ketch shirts for en,1,missing-char
+chains for women,chains for womenn,1,double-letter
+wide leg pants,wide leg pans,1,missing-char
+avaasa plazo,avaasaa plazo,1,double-letter
+gardening planters,gardeniing planters,1,double-letter
+formal paint,formal painy,1,keyboard-confusion
+rare rabit,rare rabiy,1,keyboard-confusion
+sleepers for women,soeepers for women,1,keyboard-confusion
+shapewear for women,shapewear forr women,1,double-letter
+kurti set women,kurti seg women,1,keyboard-confusion
+cotton suits,cotton xuits,1,keyboard-confusion
+us polo assn for men,u polo assn for men,1,missing-char
+track pants for girls,track pants for irls,1,missing-char
+lip stick for women,lip stick for domen,1,keyboard-confusion
+white pant,white paant,1,double-letter
+sleeveless t shirt,ssleeveless t shirt,1,double-letter
+teddy bear,teddy bwar,1,keyboard-confusion
+fusionic,fuusionic,1,extra-char
+tops for kids,tps for kids,1,missing-char
+boys jackets,boys jackeets,1,extra-char
+us polo sweatshirt,us poolo sweatshirt,1,double-letter
+long shirt,kong shirt,1,keyboard-confusion
+casio watches for women,csio watches for women,1,missing-char
+the pari,hhe pari,1,keyboard-confusion
+women kurtas set,women kurtaz set,1,keyboard-confusion
+baby girl tops,baby giirl tops,1,extra-char
+red tape sports shoes,ref tape sports shoes,1,keyboard-confusion
+lilpicks,oilpicks,1,keyboard-confusion
+w dresses,w drresses,1,double-letter
+mens sunglasses,menss sunglasses,1,double-letter
+midi skirt,midii skirt,1,double-letter
+adidas white sneakers,adidas wwhite sneakers,1,double-letter
+lounge pants,louhge pants,1,keyboard-confusion
+tshirt boys,tshit boys,1,missing-char
+regular fit jeans for men,revular fit jeans for men,1,keyboard-confusion
+chelsea boots men,chelxea boots men,1,keyboard-confusion
+fidato,fiidato,1,extra-char
+football boot,fotball boot,1,missing-char
+jockey bra,jockey bbra,1,double-letter
+armani shoes,armani xhoes,1,keyboard-confusion
+satin top,sztin top,1,keyboard-confusion
+huddies for women,hyddies for women,1,keyboard-confusion
+jockey boxers for men,jockwy boxers for men,1,keyboard-confusion
+slim fit shirt for men,slim fit shrt for men,1,missing-char
+superdry shoes,supeerdry shoes,1,extra-char
+knife,kniff,1,keyboard-confusion
+fancy tops for women,fancy toops for women,1,double-letter
+bata slippers,bata slipppers,1,extra-char
+dj c tshirts for women,dj c ttshirts for women,1,double-letter
+traditional dress,traditionall dress,1,extra-char
+chikan,chian,1,missing-char
+gym shorts for men,gym shortts for men,1,double-letter
+mark and spencer women,mark and spencer aomen,1,keyboard-confusion
+dungree for girls,dunree for girls,1,missing-char
+wedding sarees,wedding warees,1,keyboard-confusion
+studs earrings for women,studs earrings for womeen,1,double-letter
+perfumes colognes for men,perfumes colognes for mn,1,missing-char
+under 300,under 3000,1,double-letter
+cotten saree,cotten saee,1,missing-char
+kurths,kkrths,1,keyboard-confusion
+high waist trousers,high waist trrousers,1,double-letter
+nike air jordan shoes,nike air jjordan shoes,1,extra-char
+plus size kurta,pous size kurta,1,keyboard-confusion
+hoodi,oodi,1,missing-char
+white shorts,whit shorts,1,missing-char
+non padded bras for women,nin padded bras for women,1,keyboard-confusion
+mang tikkas for women,manv tikkas for women,1,keyboard-confusion
+netplay jeans for men,netplay jeand for men,1,keyboard-confusion
+sky bag,sy bag,1,missing-char
+men clogs,menn clogs,1,extra-char
+boys party wear,boys pafty wear,1,keyboard-confusion
+sports for women,sportts for women,1,double-letter
+mans jacket,mans jwcket,1,keyboard-confusion
+heels sandals,hheels sandals,1,extra-char
+performax shoe,performax sho,1,missing-char
+encrustd for women,encrustd for womrn,1,keyboard-confusion
+ribbed tops women,ribbbed tops women,1,extra-char
+adidas tshirts for women,adidas tshirts for womeen,1,extra-char
+black shorts for women,black shorts foe women,1,keyboard-confusion
+sports shoes for kids,sports shoes for kiids,1,extra-char
+plazoos,plazoo,1,missing-char
+project eve kurtas,project eve kjrtas,1,keyboard-confusion
+shrug women,shrug wmen,1,missing-char
+kurta under 400,kurta undr 400,1,missing-char
+womens sweatshirt,womens wweatshirt,1,keyboard-confusion
+mens ethnic wear,mens thnic wear,1,missing-char
+performax shorts men,performaax shorts men,1,double-letter
+jack and jones shirts men,jack and jones shirfs men,1,keyboard-confusion
+cotton kurtha,coton kurtha,1,missing-char
+sneakers shoes,smeakers shoes,1,keyboard-confusion
+kryptic,krypttic,1,extra-char
+tops for ladies,topss for ladies,1,extra-char
+oversized tees,oversized teees,1,extra-char
+lavie wallets for women,lavie wallets fir women,1,keyboard-confusion
+kimarya,kimaryya,1,extra-char
+kids boys jeans,kids bys jeans,1,missing-char
+short kurties,sshort kurties,1,double-letter
+boys kurta sets,boys kurtaa sets,1,extra-char
+boys sports shoes,boys spports shoes,1,extra-char
+kurtiset,kurtisrt,1,keyboard-confusion
+swim wear,wim wear,1,missing-char
+jeans shorts for boys,jeans shorts for boyz,1,keyboard-confusion
+sports pants for women,ssports pants for women,1,double-letter
+green tshirts for men,grreen tshirts for men,1,double-letter
+women clogs,women cloggs,1,extra-char
+sports watch,ports watch,1,missing-char
+t shirt white,t suirt white,1,keyboard-confusion
+grey jeans men,grey jeans me,1,missing-char
+rajnandini for women,rajnaandini for women,1,double-letter
+shus,shue,1,keyboard-confusion
+laptop sleeve,laptop speeve,1,keyboard-confusion
+avaasa straight kurtis,avaasa straight murtis,1,keyboard-confusion
+lengha,lenghha,1,double-letter
+velvet kurta set,velvet kutta set,1,keyboard-confusion
+border saree,border sarree,1,double-letter
+makeup pouch,makeup puch,1,missing-char
+buffalo men in shirts,bffalo men in shirts,1,missing-char
+jordan shoe,jordan sho,1,missing-char
+white formal shirts,wgite formal shirts,1,keyboard-confusion
+socks for infants,soccks for infants,1,double-letter
+man lower,man loower,1,double-letter
+blue tshirts for men,bllue tshirts for men,1,double-letter
+kurta set with duppatta,kurta set wih duppatta,1,missing-char
+women straight kurta,women straoght kurta,1,keyboard-confusion
+low top sneakers,low top seakers,1,missing-char
+sneakers for mens,sneakers foor mens,1,double-letter
+nike sweatshirt,nikw sweatshirt,1,keyboard-confusion
+denim kurti,deniim kurti,1,extra-char
+women winter coat,wwomen winter coat,1,extra-char
+ateesa kurtas for women,ateesakurtas for women,1,missing-char
+shirt pieces,shirrt pieces,1,double-letter
+men joggers jeans,men joggerrs jeans,1,double-letter
+formal loafers,rormal loafers,1,keyboard-confusion
+pullover women,pnllover women,1,keyboard-confusion
+lives jeans,lives jeanx,1,keyboard-confusion
+trends tops,trendstops,1,missing-char
+print shirt for men,print shirt for jen,1,keyboard-confusion
+chumbak for women,chkmbak for women,1,keyboard-confusion
+green kurtas for men,green urtas for men,1,missing-char
+manyavar,manyaar,1,missing-char
+black bag,blaack bag,1,double-letter
+avaasa plazoo,avaasaa plazoo,1,double-letter
+polo t shirt for women,polo t sirt for women,1,missing-char
+dreeses,dreedes,1,keyboard-confusion
+low top lace up sneakers,low tpp lace up sneakers,1,keyboard-confusion
+woolen caps,woollen caps,1,extra-char
+van heusen jeans,van hehsen jeans,1,keyboard-confusion
+tshirts boys,tehirts boys,1,keyboard-confusion
+formal black pant,formal black ant,1,missing-char
+short jeans,shirt jeans,1,keyboard-confusion
+jhonplayers,jhonplayes,1,missing-char
+nike downshifter 12 shoes,nike dodnshifter 12 shoes,1,keyboard-confusion
+janasya tops for women,janasya tops for wommen,1,double-letter
+tshirt dress for women,tshirt dress foor women,1,double-letter
+men walking shoes,men walkng shoes,1,missing-char
+fig handbags,fig handbbags,1,double-letter
+black beads,black bdads,1,keyboard-confusion
+women lahenga,women lahennga,1,double-letter
+women chunky heels,women cuunky heels,1,keyboard-confusion
+kerala sarees,kerala ssrees,1,keyboard-confusion
+mens bomber jacket,menx bomber jacket,1,keyboard-confusion
+mini dresses,mini dressees,1,double-letter
+leather laptop bag,leather lapptop bag,1,extra-char
+jenas,jenass,1,double-letter
+white men shirt,wwhite men shirt,1,double-letter
+simran gold,skmran gold,1,keyboard-confusion
+heel shoes,heel shoees,1,extra-char
+puma cap for men,puna cap for men,1,keyboard-confusion
+buffalo tshirts for men,buffalo tsjirts for men,1,keyboard-confusion
+pant for mens,ant for mens,1,missing-char
+adidas lower for men,adidas lowwer for men,1,extra-char
+shibori,shiibori,1,double-letter
+cotton pants for boys,cotto pants for boys,1,missing-char
+pure cotton kurta,pure cotton kyrta,1,keyboard-confusion
+boys dress set,boys drss set,1,missing-char
+flops,fflops,1,extra-char
+sweatshirt boys,sweatshirtt boys,1,double-letter
+max shirts,mx shirts,1,missing-char
+bear house t shirt,bear house t shit,1,missing-char
+checked shirts men,checked shirts mn,1,missing-char
+label life,label lifee,1,double-letter
+white sweater for women,white sweateer for women,1,double-letter
+lenga choli,lenga cholli,1,double-letter
+cartoon,cartoo,1,missing-char
+zalio for boys,zaoio for boys,1,keyboard-confusion
+footwear ladies,footwear ladigs,1,keyboard-confusion
+rigo for men,rigo fr men,1,missing-char
+bodycon women dresses,bodycon omen dresses,1,missing-char
+banarasi silk sarees,banarasi si.k sarees,1,keyboard-confusion
+uspa flip flops,uspa flip fflops,1,double-letter
+skirt with top,skirf with top,1,keyboard-confusion
+hooded jacket for women,hooded jackeet for women,1,double-letter
+svrnaa kurta,svrnaa kuta,1,missing-char
+redtape tshirt,redtape ttshirt,1,double-letter
+denim shorts men,denim sorts men,1,missing-char
+winter jackets for girls,winter hackets for girls,1,keyboard-confusion
+louis philippe slides,louis philipke slides,1,keyboard-confusion
+green kurtis,green kuris,1,missing-char
+avaasa palazzo pants,avaasa palazzo pans,1,missing-char
+stud earrings for women,stud eaarrings for women,1,double-letter
+bandanas for men,bandnas for men,1,missing-char
+plain tshirt,plain tshirf,1,keyboard-confusion
+gym tights women,gym tights omen,1,missing-char
+rayon,raayon,1,double-letter
+dhoti pants,dhoti pannts,1,double-letter
+three fourth,three dourth,1,keyboard-confusion
+triumph for women,triumph for wome,1,missing-char
+lip liner,lip liiner,1,double-letter
+cheater,cgeater,1,keyboard-confusion
+women denim jeans,women deim jeans,1,missing-char
+women skechers,womn skechers,1,missing-char
+jack and jones hoodie,jack and jonnes hoodie,1,double-letter
+sleeveless kurtha,sleeeveless kurtha,1,extra-char
+nite flite for women,niye flite for women,1,keyboard-confusion
+jaipuri kurta,jaipuri kkurta,1,extra-char
+kurta pent set,kurta pent sset,1,extra-char
+women tshirts under 200,women tshirts under 20p,1,keyboard-confusion
+wind cheaters,wind heaters,1,missing-char
+campus sli,csmpus sli,1,keyboard-confusion
+full sleeve tshirts men,full sleeve tshirrts men,1,extra-char
+dhuppatta,djuppatta,1,keyboard-confusion
+cotton kurtha for women,cotton kurthaa for women,1,extra-char
+winter wear for infants,wiinter wear for infants,1,extra-char
+sandals woman,sandals oman,1,missing-char
+kids jogger,klds jogger,1,keyboard-confusion
+shoes without laces,shoes wiithout laces,1,extra-char
+tommy wallet,tommy wallett,1,extra-char
+blazzer men,blazzeer men,1,double-letter
+avaasa women kurtis,avaaza women kurtis,1,keyboard-confusion
+perfomax shorts for men,pergomax shorts for men,1,keyboard-confusion
+long cardigan women,long cardigan wome,1,missing-char
+bmw puma,bmmw puma,1,extra-char
+teamspirit pants,teamspirrit pants,1,extra-char
+formal shoes black,foormal shoes black,1,extra-char
+leather chappal for men,leather chappaal for men,1,double-letter
+mens hoddie,mens hoddir,1,keyboard-confusion
+here and now,hgre and now,1,keyboard-confusion
+leheriya,lheriya,1,missing-char
+woman night dress,woman nght dress,1,missing-char
+men the bear house shirts,men the bear housse shirts,1,extra-char
+ghaghra,hhaghra,1,keyboard-confusion
+kids boy jacket,kkids boy jacket,1,double-letter
+block print saree,boock print saree,1,keyboard-confusion
+slim fit tops,sllim fit tops,1,double-letter
+toy ballon,oy ballon,1,missing-char
+blue kurtis,blue kurtiis,1,extra-char
+fcuk tshirt,fcu tshirt,1,missing-char
+duppattas for women,duppattas for womeen,1,double-letter
+flare dress women,flaredress women,1,missing-char
+typographic,typogrphic,1,missing-char
+georgette kurtas,georgett kurtas,1,missing-char
+graphic print t shirt,graphic print t shrt,1,missing-char
+high rise jeggings,high rise jeggimgs,1,keyboard-confusion
+nighty dress,nigghty dress,1,extra-char
+gym pant women,gym pantt women,1,extra-char
+mens denim shirts,mens denim shirtss,1,extra-char
+baby sets,babby sets,1,double-letter
+soch suit set,soch suitset,1,missing-char
+bag pack for men,bah pack for men,1,keyboard-confusion
+denim women,denim womfn,1,keyboard-confusion
+chappels,cchappels,1,double-letter
+dnmx mens,dnmx menns,1,double-letter
+snikers for men,snikkers for men,1,double-letter
+ethnic skirt for women,etthnic skirt for women,1,double-letter
+team spirit sweatshirt,teaam spirit sweatshirt,1,double-letter
+black flats for women,black flats fkr women,1,keyboard-confusion
+indian terrain men shirts,indian terain men shirts,1,missing-char
+salwar pant,salwar pantt,1,double-letter
+teamsprit tshirts,teamsprit tshhirts,1,double-letter
+ankle length trousers,ankle lengh trousers,1,missing-char
+straight leg jeans,straightt leg jeans,1,double-letter
+shimmer dresses,shimmeer dresses,1,double-letter
+slip on walking shoes,slip on walking sshoes,1,double-letter
+puff sleeves tops,puff sleevess tops,1,double-letter
+women trauser,womenn trauser,1,double-letter
+full hand tshirt,fulll hand tshirt,1,double-letter
+danglers,dangleers,1,double-letter
+treands,treandss,1,extra-char
+casio enticer,casio ennticer,1,double-letter
+schiffli tops for women,schhiffli tops for women,1,extra-char
+woman panty,wooman panty,1,double-letter
+belts women,belts woen,1,missing-char
+men floral shirts,mmen floral shirts,1,extra-char
+dream catcher,dream carcher,1,keyboard-confusion
+xyxx men in trunks,xyxx meen in trunks,1,double-letter
+overshirts,overshiets,1,keyboard-confusion
+mens shirt netplay,mns shirt netplay,1,missing-char
+woolen kurta sets,woolen krta sets,1,missing-char
+women slip on,wlmen slip on,1,keyboard-confusion
+nighty gown for women,niighty gown for women,1,double-letter
+coach,coac,1,missing-char
+bandhani dress,bandhani drress,1,double-letter
+braclet,bbraclet,1,double-letter
+buy 1 get 3 free,buy 1 get 3 tree,1,keyboard-confusion
+office wear saree,office wear aree,1,missing-char
+poonam designer,loonam designer,1,keyboard-confusion
+nishabd kurtas for women,njshabd kurtas for women,1,keyboard-confusion
+sarara kurta set,sarwra kurta set,1,keyboard-confusion
+woolen dresses for women,qoolen dresses for women,1,keyboard-confusion
+pullovers women,pullovers wwomen,1,double-letter
+nike basketball,nike bassketball,1,extra-char
+sleevless jackets,sleevless jacketts,1,extra-char
+caps for kids,caps vor kids,1,keyboard-confusion
+jeans shorts for kids,jjeans shorts for kids,1,double-letter
+white hoodie for men,white hpodie for men,1,keyboard-confusion
+netplay tshirts men,netpplay tshirts men,1,double-letter
+friends,friens,1,missing-char
+off white pants for women,off white pwnts for women,1,keyboard-confusion
+max handbags for women,mzx handbags for women,1,keyboard-confusion
+classic for men,claassic for men,1,extra-char
+rocia for women,rocia for womenn,1,extra-char
+t shirts collar,t hirts collar,1,missing-char
+crop top woman,crop topp woman,1,double-letter
+jeans for men blue,jeans for mmen blue,1,double-letter
+hip belt,hip beltt,1,extra-char
+t shirts for baby boy,t shkrts for baby boy,1,keyboard-confusion
+floral kurta for women,floral kurta for womn,1,missing-char
+black t shirt for girls,blac t shirt for girls,1,missing-char
+blazer set,bllazer set,1,double-letter
+women full sleeve top,womn full sleeve top,1,missing-char
+gaown,ggaown,1,extra-char
+black lower for women,blzck lower for women,1,keyboard-confusion
+acrylic kurta for women,acrylic kkrta for women,1,keyboard-confusion
+ethnic anarkali,ethniic anarkali,1,double-letter
+skchers,skkchers,1,double-letter
+compus shoe,compys shoe,1,keyboard-confusion
+tshirt white,tshirtt white,1,double-letter
+flat boots,flat boot,1,missing-char
+ladies suit set,ladies syit set,1,keyboard-confusion
+office kurta,ofice kurta,1,missing-char
+cargo jeans mens,cargo jeansmens,1,missing-char
+swetar for men,sweetar for men,1,double-letter
+smocked,socked,1,missing-char
+ethinic wear for women,ethinic wear forwomen,1,missing-char
+long t shirts,llong t shirts,1,double-letter
+jewelery,jwelery,1,missing-char
+longline shrug,longlinne shrug,1,double-letter
+cotton men tshirts,votton men tshirts,1,keyboard-confusion
+women top under 250,women top undr 250,1,missing-char
+t shirt under 200 women,t shirt underr 200 women,1,double-letter
+soch dress,soch dresss,1,double-letter
+wrist watches for women,wrist watches forr women,1,double-letter
+heathered,heathhered,1,double-letter
+avaasa anarkali kurtis,avaasa anarkali krtis,1,missing-char
+denim jumpsuit,denim jumosuit,1,keyboard-confusion
+avassa straight kurta,avaasa straight kurta,1,keyboard-confusion
+avvasa kurti for women,avvasa kurti foor women,1,extra-char
+avasaa for women,avasaa for wome,1,missing-char
+soch suit sets,soch suit segs,1,keyboard-confusion
+leather shoes formal,leathee shoes formal,1,keyboard-confusion
+chunri,chunrri,1,extra-char
+ethnic wears for women,ethnic wers for women,1,missing-char
+clothes,clothew,1,keyboard-confusion
+urbanmark for men,urhanmark for men,1,keyboard-confusion
+tips,tip,1,missing-char
+training shoes men,raining shoes men,1,missing-char
+fyre rose women,fyrre rose women,1,double-letter
+christmas dress for women,christmas drress for women,1,double-letter
+jack and jones boxer,javk and jones boxer,1,keyboard-confusion
+soch set,ssoch set,1,extra-char
+ikkat cotton saree,ikka cotton saree,1,missing-char
+kurti paint set,kurti paaint set,1,extra-char
+skechers shoes for kids,skechers dhoes for kids,1,keyboard-confusion
+lee cooper joggers,lee cooper jogers,1,missing-char
+avasha kurtis,avashz kurtis,1,keyboard-confusion
+calvin klein hoodie,calvin klein hodie,1,missing-char
+formal pant black,formal oant black,1,keyboard-confusion
+satchels,satchhels,1,double-letter
+point zero for men,point ero for men,1,missing-char
+lavie wallet,lavie wllet,1,missing-char
+women dress materials,women ddess materials,1,keyboard-confusion
+high waist pants women,hgh waist pants women,1,missing-char
+adidas track suits,adidas track sujts,1,keyboard-confusion
+women t shirts,wojsn t shirts,2,keyboard-confusion
+oversized tshirt for men,oversuzed tshlrt for men,2,keyboard-confusion
+superdry for men,wupwrdry for men,2,keyboard-confusion
+maternity dresses,matfrnity dressrs,2,keyboard-confusion
+women coat,wokfn coat,2,keyboard-confusion
+dmnx,fmns,2,keyboard-confusion
+belts for women,bekta for women,2,keyboard-confusion
+womens tshirt,womend tsbirt,2,keyboard-confusion
+us polo shoes for men,hs polo shies for men,2,keyboard-confusion
+crocs for kids,crocs gor kidx,2,keyboard-confusion
+nike shorts,hime shorts,2,keyboard-confusion
+lehangas for women,lehangas fod domen,2,keyboard-confusion
+party gown,parfy goan,2,keyboard-confusion
+cotton in shirts for men,cotton in suirts for mrn,2,keyboard-confusion
+caps for women,caps fie women,2,keyboard-confusion
+shiyahi,ehiyaho,2,keyboard-confusion
+office wear women,office weae womfn,2,keyboard-confusion
+avasaa kurthi,avaeaa kyrthi,2,keyboard-confusion
+shorts for infants,shorts fod infwnts,2,keyboard-confusion
+indibelle,uneibelle,2,keyboard-confusion
+shirt kurtas for men,shirt kurtqs for mem,2,keyboard-confusion
+lahaga,lshava,2,keyboard-confusion
+ladies handbag,ladoes handvag,2,keyboard-confusion
+u s polo jacket,"u s polo jac,er",2,keyboard-confusion
+nike sliders,nike alidsrs,2,keyboard-confusion
+wallpaper,wa.lpzper,2,keyboard-confusion
+andamen for men,abdamwn for men,2,keyboard-confusion
+shirts mens,whorts mens,2,keyboard-confusion
+polo for women,pllo for aomen,2,keyboard-confusion
+fastrack for men,fastrack rpr men,2,keyboard-confusion
+womens jackets,womens jzckefs,2,keyboard-confusion
+coats for men,coats foe mdn,2,keyboard-confusion
+marks and spencer bra,marks and zpwncer bra,2,keyboard-confusion
+women short tops,women shirt topz,2,keyboard-confusion
+metro sandals for women,metro sandals fog eomen,2,keyboard-confusion
+sarry,sartt,2,keyboard-confusion
+party gowns,parry gownw,2,keyboard-confusion
+loafer shoes men,lpafef shoes men,2,keyboard-confusion
+cotton blouses for women,cottkn blouses fog women,2,keyboard-confusion
+men sport shoes,meh eport shoes,2,keyboard-confusion
+mochi sandals for men,mochi sansald for men,2,keyboard-confusion
+performax jacket for men,performaz jacket fkr men,2,keyboard-confusion
+bangels,banhelw,2,keyboard-confusion
+white boots,whits bootx,2,keyboard-confusion
+summer dresses,sumjer dressee,2,keyboard-confusion
+sports lower,sports lpwsr,2,keyboard-confusion
+kurts,kurga,2,keyboard-confusion
+chabra 555,cjabra 55t,2,keyboard-confusion
+chappel,cbaopel,2,keyboard-confusion
+ladies sweatshirt,ladies swratshiet,2,keyboard-confusion
+hoodies for mens,hoodiee fog mens,2,keyboard-confusion
+newborn baby,nrwborb baby,2,keyboard-confusion
+gold chain for men,gold chajn fot men,2,keyboard-confusion
+puma one8,oums one8,2,keyboard-confusion
+addidas lower,addidss lkwer,2,keyboard-confusion
+avaasa cotton kurtis,wvaasa cotron kurtis,2,keyboard-confusion
+spyker jeans men,spykef means men,2,keyboard-confusion
+croocs,ceoocz,2,keyboard-confusion
+running shoe for women,runjing shoe for aomen,2,keyboard-confusion
+kurthi avaasa,kurthl agaasa,2,keyboard-confusion
+maroon kurti,madoob kurti,2,keyboard-confusion
+yoga dress,togq dress,2,keyboard-confusion
+leather handbags,leathef habdbags,2,keyboard-confusion
+stole dupattas for women,atole dupattas ror women,2,keyboard-confusion
+pyjamas set for women,pyjamas ser fir women,2,keyboard-confusion
+srishti pants,sgisjti pants,2,keyboard-confusion
+lip crayon for women,lip crayon for eomeb,2,keyboard-confusion
+shirts kurtas for men,syirts kurtas fir men,2,keyboard-confusion
+bagpack for girls,bagpscm for girls,2,keyboard-confusion
+trouser pant for women,troussf pant for women,2,keyboard-confusion
+inde picks,inde lucks,2,keyboard-confusion
+avvasa kurta for women,avvasa kurra fpr women,2,keyboard-confusion
+nursing tops,nurdijg tops,2,keyboard-confusion
+plaza pants for women,plsza pants for wonen,2,keyboard-confusion
+gents lower,grnys lower,2,keyboard-confusion
+kurti top for women,ourti top for womrn,2,keyboard-confusion
+tan shoes,tan sgpes,2,keyboard-confusion
+dnmx jacket for women,dnnx jacket tor women,2,keyboard-confusion
+olive jeans for men,ilive jeqns for men,2,keyboard-confusion
+tshirt for baby boy,tshiet for gaby boy,2,keyboard-confusion
+cotton leggings for women,cottpn leggings for wojen,2,keyboard-confusion
+veromoda women,vrromoda womej,2,keyboard-confusion
+winter stole,winfee stole,2,keyboard-confusion
+watch for man,watch tor mqn,2,keyboard-confusion
+unicorn frock,ubicorn frocj,2,keyboard-confusion
+cheppal for women,cheppal ror somen,2,keyboard-confusion
+long top for woman,long tlp for womsn,2,keyboard-confusion
+loafer for mens,loader for mehs,2,keyboard-confusion
+sheetal associates,shewtql associates,2,keyboard-confusion
+under 500 kurtis,jnder 509 kurtis,2,keyboard-confusion
+off sarees,off safefs,2,keyboard-confusion
+cooker,dokker,2,keyboard-confusion
+g star raw jeans,g star raw jezjs,2,keyboard-confusion
+pearl bracelet,pearl brace.ey,2,keyboard-confusion
+longline cardigan,kongline vardigan,2,keyboard-confusion
+fort collins men,fort cillons men,2,keyboard-confusion
+beige shoes,bwigd shoes,2,keyboard-confusion
+jack and jones joggers,kack and jonee joggers,2,keyboard-confusion
+lehanga cholis,lehanga cboois,2,keyboard-confusion
+aavasa pant,aavasa psnr,2,keyboard-confusion
+kurties below 300,kurtiea nelow 300,2,keyboard-confusion
+women chikankari kurta,womdn chikankari jurta,2,keyboard-confusion
+winter night dress,wintdr night drsss,2,keyboard-confusion
+dnmx blue jeans for women,dnmx blue jeans fod wonen,2,keyboard-confusion
+fig gown,fig yoqn,2,keyboard-confusion
+bomber jacket for boys,bomber jscket for boyz,2,keyboard-confusion
+co ord dress,co odd dtess,2,keyboard-confusion
+under 400,under 3p0,2,keyboard-confusion
+duffle,sufflr,2,keyboard-confusion
+uspa t shirts for men,uspa t shirtz fpr men,2,keyboard-confusion
+terrex,tddrex,2,keyboard-confusion
+women t shirts,wojsn t shirts,2,keyboard-confusion
+oversized tshirt for men,oversuzed tshlrt for men,2,keyboard-confusion
+superdry for men,wupwrdry for men,2,keyboard-confusion
+maternity dresses,matfrnity dressrs,2,keyboard-confusion
+women coat,wokfn coat,2,keyboard-confusion
+dmnx,fmns,2,keyboard-confusion
+belts for women,bekta for women,2,keyboard-confusion
+womens tshirt,womend tsbirt,2,keyboard-confusion
+us polo shoes for men,hs polo shies for men,2,keyboard-confusion
+crocs for kids,crocs gor kidx,2,keyboard-confusion
+nike shorts,hime shorts,2,keyboard-confusion
+lehangas for women,lehangas fod domen,2,keyboard-confusion
+party gown,parfy goan,2,keyboard-confusion
+cotton in shirts for men,cotton in suirts for mrn,2,keyboard-confusion
+caps for women,caps fie women,2,keyboard-confusion
+shiyahi,ehiyaho,2,keyboard-confusion
+office wear women,office weae womfn,2,keyboard-confusion
+avasaa kurthi,avaeaa kyrthi,2,keyboard-confusion
+shorts for infants,shorts fod infwnts,2,keyboard-confusion
+indibelle,uneibelle,2,keyboard-confusion
+shirt kurtas for men,shirt kurtqs for mem,2,keyboard-confusion
+lahaga,lshava,2,keyboard-confusion
+ladies handbag,ladoes handvag,2,keyboard-confusion
+u s polo jacket,"u s polo jac,er",2,keyboard-confusion
+nike sliders,nike alidsrs,2,keyboard-confusion
+wallpaper,wa.lpzper,2,keyboard-confusion
+andamen for men,abdamwn for men,2,keyboard-confusion
+shirts mens,whorts mens,2,keyboard-confusion
+polo for women,pllo for aomen,2,keyboard-confusion
+fastrack for men,fastrack rpr men,2,keyboard-confusion
+womens jackets,womens jzckefs,2,keyboard-confusion
+coats for men,coats foe mdn,2,keyboard-confusion
+marks and spencer bra,marks and zpwncer bra,2,keyboard-confusion
+women short tops,women shirt topz,2,keyboard-confusion
+metro sandals for women,metro sandals fog eomen,2,keyboard-confusion
+sarry,sartt,2,keyboard-confusion
+party gowns,parry gownw,2,keyboard-confusion
+loafer shoes men,lpafef shoes men,2,keyboard-confusion
+cotton blouses for women,cottkn blouses fog women,2,keyboard-confusion
+men sport shoes,meh eport shoes,2,keyboard-confusion
+mochi sandals for men,mochi sansald for men,2,keyboard-confusion
+performax jacket for men,performaz jacket fkr men,2,keyboard-confusion
+bangels,banhelw,2,keyboard-confusion
+white boots,whits bootx,2,keyboard-confusion
+summer dresses,sumjer dressee,2,keyboard-confusion
+sports lower,sports lpwsr,2,keyboard-confusion
+kurts,kurga,2,keyboard-confusion
+chabra 555,cjabra 55t,2,keyboard-confusion
+chappel,cbaopel,2,keyboard-confusion
+ladies sweatshirt,ladies swratshiet,2,keyboard-confusion
+hoodies for mens,hoodiee fog mens,2,keyboard-confusion
+newborn baby,nrwborb baby,2,keyboard-confusion
+gold chain for men,gold chajn fot men,2,keyboard-confusion
+puma one8,oums one8,2,keyboard-confusion
+addidas lower,addidss lkwer,2,keyboard-confusion
+avaasa cotton kurtis,wvaasa cotron kurtis,2,keyboard-confusion
+spyker jeans men,spykef means men,2,keyboard-confusion
+croocs,ceoocz,2,keyboard-confusion
+running shoe for women,runjing shoe for aomen,2,keyboard-confusion
+kurthi avaasa,kurthl agaasa,2,keyboard-confusion
+maroon kurti,madoob kurti,2,keyboard-confusion
+yoga dress,togq dress,2,keyboard-confusion
+leather handbags,leathef habdbags,2,keyboard-confusion
+stole dupattas for women,atole dupattas ror women,2,keyboard-confusion
+pyjamas set for women,pyjamas ser fir women,2,keyboard-confusion
+srishti pants,sgisjti pants,2,keyboard-confusion
+lip crayon for women,lip crayon for eomeb,2,keyboard-confusion
+shirts kurtas for men,syirts kurtas fir men,2,keyboard-confusion
+bagpack for girls,bagpscm for girls,2,keyboard-confusion
+trouser pant for women,troussf pant for women,2,keyboard-confusion
+inde picks,inde lucks,2,keyboard-confusion
+avvasa kurta for women,avvasa kurra fpr women,2,keyboard-confusion
+nursing tops,nurdijg tops,2,keyboard-confusion
+plaza pants for women,plsza pants for wonen,2,keyboard-confusion
+gents lower,grnys lower,2,keyboard-confusion
+kurti top for women,ourti top for womrn,2,keyboard-confusion
+tan shoes,tan sgpes,2,keyboard-confusion
+dnmx jacket for women,dnnx jacket tor women,2,keyboard-confusion
+olive jeans for men,ilive jeqns for men,2,keyboard-confusion
+tshirt for baby boy,tshiet for gaby boy,2,keyboard-confusion
+cotton leggings for women,cottpn leggings for wojen,2,keyboard-confusion
+veromoda women,vrromoda womej,2,keyboard-confusion
+winter stole,winfee stole,2,keyboard-confusion
+watch for man,watch tor mqn,2,keyboard-confusion
+unicorn frock,ubicorn frocj,2,keyboard-confusion
+cheppal for women,cheppal ror somen,2,keyboard-confusion
+long top for woman,long tlp for womsn,2,keyboard-confusion
+loafer for mens,loader for mehs,2,keyboard-confusion
+sheetal associates,shewtql associates,2,keyboard-confusion
+under 500 kurtis,jnder 509 kurtis,2,keyboard-confusion
+off sarees,off safefs,2,keyboard-confusion
+cooker,dokker,2,keyboard-confusion
+g star raw jeans,g star raw jezjs,2,keyboard-confusion
+pearl bracelet,pearl brace.ey,2,keyboard-confusion
+longline cardigan,kongline vardigan,2,keyboard-confusion
+fort collins men,fort cillons men,2,keyboard-confusion
+beige shoes,bwigd shoes,2,keyboard-confusion
+jack and jones joggers,kack and jonee joggers,2,keyboard-confusion
+lehanga cholis,lehanga cboois,2,keyboard-confusion
+aavasa pant,aavasa psnr,2,keyboard-confusion

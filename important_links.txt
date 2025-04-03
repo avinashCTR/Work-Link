@@ -1,2 +1,4 @@
 Yarn :- https://10.144.97.194:8443/gateway/dev/yarn/cluster/apps/RUNNING
 Sprak3 Yarn :- https://10.144.96.170:8443/gateway/dev/yarn/cluster/apps/RUNNING
+
+"/data1/searchengine/processedHistory20240301/ajio/QueriesWithFrequencies"

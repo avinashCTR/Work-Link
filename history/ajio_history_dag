@@ -1,0 +1,231 @@
+import pprint
+from airflow import DAG
+
+# from airflow.operators import CoutureSparkOperator, CouturePythonDockerOperator, DagOperator
+from CoutureSparkPlugin import CoutureSparkOperator
+from CouturePythonDockerPlugin import CouturePythonDockerOperator
+from airflow.models import Variable
+from airflow.utils.task_group import TaskGroup
+from datetime import datetime, timedelta
+
+pp = pprint.PrettyPrinter(indent=4)
+
+year = str(2022)
+month = "Latest_Schema"  #20230517_20230614"  # "20220311_20220407"
+history_months_spread_name = "Latest_Schema"  # "20220311_20220407"
+new_history_data_folder_path = "/data1/searchengine/phase2/HistoryData/LatestHistoryData"
+# new_history_data_folder_path = "/data1/searchengine/phase2/HistoryData/SEARCH_TERM_DATA_20240201"
+
+old_training_history_data_path = "/data1/searchengine/phase2/HistoryData/history_data_for_training"
+new_processed_history_data_path = "/data1/searchengine/phase2/HistoryData/ProcessedDataHistory"
+processed_history_dta_path = "/data1/searchengine/phase2/HistoryData/ProcessedDataHistory/20240201-20240331/ProcessedHistoryData20240201-20240331_59"
+option_code_index_path = "/data1/searchengine/phase2/HistoryData/ProcessedDataHistory/20240201-20240331/OptionCodeData20240201-20240331"
+history_phase2_base_path = "/data1/searchengine/phase2/HistoryData"
+minDate = "02/2024"
+maxDate = "03/2024"
+# month = month_name
+date = datetime(2018, 1, 2)
+
+classPath = 'ai.couture.obelisk.search.MainClass'
+# code_artifact = 'obelisk-retail-legos-searchengine-history-tejkiran.jar' (Got old. words_with_categories is still not updated)
+# code_artifact = 'obelisk-retail-legos-searchengine-preprod-tejkiran.jar'
+# code_artifact = 'obelisk-search-prod-tejkiran.jar'
+code_artifact = 'couture-search-pipelines-2.0.0-tejkiran.jar'
+# code_artifact_phase2 = "couture-search-pipelines-2.0.0-piyushagarwal.jar"
+code_artifact_phase2 = "couture-search-pipelines-2.0.0-piyushagarwal_history.jar"
+code_artifact_phase2_1 = "couture-search-pipelines-2.0.0-piyushagarwal_history.jar"
+code_artifact_monil = "couture-search-pipelines-2.0.0-monil-history.jar"
+
+dirBasePath = "/data1/searchengine/"
+dirPathStaticData = f"{dirBasePath}staticdata/fashion/"
+dirPathProcessed = f"{dirBasePath}processed/ajio/15042024/V1/"
+# dirPathProcessedHistory = '/data1/searchengine/processedHistoryDelta29092023/ajio/'
+dirPathProcessedHistory = '/data1/searchengine/processedHistory20240301/ajio/'
+# dirPathRawHistoryData = '/data1/searchengine/rawdata/historydata/20230517_20230615'
+dirPathRawHistoryData = f"/data1/searchengine/rawdata/historydata/{month}/"
+# dirSearchHistoryProcessed = '/data/searchengine/SearchHistoryProcessed/'
+
+default_args = {
+    'owner': 'couture',
+    'depends_on_past': False,
+    'start_date': date,
+    'retries': 0,
+    'retry_delay': timedelta(minutes=1),
+    "config_group": "config_group_old_cluster"
+}
+
+Dag = DAG('search_engine_history_transformations', default_args=default_args, schedule_interval=None, tags=["search-engine"])
+
+# ==================== #
+# ======= LOAD ======= #
+# ==================== #
+
+# ======== LEVEL 0 ======== #
+
+ParseHistoryCSV = CoutureSparkOperator(
+    task_id='ParseHistoryCSV',
+    method_id='ParseHistoryCSV',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={"search_term_column": "search_term"},
+    input_base_dir_path="",
+    output_base_dir_path=dirPathProcessedHistory,
+    input_filenames_dict={"search_term_data": dirPathRawHistoryData},
+    output_filenames_dict={"history_data_parquet_file_path": "rawHistoryDataParquetFiles/" + month},
+    dag=Dag,
+	config_group="config_group_search_engine_testing",
+    description=''
+)
+
+
+# ======== LEVEL 1 ======== #
+
+CleanAndNormaliseHistoryData = CoutureSparkOperator(
+    task_id='CleanAndNormaliseHistoryData',
+    method_id='CleanAndNormaliseHistoryData',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={"query_col": "search_term"},
+    input_base_dir_path=dirPathProcessedHistory,
+    output_base_dir_path=dirPathProcessedHistory,
+    input_filenames_dict={"all_raw_queries": "rawHistoryDataParquetFiles/" + month},  #"search_" + month},
+    output_filenames_dict={"history_queries_normalised": "OutputArchive_HistoryQueriesNormalised",
+                           "archive_history_queries_normalised": "Archive_HistoryQueriesNormalised"},
+                           # "history_words_normalised": "HistoryWordsNormalised"},
+    dag=Dag,
+    description=''
+)
+CleanAndNormaliseHistoryData.set_upstream([ParseHistoryCSV])
+
+# ======== LEVEL 2 ======== #
+
+GetShortQueries = CoutureSparkOperator(
+    task_id='GetShortQueries',
+    method_id='GetShortQueries',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={"search_term_column": "search_term",
+                      "max_query_length": 3,
+                      "history_data_dfs_paths": "20210826_20211020,20220408_20220706,20220810_20220920,20220921_20221116,20240201_20240227"},
+    input_base_dir_path=dirPathProcessedHistory,
+    output_base_dir_path=dirPathProcessedHistory,
+    input_filenames_dict={"history_data_grouped": "rawHistoryDataParquetFiles"},
+    output_filenames_dict={"short_queries": "HistoryMergedShortQueries"},
+    dag=Dag,
+    description=''
+)
+GetShortQueries.set_upstream([CleanAndNormaliseHistoryData])
+
+GroupSearchQueries = CoutureSparkOperator(
+    task_id='GroupSearchQueries',
+    method_id='GroupSearchQueries',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={"search_term_column": "search_term"},
+    input_base_dir_path="",
+    output_base_dir_path=dirPathProcessedHistory,
+    # input_filenames_dict={"search_term_data": "/data1/searchengine/processedHistoryDelta29092023/ajio/Archive_HistoryQueriesNormalised/OutputArchive_HistoryQueriesNormalised_" + month},
+	# input_filenames_dict={"search_term_data": "/data1/searchengine/processedHistoryBrandAnalysis/ajio/Archive_HistoryQueriesNormalised/OutputArchive_HistoryQueriesNormalised_Latest_Schema",
+  input_filenames_dict={"search_term_data": f"{dirPathProcessedHistory}rawHistoryDataParquetFiles/{month}",
+                        "k_stemmer_exceptions": f"{dirPathStaticData}KStemmerExceptions"},
+    output_filenames_dict={"queries_with_frequencies": "QueriesWithFrequencies",
+						   "query_impressions_with_frequencies": "QueryImpressionsWithFrequencies",
+                           "query_clicks_with_frequencies": "QueryClicksWithFrequencies"},
+    dag=Dag,
+    description=''
+)
+GroupSearchQueries.set_upstream([CleanAndNormaliseHistoryData])
+
+
+# ======== LEVEL  2 ======== #
+
+AccumulateHistoryData = CoutureSparkOperator(
+    task_id='AccumulateHistoryData',
+    method_id='AccumulateHistoryData',
+    class_path=classPath,
+    code_artifact=code_artifact,
+    method_args_dict={"search_term_column": "query",
+                      "max_query_length": 3,
+                      "min_category_percentile": 0.9733,
+                      "min_l1_percentile": 25},
+    input_base_dir_path="",
+    output_base_dir_path=dirPathProcessedHistory,
+    input_filenames_dict={"transpose_catalogue_attributes": f"{dirPathProcessed}TransposedCatalogueAttributesWithHierarchy",
+                          "history_data": f"{dirPathProcessedHistory}QueryClicksWithFrequencies"},  # "HistoryMergedShortQueries"},
+    output_filenames_dict={"queries_with_categories": "QueriesWithCategories",
+                           "queries_with_brands": "QueriesWithBrands",
+                           "tokens_with_categories": "TokensWithCategories"},
+    dag=Dag,
+    description=''
+)
+AccumulateHistoryData.set_upstream([GroupSearchQueries])
+
+# =================================== PHASE 2 ================================================
+
+HistoryDataPreprocessing = CoutureSparkOperator(
+    task_id='HistoryDataPreprocessing',
+    method_id='HistoryPreProcessing',
+    class_path=classPath,
+    code_artifact=code_artifact_phase2,
+    # method_args_dict={"search_term_column": "search_term"},
+    input_base_dir_path = "",
+    output_base_dir_path=new_processed_history_data_path,
+	input_filenames_dict={"new_history_data_folder": new_history_data_folder_path},
+    output_filenames_dict={"option_code_data": "",
+						   "processed_history_data":""
+                           },
+    dag=Dag,
+  	# config_group="config_group_search_engine_testing",
+    description=''
+)
+# old_training_history_data_path = "/data1/searchengine/phase2/HistoryData/history_data_for_training"
+# new_processed_history_data_path = "/data1/searchengine/phase2/HistoryData/ProcessedDataHistory"
+# processed_history_dta_path = "/data1/searchengine/phase2/HistoryData/ProcessedDataHistory/20240201-20240201/ProcessedHistoryData20240201-20240201"
+# option_code_index_path = "/data1/searchengine/phase2/HistoryData/ProcessedDataHistory/20240201-20240201/OptionCodeData20240201-20240201"
+# history_phase2_base_path 
+HistoryTrainingData = CoutureSparkOperator(
+    task_id='HistoryTrainingData',
+    method_id='HistoryTrainingData',
+    class_path=classPath,
+    code_artifact=code_artifact_phase2,
+    method_args_dict={"product_click_threshold": 2},
+    input_base_dir_path = "",
+    output_base_dir_path=history_phase2_base_path,
+	input_filenames_dict={"processed_history_data": processed_history_dta_path,
+                          "option_code_index": option_code_index_path,
+                          "old_history_training_data": old_training_history_data_path
+                         },
+    output_filenames_dict={"history_data_training": 'HistoryTrainingData',
+                           },
+    dag=Dag,
+    description=''
+)
+HistoryTrainingData.set_upstream([HistoryDataPreprocessing])
+
+GenerateHistoryInteractionScore = CoutureSparkOperator(
+    task_id='GenerateHistoryInteractionScore',
+    method_id='ProcessHistoryDataForRelevanceScore',
+    class_path=classPath,
+    # code_artifact=code_artifact_phase2_1,
+  	code_artifact=code_artifact_monil,
+    method_args_dict={"revr_weightage": 0.2,
+                      "ordr_weightage": 0.3,
+                      "ctr_weightage": 0.5
+                     },
+	# input_base_dir_path = "",
+	# output_base_dir_path=history_phase2_base_path,
+	# input_filenames_dict={"history_data_path": "/data1/searchengine/rawdata/historydata/Latest_Schema"
+	# },
+  	input_base_dir_path = "",
+    output_base_dir_path="/data1/searchengine/EmbeddingTrainingDataCuration/ajio/HistoryTrainingData/15012025",
+	input_filenames_dict={"history_data_path": "/data1/searchengine/rawdata/historydata/NonZeroProductInteractionsCombined"
+	},
+  	# input_filenames_dict={"history_data_path": "/data1/archive/searchengine/ProcessHistoryDataForRelevanceScore.scala.106"
+  	# },
+    output_filenames_dict={"final_df_with_scores": 'HistoryDataWithScores',
+                           "final_df_with_filtered_scores": 'HistoryFilterDataWithFilterScores',
+                           },
+  	config_group="config_group_search_engine_testing",
+    dag=Dag,
+    description=''
+)

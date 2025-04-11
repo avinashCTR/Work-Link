@@ -1,0 +1,64 @@
+#!/bin/bash
+
+set -e
+
+# Server 1 details
+REMOTE_USER="couture"                     # Replace with actual user on Server 1
+REMOTE_HOST="10.144.115.113"           # Replace with actual Server 1 hostname or IP
+REMOTE_DIR="/data/sftp_upload/uploads/data/uploads"
+TMP_REMOTE_LIST="/tmp/ga_todays_files.txt"
+
+# Local temporary directory
+LOCAL_TMP_DIR="/mysqldata/fetched_files_$(date +%s)"
+mkdir -p "$LOCAL_TMP_DIR"
+
+# HDFS target directory
+HDFS_BASE_DIR="/data1/archive/avinash/GA_DATA_AJIO"
+TODAY_DATE=$(date +"%Y-%m-%d")
+HDFS_TARGET_DIR="${HDFS_BASE_DIR}/${TODAY_DATE}"
+
+# Function to get sub-directory in HDFS based on filename
+get_hdfs_subdirectory() {
+    local filename="$1"
+
+    if [[ "$filename" =~ [sS][eE][aA][rR][cC][hH]_[sS][eE][aA][rR][cC][hH][tT][eE][rR][mM]_[zZ][sS][rR] ]]; then
+        echo "zsr"
+    elif [[ "$filename" =~ [sS][eE][aA][rR][cC][hH]_[sS][eE][aA][rR][cC][hH][tT][eE][rR][mM]_[sS][hH][oO][wW][sS][eE][aA][rR][cC][hH] ]]; then
+        echo "showsearchpage"
+    elif [[ "$filename" =~ search_term_data ]]; then
+        echo "search_term_data"
+    else
+        echo "other"
+    fi
+}
+
+echo "Getting list of files modified today from $REMOTE_HOST..."
+
+# Use find to get today’s modified files on Server 1
+ssh "${REMOTE_USER}@${REMOTE_HOST}" "find $REMOTE_DIR -type f -newermt $(date +%Y-%m-%d) ! -newermt $(date -d tomorrow +%Y-%m-%d)" > "$TMP_REMOTE_LIST"
+
+echo "$TMP_REMOTE_LIST"
+
+echo "Fetching files to $LOCAL_TMP_DIR..."
+while IFS= read -r remote_file; do
+    scp "${REMOTE_USER}@${REMOTE_HOST}:${remote_file}" "$LOCAL_TMP_DIR/"
+done < "$TMP_REMOTE_LIST"
+
+echo "Uploading files to HDFS..."
+for file in "$LOCAL_TMP_DIR"/*; do
+    if [[ -f "$file" ]]; then
+        filename=$(basename "$file")
+        subdir=$(get_hdfs_subdirectory "$filename")
+        hdfs_target_path="${HDFS_TARGET_DIR}/${subdir}"
+        
+        echo "Uploading $filename to $hdfs_target_path"
+        hdfs dfs -mkdir -p "$hdfs_target_path"
+        hdfs dfs -put -f "$file" "$hdfs_target_path"
+    fi
+done
+
+echo "Cleaning up..."
+rm -rf $LOCAL_TMP_DIR
+rm -f "$TMP_REMOTE_LIST"
+
+echo "Done."

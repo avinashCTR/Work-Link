@@ -1,0 +1,1 @@
+kinit -kt /home/jioapp/aditya/jiomart_cluster/couture.keytab couture@COUTURE.AI

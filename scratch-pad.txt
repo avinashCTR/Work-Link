@@ -1,0 +1,10 @@
+ajio_prod_mpnet_custom_loss_ajio_ep2_09022025_sarthak
+http://10.177.51.98:6333/dashboard
+
+/data1/searchengine/genai_search/ajio/processed/dev/09022025/V1/GenAIProcessedCatalogue
+
+notebooks/Charan/jiomart/static/synonyms_output - synonyms_output.csv
+
+http://10.166.181.219:8889/lab/workspaces/auto-1/tree/notebooks/avinash/NDGC_task/ScalaTry/ApplyFilters.ipynb
+
+/data1/searchengine/processedHistory/ajio/TopMillionQueryByFreq2025_01012025_07042025

@@ -8,3 +8,7 @@ notebooks/Charan/jiomart/static/synonyms_output - synonyms_output.csv
 http://10.166.181.219:8889/lab/workspaces/auto-1/tree/notebooks/avinash/NDGC_task/ScalaTry/ApplyFilters.ipynb
 
 /data1/searchengine/processedHistory/ajio/TopMillionQueryByFreq2025_01012025_07042025
+
+http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_fullresults_output.csv
+
+http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_top100results_output.csv

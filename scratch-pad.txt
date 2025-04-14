@@ -14,3 +14,5 @@ http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_f
 http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_top100results_output.csv
 
 /data1/archive/avinash/AjioProcessed/rawHistoryDataParquetFiles/04
+
+/data1/archive/avinash/ajioSearchTermDataTemp/ColdCacheQueries/ColdCacheQueries_cummulative

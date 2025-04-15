@@ -16,3 +16,8 @@ http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_t
 /data1/archive/avinash/AjioProcessed/rawHistoryDataParquetFiles/04
 
 /data1/archive/avinash/ajioSearchTermDataTemp/ColdCacheQueries/ColdCacheQueries_cummulative
+
+
+"boostingScore_rilfnl",
+"boostingScore_rilfnl_premium_product_ranking",
+"boostingScore_rilfnl_super_value",

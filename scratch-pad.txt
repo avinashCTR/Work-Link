@@ -23,3 +23,5 @@ http://10.166.181.219:8497/docs#/default/search_search_latest_stable_post
 "boostingScore_rilfnl",
 "boostingScore_rilfnl_premium_product_ranking",
 "boostingScore_rilfnl_super_value",
+
+/data1/searchengine/genai_search/ajio/rwc/prod/current/spell_corrected_queries

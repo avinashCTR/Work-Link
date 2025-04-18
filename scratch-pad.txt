@@ -1,27 +1,10 @@
-ajio_prod_mpnet_custom_loss_ajio_ep2_09022025_sarthak
-http://10.177.51.98:6333/dashboard
+1 . https://osprey-sit.services.ajio.com/docs#/Search/search_couturesearch_v1_products_search_post
+2 . https://osprey-rep.services.ajio.com/couturesearch/v1/products/search
 
-/data1/searchengine/genai_search/ajio/processed/dev/09022025/V1/GenAIProcessedCatalogue
-
-notebooks/Charan/jiomart/static/synonyms_output - synonyms_output.csv
-
-http://10.166.181.219:8889/lab/workspaces/auto-1/tree/notebooks/avinash/NDGC_task/ScalaTry/ApplyFilters.ipynb
-
-/data1/searchengine/processedHistory/ajio/TopMillionQueryByFreq2025_01012025_07042025
-
-http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_fullresults_output.csv
-
-http://10.166.181.219:8889/lab/tree/notebooks/avinash/NDGC_task/ScalaTry/query_top100results_output.csv
-
-/data1/archive/avinash/AjioProcessed/rawHistoryDataParquetFiles/04
-
-/data1/archive/avinash/ajioSearchTermDataTemp/ColdCacheQueries/ColdCacheQueries_cummulative
-
-http://10.166.181.219:8497/docs#/default/search_search_latest_stable_post
-
-
-"boostingScore_rilfnl",
-"boostingScore_rilfnl_premium_product_ranking",
-"boostingScore_rilfnl_super_value",
-
-/data1/searchengine/genai_search/ajio/rwc/prod/current/spell_corrected_queries
+{
+    "api_key": "yAqEprUS6mvsog.IrbtwV0pTg5jRQ.7Lyrm7P9V4tzLw",
+    "key_name": "couture",
+    "created_at": "2025-04-17T13:32:40.443181+00:00",
+    "expires_at": "2025-05-17T13:32:40.443181+00:00",
+    "client_id": "ajio-saas"
+}

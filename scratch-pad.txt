@@ -8,3 +8,6 @@
     "expires_at": "2025-05-17T13:32:40.443181+00:00",
     "client_id": "ajio-saas"
 }
+
+/data1/searchengine/processed/jiomart/05092024/etl_backup/UnifiedFinalDFJioMart2/CatalogueAttributes
+/data1/searchengine/processed/jiomart/05092024/catalogue/archive/UnifiedFinalDFJioMart2

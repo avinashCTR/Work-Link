@@ -9,5 +9,8 @@
     "client_id": "ajio-saas"
 }
 
+Request Error: HTTPSConnectionPool(host='osprey-rep.services.ajio.com', port=443): Max retries exceeded with url: /couturesearch/v1/products/search (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc18006eb20>: Failed to establish a new connection: [Errno 111] Connection refused')))
+False
+
 /data1/searchengine/processed/jiomart/05092024/etl_backup/UnifiedFinalDFJioMart2/CatalogueAttributes
 /data1/searchengine/processed/jiomart/05092024/catalogue/archive/UnifiedFinalDFJioMart2

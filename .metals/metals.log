@@ -47,3 +47,6 @@
 2025.04.16 15:07:17 WARN  Build server is not auto-connectable.
 2025.04.16 15:07:17 INFO  compiling work-link_d5c0a6989e (7 scala sources)
 2025.04.16 15:07:19 INFO  time: compiled Work-Link_d5c0a6989e in 1.43s
+2025.04.18 16:06:35 INFO  Scala CLI: Bloop 'bsp' command exited with code 1. Something may be wrong with the current configuration.
+2025.04.18 16:06:35 INFO  Scala CLI: Running the clean sub-command to clear the working directory and remove caches might help.
+2025.04.18 16:06:35 INFO  Scala CLI: If the error persists, please report the issue as a bug and attach a log with increased verbosity by passing -v -v -v.

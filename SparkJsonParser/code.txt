@@ -46,13 +46,6 @@ def mergeSchemas(s1: StructType, s2: StructType): StructType = {
   StructType(merged.toSeq.sortBy(_.name))
 }
 
-// Merge two DataTypes safely
-// def mergeDataTypes(dt1: DataType, dt2: DataType): DataType = (dt1, dt2) match {
-//   case (s1: StructType, s2: StructType) => mergeSchemas(s1, s2)
-//   case (ArrayType(e1, _), ArrayType(e2, _)) => ArrayType(mergeDataTypes(e1, e2), containsNull = true)
-//   case _ => dt1 // fallback to first
-// }
-
 def mergeDataTypes(dt1: DataType, dt2: DataType): DataType = (dt1, dt2) match {
   case (s1: StructType, s2: StructType) => mergeSchemas(s1, s2)
   case (ArrayType(e1, _), ArrayType(e2, _)) => ArrayType(mergeDataTypes(e1, e2), containsNull = true)

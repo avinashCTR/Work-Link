@@ -1,0 +1,90 @@
+import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.types._
+import org.apache.spark.sql.functions._
+import scala.util.Try
+import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
+import com.fasterxml.jackson.module.scala.DefaultScalaModule
+import scala.collection.JavaConverters._
+
+// Initialize Jackson object mapper once
+val mapper = new ObjectMapper()
+mapper.registerModule(DefaultScalaModule)
+
+// Recursively parse a JsonNode into a Spark DataType
+def parseJsonNode(node: JsonNode): DataType = {
+  if (node.isObject) {
+    val fields = node.fieldNames().asScala.toSeq
+    val structFields = fields.map { field =>
+      StructField(field, parseJsonNode(node.get(field)), nullable = true)
+    }
+    StructType(structFields)
+  } else if (node.isArray) {
+    val elements = node.elements().asScala.toSeq
+    val elementType = elements.map(parseJsonNode).reduceOption(mergeDataTypes).getOrElse(StringType)
+    ArrayType(elementType, containsNull = true)
+  } else if (node.isInt) IntegerType
+  else if (node.isLong) LongType
+  else if (node.isDouble || node.isFloat || node.isBigDecimal) DoubleType
+  else if (node.isBoolean) BooleanType
+  else StringType
+}
+
+// Parse a JSON string into a StructType
+def inferSchemaFromJson(json: String): Option[StructType] = Try {
+  val rootNode = mapper.readTree(json)
+  parseJsonNode(rootNode).asInstanceOf[StructType]
+}.toOption
+
+// Merge two StructTypes recursively
+def mergeSchemas(s1: StructType, s2: StructType): StructType = {
+  val merged = (s1 ++ s2)
+    .groupBy(_.name)
+    .map { case (name, fields) =>
+      val mergedType = fields.map(_.dataType).reduce(mergeDataTypes)
+      StructField(name, mergedType, nullable = true)
+    }
+  StructType(merged.toSeq.sortBy(_.name))
+}
+
+// Merge two DataTypes safely
+// def mergeDataTypes(dt1: DataType, dt2: DataType): DataType = (dt1, dt2) match {
+//   case (s1: StructType, s2: StructType) => mergeSchemas(s1, s2)
+//   case (ArrayType(e1, _), ArrayType(e2, _)) => ArrayType(mergeDataTypes(e1, e2), containsNull = true)
+//   case _ => dt1 // fallback to first
+// }
+
+def mergeDataTypes(dt1: DataType, dt2: DataType): DataType = (dt1, dt2) match {
+  case (s1: StructType, s2: StructType) => mergeSchemas(s1, s2)
+  case (ArrayType(e1, _), ArrayType(e2, _)) => ArrayType(mergeDataTypes(e1, e2), containsNull = true)
+  case _ =>
+    val types = Set(dt1, dt2)
+    if (types.contains(DoubleType)) DoubleType
+    else if (types.contains(LongType)) LongType
+    else if (types.contains(IntegerType)) IntegerType
+    else if (types.contains(BooleanType)) BooleanType
+    else StringType
+}
+
+// 🔄 Replace original inferJSONSchema to use Jackson instead of Spark JSON parser
+def inferJSONSchema(df: DataFrame, jsonStrColumn: String, batchSize: Int = 1000): StructType = {
+  val jsonStrings = df.select(jsonStrColumn)
+    .filter(col(jsonStrColumn).isNotNull)
+    .as[String]
+    .collect()
+    .toIterator
+    .filter(js => js.trim.nonEmpty && js.trim.startsWith("{") && js.trim.endsWith("}"))
+
+  val batchSchemas = jsonStrings.grouped(batchSize).flatMap { batch =>
+    val inferred = batch.flatMap(inferSchemaFromJson)
+    if (inferred.isEmpty) None
+    else Some(inferred.reduce(mergeSchemas))
+  }.toSeq
+
+  if (batchSchemas.isEmpty) StructType(Nil)
+  else batchSchemas.reduce(mergeSchemas)
+}
+
+val productAttributesSchema = inferJSONSchema(df, "product_attributes", 10000)
+
+df = df.withColumn("product_attributes", from_json(col("product_attributes"), productAttributesSchema))
+df.select("product_attributes").printSchema(2)

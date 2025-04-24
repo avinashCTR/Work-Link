@@ -15,6 +15,8 @@ False
 /data1/searchengine/processed/jiomart/05092024/etl_backup/UnifiedFinalDFJioMart2/CatalogueAttributes
 /data1/searchengine/processed/jiomart/05092024/catalogue/archive/UnifiedFinalDFJioMart2
 
+.filter(col("response").rlike("""\{\s*"point_ids"\s*:\s*\[\s*\]"""))
+
 http://10.144.96.175:8080/workflow/code?dag_id=search_engine_embeddings_compare
 
 /data1/archive/avinash/ModelTestingData2/outputs/MpnetOutputs

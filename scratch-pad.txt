@@ -14,3 +14,5 @@ False
 
 /data1/searchengine/processed/jiomart/05092024/etl_backup/UnifiedFinalDFJioMart2/CatalogueAttributes
 /data1/searchengine/processed/jiomart/05092024/catalogue/archive/UnifiedFinalDFJioMart2
+
+http://10.144.96.175:8080/workflow/code?dag_id=search_engine_embeddings_compare

@@ -17,6 +17,8 @@ False
 
 .filter(col("response").rlike("""\{\s*"point_ids"\s*:\s*\[\s*\]"""))
 
+http://10.144.96.175:8080/workflow/graph?dag_id=search_engine_embeddings_compare
+
 http://10.144.96.175:8080/workflow/code?dag_id=search_engine_embeddings_compare
 
 /data1/archive/avinash/ModelTestingData2/outputs/MpnetOutputs

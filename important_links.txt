@@ -1,4 +1,5 @@
 Yarn :- https://10.144.97.194:8443/gateway/dev/yarn/cluster/apps/RUNNING
 Sprak3 Yarn :- https://10.144.96.170:8443/gateway/dev/yarn/cluster/apps/RUNNING
+NEW HDFS :- http://10.144.96.170:8888/hue/filebrowser/
 
 spark-shell --queue default --name ooha_jiomart --driver-memory 5g --executor-memory 3g --jars Jars/commons-1.0.1.jar

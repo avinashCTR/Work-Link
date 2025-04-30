@@ -1,1 +1,124 @@
-^[0-9a-zA-Z]+$
+import sys
+
+from ai.couture.obelisk.commons.utils.ArgumentsParser import ArgumentsParser
+
+from couturesearch.analysis.AnalyseRetrievedProducts import AnalyseRetrievedProducts
+from couturesearch.analysis.CompileAnalysisReport import CompileAnalysisReport
+from couturesearch.analysis.ConvertGroundDataToTopNStepWiseInput import (
+    ConvertGroundDataToTopNStepWiseInput,
+)
+from couturesearch.analysis.FormatAnalysisFiles import FormatAnalysisFiles
+from couturesearch.analysis.GenerateCatalogueWordIndexes import (
+    GenerateCatalogueWordIndexes,
+)
+from couturesearch.analysis.GenerateJson import GenerateJson
+from couturesearch.analysis.GenerateNetScore import GenerateNetScore
+from couturesearch.analysis.GroundTruthAnalysis import GroundTruthAnalysis
+from couturesearch.analysis.IdentifyNumericalBrands import IdentifyNumericalBrands
+from couturesearch.analysis.InitialAnalysis import InitialAnalysis
+from couturesearch.analysis.PerformanceIdentifyIntent import PerformanceIdentifyIntent
+from couturesearch.analysis.PerformanceNormalisation import PerformanceNormalisation
+from couturesearch.analysis.PerformancePhraseMatch import PerformancePhraseMatch
+from couturesearch.analysis.PerformanceRewriteQuery import PerformanceRewriteQuery
+from couturesearch.analysis.PerformanceSpellCheck import PerformanceSpellCheck
+from couturesearch.analysis.PerformanceTextToNum import PerformanceTextToNum
+from couturesearch.analysis.PreprocessTestQueries import PreprocessTestQueries
+from couturesearch.analysis.RetrieveProductsFromQueryJson import (
+    RetrieveProductsFromQueryJson,
+)
+from couturesearch.analysis.TopNHistoryCoverage import TopNHistoryCoverage
+from couturesearch.analysis.TopNStepWiseOutput import TopNStepWiseOutput
+from couturesearch.analysis.TopNUnderScore import TopNUnderScore
+from couturesearch.analysis.history_data_analysis import (
+    GenerateCatalogueWords,
+    CreateW2RTestingDF,
+)
+from couturesearch.analysis.history_data_analysis.GenerateW2RInteractions import (
+    GenerateW2RInteractions,
+)
+from couturesearch.analysis.DecodeProductCodes import DecodeProductCodes
+from couturesearch.analysis.IssueTestingScorer import IssueTestingScorer
+from couturesearch.analysis.GenerateTestingModulesQueries import (
+    GenerateTestingModulesQueries,
+)
+from couturesearch.analysis.GetTopGAQueries import GetTopGAQueries
+
+
+class MainClass(object):
+    def __init__(self, sys_arg):
+        self.sys_arg = sys_arg
+        return
+
+    def main(self):
+        """instantiate object for global arguments parser"""
+        args = ArgumentsParser()
+        """parse task from args."""
+        task = args.parse_task(self.sys_arg)
+
+        """======================== Object Mappings ========================"""
+        # Search Engine Analysis module tasks
+        search_engine_analysis_module = {
+            "generate_json": GenerateJson,
+            "top_nstep_wise_output": TopNStepWiseOutput,
+            "initial_analysis": InitialAnalysis,
+            "performance_normalisation": PerformanceNormalisation,
+            "performance_spell_check": PerformanceSpellCheck,
+            "performance_phrase_match": PerformancePhraseMatch,
+            "identify_numerical_brands": IdentifyNumericalBrands,
+            "performance_text_to_num": PerformanceTextToNum,
+            "performance_rewrite_query": PerformanceRewriteQuery,
+            "performance_identify_intent": PerformanceIdentifyIntent,
+            "top_n_under_score": TopNUnderScore,
+            "generate_net_score": GenerateNetScore,
+            "top_n_history_coverage": TopNHistoryCoverage,
+            "format_analysis_files": FormatAnalysisFiles,
+            "ground_truth_analysis": GroundTruthAnalysis,
+            "convert_gtruthdata_parquet": ConvertGroundDataToTopNStepWiseInput,
+            "compile_analysis_report": CompileAnalysisReport,
+            "preprocess_test_queries": PreprocessTestQueries,
+            "retrieve_products": RetrieveProductsFromQueryJson,
+            "retrieved_products_analysis": AnalyseRetrievedProducts,
+            "generate_catalogue_word_index": GenerateCatalogueWordIndexes,
+            "generate_w2r_interaction_from_history": GenerateW2RInteractions,
+            "generate_catalogue_words": GenerateCatalogueWords,
+            "create_w2r_testing_df": CreateW2RTestingDF,
+            "decode_product_codes": DecodeProductCodes,
+            "issue_testing_scorer": IssueTestingScorer,
+            "generate_testing_modules_queries": GenerateTestingModulesQueries,
+            "get_top_ga_queries": GetTopGAQueries,
+        }
+
+        # try:
+        #     from couturesearch.analysis.DecodeProductCodes import DecodeProductCodes
+        #     from couturesearch.analysis.IssueTestingScorer import IssueTestingScorer
+        #
+        #     search_engine_analysis_module.update(
+        #         {
+        #             "decode_product_codes": DecodeProductCodes,
+        #             "issue_testing_scorer": IssueTestingScorer,
+        #         }
+        #     )
+        # except ImportError as e:
+        #     print("Import failed for module_name", e)
+        #     print("Code execution continues...")
+
+        modules = {}
+        modules.update(search_engine_analysis_module)
+
+        tasks_list = list(modules.keys())
+        if task in tasks_list:
+            """Instantiate object for a task and run it"""
+            task_obj = modules[task]()
+            task_obj.execute(self.sys_arg)
+        else:
+            print(
+                "Keyerror: '{}' No such task found. \n"
+                "List of tasks available : \n{}".format(task, tasks_list)
+            )
+            sys.exit(1)
+
+
+if __name__ == "__main__":
+    """instantiate object for all usecases and call the main function."""
+    usecase_obj = MainClass(sys.argv[1])
+    usecase_obj.main()

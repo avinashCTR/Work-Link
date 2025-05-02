@@ -11,3 +11,5 @@ exact same aa kaado check cheyva(rows cout,schema, and also values correspsondin
 
 2. See if color is not null in all verticals
 /data1/searchengine/processed/jiomart/05092024/etl/beauty/TransposedCatalogueAttributesWithHierarchy
+
+/data1/searchengine/processedHistory/ajio/ColdCacheQueriesWithFrequencies

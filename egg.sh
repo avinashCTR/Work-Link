@@ -7,4 +7,4 @@ cd /Users/avinash/Couture-Scala/Work-Link
 
 git add .
 git commit -m "Updated couture_search egg"
-git push origin master
+git push

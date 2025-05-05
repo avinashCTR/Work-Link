@@ -1,15 +1,10 @@
-TUNUGUNTLA OOHA, Wed 10:23 PM, Edited
-Neeku free unnapud okasari 
-
-1. 
-For all verticals
-
-/data1/searchengine/processed/jiomart/05092024/etl/Beauty/TransposedCatalogueAttributesWithHierarchy
-/data1/searchengine/processed/jiomart/05092024/etl/Beauty/TransposedCatalogueAttributesWithHierarchyOpt (will be created by tomorrow morning)
-exact same aa kaado check cheyva(rows cout,schema, and also values correspsonding to each column for each objectId)
-
-
-2. See if color is not null in all verticals
-/data1/searchengine/processed/jiomart/05092024/etl/beauty/TransposedCatalogueAttributesWithHierarchy
-
-/data1/searchengine/processedHistory/ajio/ColdCacheQueriesWithFrequencies
+5d	"{\"home_lifestyle\":{\"rightword\":[\"15d\",\"1.0\"],\"token_type\":\"corpus\"},\"electronics\":{\"rightword\":[\"15d\",\"1.0\"],\"token_type\":\"corpus\"},\"other_verticals\":{\"rightword\":[\"15d\",\"1.0\"],\"token_type\":\"corpus\"}}"
+15days's	"{\"groceries\":{\"rightword\":[\"15days\",\"0.836\"],\"token_type\":\"corpus\"}}"
+15feets	"{\"home_lifestyle\":{\"rightword\":[\"15feet\",\"0.872\"],\"token_type\":\"corpus\"},\"other_verticals\":{\"rightword\":[\"15feet\",\"0.872\"],\"token_type\":\"corpus\"}}"
+15inches	"{\"home_lifestyle\":{\"rightword\":[\"15inch\",\"0.802\"],\"token_type\":\"corpus\"},\"other_verticals\":{\"rightword\":[\"15inches\",\"1.0\"],\"token_type\":\"corpus\"},\"electronics\":{\"rightword\":[\"15inch\",\"0.802\"],\"token_type\":\"corpus\"}}"
+15iskes	"{\"electronics\":{\"rightword\":[\"15isk\",\"0.81\"],\"token_type\":\"corpus\"}}"
+15lb	"{\"home_lifestyle\":{\"rightword\":[\"15lb\",\"1.0\"],\"token_type\":\"corpus\"}}"
+15min's	"{\"home_lifestyle\":{\"rightword\":[\"15min\",\"0.81\"],\"token_type\":\"corpus\"}}"
+15mp	"{\"electronics\":{\"rightword\":[\"15mp\",\"1.0\"],\"token_type\":\"corpus\"}}"
+15mp's	"{\"electronics\":{\"rightword\":[\"15mp\",\"0.774\"],\"token_type\":\"corpus\"}}"
+15pluss	"{\"home_lifestyle\":{\"rightword\":[\"15plus\",\"0.941\"],\"token_type\":\"corpus\"}}"

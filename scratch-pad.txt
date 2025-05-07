@@ -1,1 +1,2 @@
 /data1/archive/avinash/guardrailsConfChanges/phrasesMergedIntoRightWordsFashion.csv
+/data1/searchengine/rawdata/historydata/jiomart/dump/query_level_data

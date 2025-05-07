@@ -3,5 +3,6 @@ Sprak3 Yarn :- https://10.144.96.170:8443/gateway/dev/yarn/cluster/apps/RUNNING
 NEW HDFS :- http://10.144.96.170:8888/hue/filebrowser/
 GPU 219 :- http://10.166.181.219:8889/lab/workspaces/auto-R/tree/notebooks/avinash
 DAGS Airflow :- http://10.144.96.175:8080/workflow/
+Algolia Search :- https://dashboard.algolia.com/apps/3YP0HP3WSH/explorer/browse/prod_mart_master_vertical
 
 spark-shell --queue default --name ooha_jiomart --driver-memory 5g --executor-memory 3g --jars Jars/commons-1.0.1.jar

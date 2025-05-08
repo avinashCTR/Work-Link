@@ -9,3 +9,5 @@ package ai.couture.obelisk.commons.maths.evaluationmetrics.rankingsystem
 
 /data1/searchengine/processed/jiomart/accumulateddata/IPATransliterationsAutomaticAccumulator
 .agg(SpearmCorrelation.SpearmanCorr("c1", "c2").toColumn.as("correlation"))
+
+notebooks/avinash/rankingAnalysis/ranking-analysis.ipynb

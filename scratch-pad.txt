@@ -3,3 +3,5 @@
 /data1/archive/avinash/guardrailsConfChanges/beauty_added_v7_v8.csv
 /data1/archive/avinash/guardrailsConfChanges/home&lifestyle_min_product_count_20_30.csv
 /data1/archive/avinash/guardrailsConfChanges/other_vertical_min_product_count_known_words_100_200.csv
+
+package ai.couture.obelisk.commons.maths.evaluationmetrics.rankingsystem

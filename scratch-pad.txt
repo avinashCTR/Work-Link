@@ -11,3 +11,5 @@ package ai.couture.obelisk.commons.maths.evaluationmetrics.rankingsystem
 .agg(SpearmCorrelation.SpearmanCorr("c1", "c2").toColumn.as("correlation"))
 
 notebooks/avinash/rankingAnalysis/ranking-analysis.ipynb
+
+http://10.166.181.219:8889/lab/tree/notebooks/avinash/GaurdrailsAnalysisTasks/BrandNonBrand.ipynb

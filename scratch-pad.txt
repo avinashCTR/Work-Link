@@ -19,3 +19,5 @@ hdfs://10.144.96.170:8020/data1/archive/avinash/guardrailsTemp/BrandNonBrand
 split(regexp_replace(col("entity"), "[\\[|\"|\\]]", ""), ",")\
 
 dev07052025_1205
+
+/data1/archive/avinash/Template-Testing/ajio

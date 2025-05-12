@@ -15,3 +15,5 @@ notebooks/avinash/rankingAnalysis/ranking-analysis.ipynb
 http://10.166.181.219:8889/lab/tree/notebooks/avinash/GaurdrailsAnalysisTasks/BrandNonBrand.ipynb
 
 hdfs://10.144.96.170:8020/data1/archive/avinash/guardrailsTemp/BrandNonBrand
+
+split(regexp_replace(col("entity"), "[\\[|\"|\\]]", ""), ",")

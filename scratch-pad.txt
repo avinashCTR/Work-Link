@@ -16,4 +16,6 @@ http://10.166.181.219:8889/lab/tree/notebooks/avinash/GaurdrailsAnalysisTasks/Br
 
 hdfs://10.144.96.170:8020/data1/archive/avinash/guardrailsTemp/BrandNonBrand
 
-split(regexp_replace(col("entity"), "[\\[|\"|\\]]", ""), ",")
+split(regexp_replace(col("entity"), "[\\[|\"|\\]]", ""), ",")\
+
+dev07052025_1205

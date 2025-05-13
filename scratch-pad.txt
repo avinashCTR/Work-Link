@@ -21,3 +21,26 @@ split(regexp_replace(col("entity"), "[\\[|\"|\\]]", ""), ",")\
 dev07052025_1205
 
 /data1/archive/avinash/Template-Testing/ajio/output
+
+    UnifyAllVerticals = CoutureSparkOperator(
+        task_id="UnifyAllVerticals",
+        dag=Dag,
+        code_artifact=code_artifact,
+        class_path=classPath,
+        method_id="UnifyAllVerticals",
+        input_base_dir_path= f"{paths_conf["dirBasePath"]}processed/{paths_conf["catalogue_label"]}/{paths_conf["catalogue_date"]}/{paths_conf["version_new"]}",
+        output_base_dir_path=f"{paths_conf["dirBasePath"]}processed/{paths_conf["catalogue_label"]}/{paths_conf["catalogue_date"]}/{paths_conf["version_new"]}/UnifiedCorpus",
+        input_filenames_dict={
+                              "entities_path":"/JSONData/RightWordEntitiesCSV/",
+                              "phrases_path":"/JSONData/InternalPhraseCSV/",
+                              "w2r_path" : "/analysis/Wrong2RightWordsAnalysisCSVW2R/",
+                              "r2x_path":"/analysis/Wrong2RightWordsAnalysisCSVR2X/",
+                              },
+        output_filenames_dict={
+            "entities_path":"/JSONData/RightWordEntitiesCSV/",
+            "phrases_path":"/JSONData/InternalPhraseCSV/",
+            "w2r_path" : "/analysis/Wrong2RightWordsAnalysisCSVW2R/",
+            "r2x_path":"/analysis/Wrong2RightWordsAnalysisCSVR2X/",
+        },
+        description="Combines Corpus from all verticals sources"
+    )

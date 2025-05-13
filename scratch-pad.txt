@@ -22,25 +22,44 @@ dev07052025_1205
 
 /data1/archive/avinash/Template-Testing/ajio/output
 
-    UnifyAllVerticals = CoutureSparkOperator(
-        task_id="UnifyAllVerticals",
-        dag=Dag,
-        code_artifact=code_artifact,
-        class_path=classPath,
-        method_id="UnifyAllVerticals",
-        input_base_dir_path= f"{paths_conf["dirBasePath"]}processed/{paths_conf["catalogue_label"]}/{paths_conf["catalogue_date"]}/{paths_conf["version_new"]}",
-        output_base_dir_path=f"{paths_conf["dirBasePath"]}processed/{paths_conf["catalogue_label"]}/{paths_conf["catalogue_date"]}/{paths_conf["version_new"]}/UnifiedCorpus",
-        input_filenames_dict={
-                              "entities_path":"/JSONData/RightWordEntitiesCSV/",
-                              "phrases_path":"/JSONData/InternalPhraseCSV/",
-                              "w2r_path" : "/analysis/Wrong2RightWordsAnalysisCSVW2R/",
-                              "r2x_path":"/analysis/Wrong2RightWordsAnalysisCSVR2X/",
-                              },
-        output_filenames_dict={
-            "entities_path":"/JSONData/RightWordEntitiesCSV/",
-            "phrases_path":"/JSONData/InternalPhraseCSV/",
-            "w2r_path" : "/analysis/Wrong2RightWordsAnalysisCSVW2R/",
-            "r2x_path":"/analysis/Wrong2RightWordsAnalysisCSVR2X/",
-        },
-        description="Combines Corpus from all verticals sources"
-    )
+
+package ai.couture.obelisk.search.etl.fetch
+
+import ai.couture.obelisk.commons.Constants.NUM_PARTITIONS
+import ai.couture.obelisk.commons.Constants.REGEX_PATTERN.{HTML_TAG, IS_NUM_ONLY}
+import ai.couture.obelisk.commons.io._
+import ai.couture.obelisk.commons.utils.{BaseBlocks, DataFrameUtil}
+import ai.couture.obelisk.commons.utils.arrayutil.Array1D.strReplaceInArray
+import ai.couture.obelisk.search.Constants._
+import org.apache.spark.sql.expressions.UserDefinedFunction
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types.{ArrayType, StringType}
+import org.apache.spark.sql.{DataFrame, SparkSession}
+
+import scala.collection.mutable.WrappedArray
+import javax.sound.midi.Sequence
+
+object DeriveL1LevelCatalogueData extends BaseBlocks {
+
+  var catalogueAttributesData: DataFrame = _
+
+  
+  val getL1Names: UserDefinedFunction = udf { arr: Seq[String] =>
+    arr.map(_.split(":")(0)).toSet.toSeq
+  }
+
+  def load(): Unit = {
+    catalogueAttributesData = ParquetToDF.getDF(setInputPath("unified_catalogue"))
+  }
+
+  def doTransformations(): Unit = {
+    catalogueAttributesData = catalogueAttributesData.select(L1_LEVEL_CATALOGUE_COLUMNS.map(col): _*)
+    catalogueAttributesData = catalogueAttributesData.withColumn("l1_name", getL1Names(col("l1l2l3_category")))
+    catalogueAttributesData = catalogueAttributesData.withColumn("l1_name", explode(col("l1_name")))
+  }
+
+  def save(): Unit = {
+    catalogueAttributesData.repartition(col("vertical_code")).write.partitionBy("vertical_code").option("maxRecordsPerFile", 100000).parquet(setInputPath("split_l1_level_catalogue"))
+  }
+
+}

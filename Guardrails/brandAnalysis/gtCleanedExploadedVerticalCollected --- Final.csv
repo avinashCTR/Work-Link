@@ -1,0 +1,152 @@
+,query,vertical,ground_truth_l1l2l3_category,ground_truth_brand,count
+0,10 kg rice,Groceries,"['Groceries: Cooking Essentials - Basmati Rice', 'Groceries: Cooking Essentials - Other Rice Varieties']","['[]', '[]']",2
+1,50 50 biscuits,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Salted Biscuits']","[""['britannia']""]",1
+2,act 2 popcorn,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Chips & Corn Snacks']","[""['act 2']""]",1
+3,adrak,Groceries,"['Groceries: Cooking Essentials - Powdered Spices', 'Groceries: Cooking Essentials - Cooking Paste']","['[]', '[]']",2
+4,allout refil,Groceries,['Groceries: Home Care - Mosquito Repellent'],"[""['All Out']""]",1
+5,almonds 1kg,Groceries,['Groceries: Cooking Essentials - Almonds/Badam'],['[]'],1
+6,aloe vera gel,Groceries,['Groceries: Personal Care - Face Gels'],['[]'],1
+7,amul cream,Groceries,['Groceries: Dairy & Bakery - Milk Powder & Cream'],"[""['Amul']""]",1
+8,amul pure ghee 1 l pouch,Groceries,"['Groceries: Staples - Ghee', 'Groceries: Cooking Essentials - Ghee']","[""['amul']"", ""['amul']""]",2
+9,antiseptic liquid,Groceries,['Groceries: Personal Care - Antiseptics & Antifungal Remedies'],['[]'],1
+10,arhar dal 1kg,Groceries,['Groceries: Cooking Essentials - Toor Dal'],['[]'],1
+11,ariel front load liquid,Groceries,['Groceries: Home Care - Detergents & Cleaners'],"[""['Ariel']""]",1
+12,ata 5 kg,Groceries,['Groceries: Cooking Essentials - Atta'],['[]'],1
+13,b natural juice,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Juices']","[""['B Natural']""]",1
+14,basmathi,Groceries,['Groceries: Cooking Essentials - Basmati Rice'],['[]'],1
+15,bath soap,Groceries,['Groceries: Personal Care - Bathing Bars & Soaps'],['[]'],1
+16,bay leaf,Groceries,['Groceries: Cooking Essentials - Whole Spices'],['[]'],1
+17,besan 1kg,Groceries,['Groceries: Cooking Essentials - Besan'],['[]'],1
+18,besan flour 1kg,Groceries,['Groceries: Cooking Essentials - Besan'],['[]'],1
+19,bikaji bhel,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Namkeen & Savoury Snacks']","[""['Bikaji']""]",1
+20,biscuit family pack,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cookies']",['[]'],1
+21,bottle,Groceries,['Groceries: Kitchenware - Water Bottle'],['[]'],1
+22,broom,Industrial & Proffesional Supplies,['Industrial & Proffesional Supplies: Home Cleaning & Organisation - Brooms & Accssories'],['[]'],1
+23,buscuit,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cream Biscuits & Wafers', 'Groceries: Biscuits, Drinks & Packaged Foods - Cookies']","['[]', '[]']",2
+24,cashew 500 gm,Groceries,['Groceries: Cooking Essentials - Cashews / Kaaju'],['[]'],1
+25,cashew nuts,Groceries,['Groceries: Cooking Essentials - Cashews / Kaaju'],['[]'],1
+26,castor oil,Groceries,['Groceries: Cooking Essentials - Castor Oil'],['[]'],1
+27,chandan,Groceries,['Groceries: Crafts of India - Pooja Accessories'],['[]'],1
+28,channa,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Roasted Chana', 'Groceries: Cooking Essentials - Kabuli Chana']","['[]', '[]']",2
+29,chat masala,Groceries,['Groceries: Cooking Essentials - Blended Masalas'],['[]'],1
+30,cheese block,Groceries,['Groceries: Dairy & Bakery - Cheese'],['[]'],1
+31,chilli sauce,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Dips, Dressings, Chilli & Soya Sauce']",['[]'],1
+32,chocolate oats,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Oats']",['[]'],1
+33,chocos,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Flakes']","[""['Groceries: Biscuits, Drinks & Packaged Foods - Breakfast Cereals']""]",1
+34,classmate notebook,Groceries,"['Groceries: School, Office & Stationery - Diaries & Notebooks']","[""['classmate']""]",1
+35,cold drink sprite,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cold Drinks']","[""['Sprite']""]",1
+36,cold drinks 2 ltr,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cold Drinks']",['[]'],1
+37,colgate toothpaste,Groceries,['Groceries: Personal Care - Toothpaste'],"[""['Colgate']""]",1
+38,comfort liquid,Groceries,['Groceries: Home Care - Detergents & Cleaners'],"[""['Comfort']""]",1
+39,complan,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Nutritional Drinks']","[""['Complan']""]",1
+40,cooker 3 litre,Home & Lifestyle,['Home & Lifestyle: Kitchenware - Pressure Cooker'],['[]'],1
+41,dabur gulabari,Groceries,"['Groceries: Personal Care - Bathing Bars & Soaps', 'Groceries: Beauty - Cleanser & Make Up Remover']","[""['dabur']"", ""['dabur']""]",2
+42,dairy milk chocolate,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Chocolates']","[""['cadbury']""]",1
+43,dant kanti toothpaste,Groceries,['Groceries: Personal Care - Toothpaste'],"[""['patanjali']""]",1
+44,delmonte ketchup,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Tomato Ketchup & Sauces']","[""['Del Monte']""]",1
+45,detergent powder,Groceries,['Groceries: Home Care - Detergents & Cleaners'],['[]'],1
+46,dhania,Groceries,"['Groceries: Fruits & Vegetables - Leafy Vegetables', 'Groceries: Cooking Essentials - Powdered Spices', 'Groceries: Cooking Essentials - Whole Spices']","['[]', '[]', '[]']",3
+47,dhoop batti,Home & Lifestyle,['Home & Lifestyle: Prayer & Spiritual Needs - Dry Dhoop'],['[]'],1
+48,face mask,Groceries,['Groceries: Personal Care - Sheet Masks'],['[]'],1
+49,face mask,Industrial & Professional Supplies,['Industrial & Professional Supplies: Security Saftey & Automation - Masks & Respirators'],['[]'],1
+50,fem hair removal cream,Groceries,"['Groceries: Personal Care - Hair Removal', 'Groceries: Personal Care - Shaving & Hair Removal']","[""['fem']"", ""['fem']""]",2
+51,floor cleaner 5l,Groceries,['Groceries: Home Care - Floor & Other Cleaners'],['[]'],1
+52,fogg,Groceries,['Groceries: Personal Care -  Deodorants'],"[""['Fogg']""]",1
+53,fortune atta 10 kg,Groceries,['Groceries: Cooking Essentials - Atta'],"[""['Fortune']""]",1
+54,fortune oil 15 liter,Groceries,"['Groceries: Cooking Essentials - Soyabean Oil', 'Groceries: Cooking Essentials - Groundnut Oil', 'Groceries: Cooking Essentials - Sunflower Oil', 'Groceries: Cooking Essentials - Rice Bran Oil']","[""['Fortune']"", ""['Fortune']"", ""['Fortune']"", ""['Fortune']""]",4
+55,fortune sunflower oil 15 liter,Groceries,['Groceries: Cooking Essentials - Sunflower Oil'],['[]'],1
+56,garbage bag medium,Home & Lifestyle,['Home & Lifestyle: Disposables - Grabage Bags'],['[]'],1
+57,garnier hair colour,Groceries,['Groceries: Personal Care - Hair Color'],"[""['Garnier']""]",1
+58,ghee 500 ml,Groceries,['Groceries: Cooking Essentials - Ghee'],['[]'],1
+59,godrej liquid detergent,Groceries,['Groceries: Home Care - Detergents & Cleaners'],"[""['Godrej']""]",1
+60,good day biscuits family pack 1kg,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cookies']","[""['britannia']""]",1
+61,good night liquid,Groceries,['Groceries: Home Care - Mosquito Repellent'],"[""['Good Night']""]",1
+62,green cardmom,Groceries,['Groceries: Cooking Essentials - Whole Spices'],['[]'],1
+63,hair care oil,Groceries,['Groceries: Personal Care - Hair Oil & Serum'],['[]'],1
+64,hair removal spray,Groceries,"['Groceries: Personal Care - Hair Removal', 'Groceries: Personal Care - Shaving & Hair Removal']","['[]', '[]']",2
+65,haldiram moong dal namkeen,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Namkeen & Savoury Snacks']","[""['haldiram']""]",1
+66,head and shoulder shampoo,Beauty,['Beauty: Hair - Shampoos'],"[""['Head and Shoulders']""]",1
+67,heritage ghee,Groceries,['Groceries: Cooking Essentials - Ghee'],"[""['Heritage']""]",1
+68,horlicks 1kg,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Nutritional Drinks']","[""['Horlicks']""]",1
+69,ilachi,Groceries,['Groceries: Cooking Essentials - Whole Spices'],['[]'],1
+70,jasmine oil,Groceries,['Groceries: Personal Care - Hair Oil & Serum'],['[]'],1
+71,jowar atta,Groceries,['Groceries: Cooking Essentials - Atta'],['[]'],1
+72,kashmiri lal mirch,Groceries,['Groceries: Cooking Essentials - Powdered Spices'],['[]'],1
+73,kellogs,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Muesli', 'Groceries: Biscuits, Drinks & Packaged Foods - Flakes']","[""['Kellogg's']"", ""['Kellogg's']""]",2
+74,kheera,Groceries,['Groceries: Fruits & Vegetables - Cucumber'],['[]'],1
+75,kishmis,Groceries,['Groceries: Cooking Essentials - Raisins / Kishmish'],['[]'],1
+76,kitchen towel,Fashion,['Fashion: Home & Kitchen - Kitchen Linen'],['[]'],1
+77,kitchen towel,Home & Lifestyle,['Home & Lifestyle: Home Furnishing - Dish Cloths & Towels'],['[]'],1
+78,lijjat papad,Groceries,"['Groceries: Cooking Essentials - Papads, Ready To Fry']","[""['Lijjat']""]",1
+79,limca 2l,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cold Drinks']",['[]'],1
+80,loreal hair,Groceres,['Groceres: Personal Care - Hair & Scalp Treatment'],"[""['L'Oreal Paris']""]",1
+81,loreal hair,Groceries,['Groceries: Personal Care - Hair Oil & Serum'],"[""['L'Oreal Paris']""]",1
+82,lux body wash for women,Groceries,['Groceries: Personal Care - Shower Gel & Body Wash'],"[""['Lux']""]",1
+83,maxfresh toothpaste,Groceries,['Groceries: Personal Care - Toothpaste'],"[""['Colgate']""]",1
+84,milk,Groceries,['Groceries: Diary & Bakery - Milk'],['[]'],1
+85,moisturiser,Groceries,"['Groceries: Personal Care - Face Care', 'Groceries: Personal Care - Body Care', 'Groceries: Personal Care - Face Cream & Mosturizer']","['[]', '[]', '[]']",3
+86,moong sabut,Groceries,['Groceries: Cooking Essentials - Moong Dal'],['[]'],1
+87,mop stick,Industrial & Professional Supplies,['Industrial & Professional Supplies: Home Cleaning & Organisation - Mops & Accessories'],['[]'],1
+88,musali,Groceries,['Groceries: Personal Care - Herbal & Ayurvedic'],['[]'],1
+89,mushroom,Groceries,['Groceries: Fruits & Vegetables - Exotic Vegetables'],['[]'],1
+90,napkins,Category,"['Category: Home & Kitchen -  Table Napkins, Coasters & Placemats']",['[]'],1
+91,nivea rollon,Groceries,['Groceries: Personal Care - Roll on'],"[""['Nivea']""]",1
+92,noodles packets,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Instant, hakka, cup noodles']",['[]'],1
+93,nutrichoice biscuits digestive 1kg,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Marie, Health, Diestive']",['[]'],1
+94,oil 1 litre,Groceries,"['Groceries: Cooking Essentials - Soyabean Oil', 'Groceries: Cooking Essentials - Groundnut Oil', 'Groceries: Cooking Essentials - Sunflower Oil', 'Groceries: Cooking Essentials - Rice Bran Oil']","['[]', '[]', '[]', '[]']",4
+95,oil mustard,Groceries,['Groceries: Cooking Essentials - Mustard Oil'],['[]'],1
+96,oral b,Groceries,['Groceries: Personal Care - Toothbrush'],"[""['Oral-B']""]",1
+97,palm oil,Groceries,['Groceries: Cooking Essentials - Palm Oil'],['[]'],1
+98,pappad,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Papads, Ready To Fry']",['[]'],1
+99,parachute aloe vera oil,Groceries,['Groceries: Personal Care - Hair Oil & Serum'],"[""['Parachute']""]",1
+100,parle biscuits,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Glucose & Milk Biscuits']","[""['Parle']""]",1
+101,peanuts raw,Groceries,['Groceries: Cooking Essentials - Peanuts'],['[]'],1
+102,pears,Groceries,"['Groceries: Personal Care - Bathing Bars & Soaps', 'Groceries: Fruits & Vegetables - Pears']","[""['Pears']"", ""['Pears']""]",2
+103,pencil cell,Home & Lifestyle,['Home & Lifestyle: DIY - Household Batteries'],['[]'],1
+104,penut butter,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Choco & Nut Spread']",['[]'],1
+105,perk chocolate,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Chocolates']","[""['Cadbury']""]",1
+106,pickle 1kg,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Other Pickles']",['[]'],1
+107,pizza base,Groceries,"['Groceries: Diary & Bakery - Buns, Pavs & Pizza Base']",['[]'],1
+108,pomegranate juice,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Juices']",['[]'],1
+109,ponds moisturiser,Groceries,['Groceries: Personal Care - Face Care'],"[""['pond's']""]",1
+110,ponds white beauty face wash,Groceries,['Groceries: Personal Care - Face Wash & Clensers'],"[""['Ponds's']""]",1
+111,rajma chitra,Groceries,['Groceries: Cooking Essentials - Rajma'],['[]'],1
+112,raw banana,Groceries,['Groceries: Fruits & Vegetables - Banana'],['[]'],1
+113,red chilli sauce,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Dips, Dressings, Chilli & Soya Sauce']",['[]'],1
+114,refined oil 5l,Groceries,"['Groceries: Cooking Essentials - Soyabean Oil', 'Groceries: Cooking Essentials - Groundnut Oil', 'Groceries: Cooking Essentials - Sunflower Oil', 'Groceries: Cooking Essentials - Rice Bran Oil']","['[]', '[]', '[]', '[]']",4
+115,refined sunflower oil,Groceries,['Groceries: Cooking Essentials - Sunflower Oil'],['[]'],1
+116,roasted vermicelli,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Vermicelli']",['[]'],1
+117,rock salt,Groceries,['Groceries: Cooking Essentials - Salt'],['[]'],1
+118,room freshner odonil,Groceries,['Groceries: Home Care - Air Freshener'],"[""['odonil']""]",1
+119,rusk britannia,Groceries,['Groceries: Dairy & Bakery - Rusk'],"[""['britannia']""]",1
+120,sanitary pads for women stayfree,Groceries,['Groceries: Personal Care - Sanitary Napkins'],"[""['Stayfree']""]",1
+121,shampoo 1 ltr,Groceries,['Groceries: Personal Care & Beauty - Shampoo'],['[]'],1
+122,snacks,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cream Biscuits & Wafers', 'Groceries: Biscuits, Drinks & Packaged Foods - Cookies']","['[]', '[]']",2
+123,soda 750 ml,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Soda & Tonic Water']",['[]'],1
+124,soup,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Soups']",['[]'],1
+125,soya badi,Groceries,['Groceries: Cooking Essentials - Soya Products'],['[]'],1
+126,soya bean,Groceries,['Groceries: Cooking Essentials - Soyabean'],['[]'],1
+127,spaghetti pasta,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Pasta & Macaroni']",['[]'],1
+128,sprite 250 ml,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cold Drinks']","[""['Sprite']""]",1
+129,sugar 5kg madhur,Groceries,['Groceries: Cooking Essentials - Sugar'],"[""['Madhur']""]",1
+130,sugar powder,Groceries,['Groceries: Cooking Essentials - Sugar'],['[]'],1
+131,suger 5 kg,Groceries,['Groceries: Cooking Essentials - Sugar'],['[]'],1
+132,suji 1kg,Groceries,['Groceries: Cooking Essentials - Rawa/Sooji'],['[]'],1
+133,sunfeast biscuits,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Cookies']","[""['sunfeast']""]",1
+134,surf excel bar,Groceries,['Groceries: Home Care - Detergent Bars'],"[""['surf excel']""]",1
+135,surf excel bar pack of 4,Groceries,['Groceries: Home Care - Detergents & Cleaners'],"[""['Surf Excel']""]",1
+136,taj mahal tea 1kg,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Leaf & Dust Tea']","[""['Taj Mahal']""]",1
+137,tajmahal tea,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Leaf & Dust Tea']","[""['Taj Mahal']""]",1
+138,tea 1 kg,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Leaf & Dust Tea']",['[]'],1
+139,tomato 1kg,Groceries,['Groceries: Fruits & Vegetables - Tomato'],['[]'],1
+140,tomato ketchup,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Tomato Ketchup & Sauces']",['[]'],1
+141,toor dal 1 kg,Groceries,['Groceries: Cooking Essentials - Toor Dal'],['[]'],1
+142,toor dal 2kg,Groceries,['Groceries: Cooking Essentials - Toor Dal'],['[]'],1
+143,turmeric,Groceries,"['Groceries: Cooking Essentials - Powdered Spices', 'Groceries: Cooking Essentials - Whole Spices', 'Groceries: Personal Care - Herbal & Ayurvedic', 'Groceries: Fruits & Vegetables - Other Vegetables']","['[]', '[]', '[]', '[]']",4
+144,vaseline lip balm,Groceries,['Groceries: Beauty - Lip Care'],"[""['Vaseline']""]",1
+145,vicco tooth paste,Groceries,['Groceries: Personal Care - Tootpaste'],"[""['Vicco']""]",1
+146,vimbar,Groceries,['Groceries: Home Care - Dishwash Bars & Powders'],"[""['Vim']""]",1
+147,water,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Packaged Water']",['[]'],1
+148,wheat 10kg,Groceries,"['Groceries: Cooking Essentials - Lokwan Wheat', 'Groceries: Cooking Essentials - Sharbati Sihore Wheat']","['[]', '[]']",2
+149,wheat flour 5kg,Groceries,"['Groceries: Cooking Essentials - Lokwan Wheat', 'Groceries: Cooking Essentials - Sharbati Sihore Wheat']","['[]', '[]']",2
+150,white vinegar,Groceries,"['Groceries: Biscuits, Drinks & Packaged Foods - Tomato Ketchup & Sauces']",['[]'],1

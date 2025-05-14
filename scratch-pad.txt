@@ -4,3 +4,6 @@ spark.read.parquet(s"$ip//data1/searchengine/processed/jiomart/05092024/etl/Elec
 .filter(col("attributename").rlike("free_cha"))
 .show()
 //.printSchema
+
+
+dev07052025_1205

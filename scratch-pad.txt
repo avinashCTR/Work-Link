@@ -7,3 +7,5 @@ spark.read.parquet(s"$ip//data1/searchengine/processed/jiomart/05092024/etl/Elec
 
 
 dev07052025_1205
+
+hdfs://10.144.96.170:8020/data1/searchengine/processed/jiomart/accumulateddata/IPATransliterationsAutomaticAccumulator20251505collab

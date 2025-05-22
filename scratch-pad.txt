@@ -15,3 +15,5 @@ hdfs://10.144.96.170:8020/data1/searchengine/processed/jiomart/accumulateddata/I
 /data1/searchengine/EmbeddingTrainingDataCuration/ajio/09122024/V3/TemplatedQueriesFixed
 
 dev24032025_1605
+
+http://10.144.96.175:8080/workflow/log?dag_id=search_engine_analysis_jiomart&task_id=AnalyseTopN&execution_date=2025-01-03T09%3A07%3A45.682930%2B00%3A00

@@ -3,3 +3,57 @@
 PreProcessHistoryData
 
 /data1/archive/avinash/ModelTestingData2/inputs/SearchStability.parquet
+
+package ai.couture.obelisk.commons.io
+
+import org.apache.spark.sql.{DataFrame, SparkSession, SaveMode}
+import io.delta.tables._
+
+import scala.util.Try
+
+object DFToDelta {
+
+  val spark: SparkSession = SparkConfig.getSparkSession
+  import spark.implicits._
+
+  /**
+   * Saves the DataFrame to the specified filepath in Delta format.
+   *
+   * @param df                           The DataFrame to save.
+   * @param filepath                     HDFS or local file path.
+   * @param saveMode                     Write mode, defaults to Overwrite.
+   * @param deletedFileRetentionDuration Delta setting for file retention.
+   * @param logRetentionDuration         Delta setting for log retention.
+   * @param partitionBy                  Optional partition column.
+   */
+  @throws(classOf[Exception])
+  def putDF(
+      df: DataFrame,
+      filepath: String,
+      saveMode: SaveMode = SaveMode.Overwrite,
+      deletedFileRetentionDuration: String = "10 days",
+      logRetentionDuration: String = "30 days",
+      partitionBy: Option[String] = None
+  ): Unit = {
+    val writer = df.write
+      .format("delta")
+      .mode(saveMode)
+      .option("delta.deletedFileRetentionDuration", deletedFileRetentionDuration)
+      .option("delta.logRetentionDuration", logRetentionDuration)
+
+    val finalWriter = partitionBy match {
+      case Some(partCol) => writer.partitionBy(partCol)
+      case None          => writer
+    }
+
+    Try {
+      finalWriter.save(filepath)
+    }.getOrElse {
+      throw new Exception(s"Failed to write Delta table to $filepath")
+    }
+  }
+
+  def putDF(df: DataFrame, filepath: String): Unit = {
+    putDF(df, filepath, SaveMode.Overwrite, "10 days", "30 days", None)
+  }
+}

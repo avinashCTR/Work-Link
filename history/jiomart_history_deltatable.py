@@ -17,9 +17,9 @@ classPath = 'ai.couture.obelisk.search.MainClass'
 
 ################################################################ paths ###########################################################################################
 
-dirPathMain = "/data1/archive/avinash/"
-dirPathHistory = f"{dirPathMain}HistoryDataTest/"
-dirPathGAData = f"{dirPathMain}GA_DATA_UPLOAD/"
+dirPathMain = "/data1/searchengine/processedHistory/"
+dirPathGAData = f"/data1/searchengine/rawdata/historydata/jiomart_new/"
+dirPathHistory = f"{dirPathMain}jiomartNewPipeline/"
 dirPathHistoryAgg = f"{dirPathHistory}aggregated/"
 
 ################################################################## dates #########################################################################################
@@ -45,7 +45,7 @@ default_args = {
     "config_group": "config_group_jiomart_delta_lake"
 }
 
-Dag = DAG('search_engine_history_transformations_jiomart_deltaTable', default_args=default_args, schedule_interval=None, tags=["search-engine"])
+Dag = DAG('search_engine_history_transformations_jiomart_deltaTable', default_args=default_args, schedule_interval='30 1 * * *', tags=["search-engine"])
 
 ################################################################# main dag ########################################################################################
 
@@ -75,10 +75,10 @@ PreProcessHistory = CoutureSparkOperator(
         "product_id_column": "sku",
         "vertical_column": "product_vertical"
     },
-    input_base_dir_path=f"{dirPathGAData}{current_date_str}/",
+    input_base_dir_path=f"{dirPathGAData}",
     output_base_dir_path=dirPathHistory,
-    input_filenames_dict={"query_product_interactions": "query_product_interactions",
-                          "query_position_data": "query_position"},
+    input_filenames_dict={"query_product_interactions": f"query_product_interactions/{current_date_str}",
+                          "query_position_data": f"query_position/{current_date_str}"},
     output_filenames_dict={"history_queries_data": "HistoryMerged"},
     dag=Dag,
     description='Merges the two dataframes, query_product_interactions and query_position and gets all the required columns for next tasks to consume'
@@ -156,9 +156,9 @@ ColdCacheQueries = CoutureSparkOperator(
     method_args_dict={"search_term_column": "search_term",
                       "freq_column": "product_unique_list_view",
                       "topk": 100000},
-    input_base_dir_path=f"{dirPathGAData}{current_date_str}/",
+    input_base_dir_path=f"{dirPathGAData}",
     output_base_dir_path=dirPathHistory,
-    input_filenames_dict={"history_data": "query_position"},
+    input_filenames_dict={"history_data": f"query_position/{current_date_str}"},
     output_filenames_dict={"cold_cache_queries": "ColdCacheQueries"},
     dag=Dag,
     description='Generates cleaned queries applying multiple transformations'
@@ -181,10 +181,10 @@ PreProcessDataScienceHistoryData = CoutureSparkOperator(
         "vertical_column": "product_vertical",
         "quantity_column": "unique_adds_to_cart"
     },
-    input_base_dir_path=f"{dirPathGAData}{current_date_str}/",
+    input_base_dir_path=f"{dirPathGAData}",
     output_base_dir_path=dirPathHistory,
-    input_filenames_dict={"query_product_interactions": "query_product_interactions",
-                          "query_position_data": "query_position"},
+    input_filenames_dict={"query_product_interactions": f"query_product_interactions/{current_date_str}",
+                          "query_position_data": f"query_position/{current_date_str}"},
     output_filenames_dict={"DataSciencePreProcessed": "DataSciencePreProcessed"},
     dag=Dag,
     description='Merges query interaction and position data for training data preparation'

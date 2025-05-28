@@ -1,1 +1,1 @@
-/data1/searchengine/processedHistory/jiomart_07012025_15052025
+/data1/searchengine/processedHistory/jiomartNewPipeline/aggregated

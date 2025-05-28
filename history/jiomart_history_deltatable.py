@@ -77,7 +77,7 @@ NormalizeQueryHistoryData = CoutureSparkOperator(
     method_id='NormalizeQueryHistoryData',
     class_path=classPath,
     code_artifact=code_artifact,
-    method_args_dict={"search_term_column": "search_term"
+    method_args_dict={"search_term_column": "search_term",
                       "product_id_column": "sku"
                      },
     input_base_dir_path=dirPathHistory,

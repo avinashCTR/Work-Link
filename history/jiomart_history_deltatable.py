@@ -15,14 +15,26 @@ pp = pprint.PrettyPrinter(indent=4)
 code_artifact = "couture-search-2.0.0-avinash-deltaTable.jar"
 classPath = 'ai.couture.obelisk.search.MainClass'
 
+################################################################ paths ###########################################################################################
+
 dirPathMain = "/data1/archive/avinash/"
 dirPathHistory = f"{dirPathMain}HistoryDataTest/"
 dirPathGAData = f"{dirPathMain}GA_DATA_UPLOAD/"
 dirPathHistoryAgg = f"{dirPathHistory}aggregated/"
 
+################################################################## dates #########################################################################################
 date = datetime(2025, 1, 1)
 current_date_str = datetime.now().strftime('%Y-%m-%d')
-# current_date_str = "Last6Months"
+
+tomorrow = datetime.now() + timedelta(days=1)
+six_months_ago = tomorrow - timedelta(days=182)
+
+range_start = six_months_ago.strftime('%Y%m%d')
+range_end = tomorrow.strftime('%Y%m%d')
+
+dynamic_range = f"{range_start},{range_end}"
+
+################################################################## args and config ################################################################################
 
 default_args = {
     'owner': 'couture',
@@ -34,6 +46,8 @@ default_args = {
 }
 
 Dag = DAG('search_engine_history_transformations_jiomart_deltaTable', default_args=default_args, schedule_interval=None, tags=["search-engine"])
+
+################################################################# main dag ########################################################################################
 
 bash_command = textwrap.dedent(
     f"""
@@ -185,7 +199,7 @@ GetShortQueriesAccumulator = CoutureSparkOperator(
     class_path=classPath,
     code_artifact=code_artifact,
     method_args_dict={"column": "date",
-                      "range": "20250512,20250525",
+                      "range": dynamic_range,
                       "group_by_columns": "['query_normalised']",
                       "sum_columns":"['freq']"
                      },
@@ -206,7 +220,7 @@ QueriesWithFrequenciesAccumulator = CoutureSparkOperator(
     code_artifact=code_artifact,
     method_args_dict={
         "column": "date",
-        "range": "20250512,20250525",
+        "range": dynamic_range,
         "group_by_columns": "['query','query_normalised']",
         "sum_columns": "['freq']"
     },
@@ -227,7 +241,7 @@ QueryImpressionsWithFrequenciesAccumulator = CoutureSparkOperator(
     code_artifact=code_artifact,
     method_args_dict={
         "column": "date",
-        "range": "20250512,20250525",
+        "range": dynamic_range,
         "group_by_columns": "['query','sku']",
         "sum_columns": "['freq']"
     },
@@ -248,7 +262,7 @@ QueryClicksWithFrequenciesAccumulator = CoutureSparkOperator(
     code_artifact=code_artifact,
     method_args_dict={
         "column": "date",
-        "range": "20250512,20250525",
+        "range": dynamic_range,
         "group_by_columns": "['query','sku']",
         "sum_columns": "['freq']"
     },
@@ -269,7 +283,7 @@ HistoryNormalizedAccumulator = CoutureSparkOperator(
     code_artifact=code_artifact,
     method_args_dict={
         "column": "date",
-        "range": "20250512,20250525",
+        "range": dynamic_range,
         "group_by_columns": "['search_term','query_normalised','sku']",
         "sum_columns": "['clicks','freq']"
     },
@@ -313,7 +327,7 @@ ColdCacheQueriesAccumulator = CoutureSparkOperator(
     code_artifact=code_artifact,
     method_args_dict={
         "column": "date",
-        "range": "20250512,20250525",
+        "range": dynamic_range,
         "group_by_columns": "['query']",
         "sum_columns": "['freq']"
     },
@@ -334,7 +348,7 @@ DataSciencePreProcessedAccumulator = CoutureSparkOperator(
     code_artifact=code_artifact,
     method_args_dict={
         "column": "date",
-        "range": "20250512,20250525",
+        "range": dynamic_range,
         "group_by_columns": "['search_term','sku']",
         "sum_columns": "['impressions', 'clicks', 'total_quantity']"
     },

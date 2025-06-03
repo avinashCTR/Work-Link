@@ -1,1 +1,222 @@
-/data1/searchengine/genai_search/ajio/processed/dev/24032025/V1/StandardizedCatalogue
+package ai.couture.obelisk.search.analysis
+
+import ai.couture.obelisk.commons.io.{CSVToDF, DFToParquet, ParquetToDF, SparkConfig}
+import ai.couture.obelisk.commons.utils.BaseBlocks
+import ai.couture.obelisk.commons.utils.DataFrameUtil.persistToHDFS
+import org.apache.spark.sql.{Column, DataFrame, Row, SparkSession}
+import org.apache.spark.sql.functions._
+import org.apache.spark.sql.types._
+import org.json4s.DefaultFormats
+import org.json4s.jackson.JsonMethods.parse
+
+
+object ApplyFiltersOnCatalogue extends BaseBlocks{
+
+    // declare all the input variables in here that are getting used in the code
+    // similar to python static variables
+
+    var catalogDF, groundTruthDF, productInteractionDF, cleanedDF, filterDF, finalDF: DataFrame = _
+
+    implicit val formats: DefaultFormats.type = DefaultFormats
+
+    // load all the dataframes using the paths
+    def load(): Unit = {
+
+        catalogDF = ParquetToDF.getDF(setInputPath("catalogue_dataframe_path"))
+        groundTruthDF = ParquetToDF.getDF(setInputPath("groundtruth_dataframe_path"))
+        productInteractionDF = ParquetToDF.getDF(setInputPath("product_interaction_dataframe_path"))
+    }
+
+    // UDF to generate filter SQL string
+    def generateFilterExprUDF(typeMap: Map[String, DataType], common_cols: Array[String]) = udf((columnsValues: Seq[String]) => {
+        val columnConditions = columnsValues.zipWithIndex.flatMap {
+            case (columnValue, colIndex) if columnValue != null && columnValue.trim.nonEmpty =>
+                val colName = common_cols(colIndex)
+                val columnType = typeMap.getOrElse(colName, StringType)
+                val values = columnValue.split(",").map(_.trim).filter(_.nonEmpty)
+
+                if (columnType == StringType && colName == "normalized_open_tokens") {
+                    val jsonStringCorrected = columnValue.replace("'", "\"")
+
+                    val tokenMap = parse(jsonStringCorrected).extract[Map[String, List[String]]]
+
+                    val andConditions = tokenMap.map { case (_, tokenList) =>
+                        val orConditions = tokenList.map { token =>
+                        if (token.toLowerCase == "null") s"$colName IS NULL"
+                        else {
+                            val safeValue = token.toLowerCase
+                            s"LOWER($colName) RLIKE '.*$safeValue.*'"
+                        }
+                        }
+                        s"(${orConditions.mkString(" OR ")})"
+                    }
+
+                    Some(andConditions.mkString(" AND "))
+                }
+
+                else if (columnType == StringType) {
+                    val conditions = values.map { value =>
+                        if (value.toLowerCase == "null") {
+                            s"$colName IS NULL"
+                        } else {
+                            s"LOWER($colName) = '${value.toLowerCase}'"
+                        }
+                    }
+                    if (conditions.nonEmpty) Some(conditions.mkString(" OR ")) else None
+                }
+
+                else if (columnType == ArrayType(StringType, containsNull = true)) {
+                    val conditions = values.map { value =>
+                        if (value.toLowerCase == "null") {
+                            s"array_contains($colName, NULL)"
+                        } else {
+                            s"EXISTS($colName, x -> LOWER(x) = '${value.toLowerCase}')"
+                        }
+                    }
+                    if (conditions.nonEmpty) Some(conditions.mkString(" OR ")) else None
+                }
+
+                else None
+
+            case _ => None
+        }
+
+        // if (columnConditions.nonEmpty) columnConditions.mkString(" AND ") else "1 = 1"
+        if (columnConditions.nonEmpty) columnConditions.map(cond => s"($cond)").mkString(" AND ") else "1 = 1"
+
+    })
+
+    // required transformations and processing
+    def doTransformations(): Unit = {
+
+        // drop the point_id column from productInteractionDF
+        productInteractionDF = productInteractionDF
+            .drop("point_id")
+
+        // clean the product interactions
+        productInteractionDF = productInteractionDF
+            .withColumn(
+                "productDescription",
+                trim(
+                    regexp_replace(
+                        regexp_replace(
+                            col("productDescription"),
+                            "[^\\w\\s]", " "
+                        ),
+                        "\\s+", " "
+                    )
+                )
+            )
+
+        // join the catalogDF with productInteractionDF to get the product interactions
+        catalogDF = catalogDF
+            .join(productInteractionDF, Seq("colorGroup_string"), "inner")
+            .drop(productInteractionDF("colorGroup_string"))
+        
+        // rename the productDescription column to open_tokens for creating common columns for open token filters
+        catalogDF = catalogDF
+            .withColumnRenamed("productDescription", "normalized_open_tokens")
+        
+        var common_cols = catalogDF.columns.intersect(groundTruthDF.columns)
+
+        val base_output_path = setOutputPath("ground_truth_analysis_base_path", "/tmp")
+
+        cleanedDF = common_cols.foldLeft(groundTruthDF) { (tempDF, colName) =>
+            if(colName!="normalized_open_tokens"){
+                tempDF
+                    .withColumn(
+                    colName,
+                    concat_ws(",",col(colName))
+                    )
+                    .withColumn(
+                    colName,
+                    regexp_replace(col(colName),"'","")
+                    )
+            } else {
+                tempDF
+            }
+        }
+
+        cleanedDF = cleanedDF.withColumn("normalized_open_tokens",to_json(col("normalized_open_tokens")))
+
+        cleanedDF = cleanedDF.transform(persistToHDFS(s"$base_output_path/temp/cleanedDF"))
+
+        // Example: list of common column names
+        // val common_cols: Array[String] = Array("col1", "col2", "col3") // Replace with actual column names
+
+        val typeMap: Map[String, DataType] = common_cols.map { colName =>
+            // For each column, fetch its data type from catalogDF schema
+            colName -> catalogDF.schema(colName).dataType
+        }.toMap
+
+
+        filterDF = cleanedDF.withColumn(
+            "filter_expr",
+            generateFilterExprUDF(typeMap, common_cols)(array(common_cols.map(col(_)):_*))
+        ).transform(persistToHDFS(s"$base_output_path/temp/filterDF"))
+
+        val finalFilters = filterDF.select("filter_expr")
+        // .limit(5)
+        .collect()
+        .map(_.getString(0))
+
+        
+        // apply the final filters
+        var i = 1
+        val productIDS = finalFilters.map { filterString =>
+        catalogDF
+            .filter(expr(filterString))  // Apply the filter expression
+            .limit(100000)
+            .select("colorGroup_string")  // Select the relevant column
+            .collect()
+            .map(_.getString(0))// Collect the results into an array
+        }
+
+
+        var queries = groundTruthDF.select("query")
+        .collect()
+        .map(_.getString(0))
+
+
+         val spark: SparkSession = SparkConfig.getSparkSession
+         import spark.implicits._
+
+         finalDF = queries.zip(productIDS).map {
+             case (query, productID) => (query, productID)
+             }.toSeq.toDF("query", "expected_products")
+
+        finalDF = finalDF.transform(persistToHDFS(s"$base_output_path/temp/finalDF"))
+        .join(groundTruthDF.select("query", "open_tokens"), Seq("query"))
+
+        finalDF = finalDF
+            .groupBy("query", "open_tokens")
+            .agg(
+                collect_set("expected_products").as("expected_products")
+            )
+
+    }
+
+    def save(): Unit = {   
+
+        val base_output_path = setOutputPath("ground_truth_analysis_base_path", "/tmp")
+
+        // save all the intermediate files
+        DFToParquet.putDF(
+            s"$base_output_path/cleanedDF",
+            cleanedDF
+        )
+
+        DFToParquet.putDF(
+            s"$base_output_path/filterDF",
+            filterDF
+        )
+
+        DFToParquet.putDF(
+             s"$base_output_path/finalDF",
+             finalDF
+        )
+
+    }
+
+
+}

@@ -36,23 +36,26 @@ object ApplyFiltersOnCatalogue extends BaseBlocks{
                 val values = columnValue.split(",").map(_.trim).filter(_.nonEmpty)
 
                 if (columnType == StringType && colName == "normalized_open_tokens") {
-                    val jsonStringCorrected = columnValue.replace("'", "\"")
-
-                    val tokenMap = parse(jsonStringCorrected).extract[Map[String, List[String]]]
-
-                    val andConditions = tokenMap.map { case (_, tokenList) =>
+                      implicit val formats: DefaultFormats.type = DefaultFormats
+            
+                      val jsonStringCorrected = columnValue.replace("'", "\"")
+            
+                      val tokenMap = parse(jsonStringCorrected).extract[Map[String, List[String]]]
+            
+                      val andConditions = tokenMap.map { case (_, tokenList) =>
                         val orConditions = tokenList.map { token =>
-                        if (token.toLowerCase == "null") s"$colName IS NULL"
-                        else {
+                          if (token.toLowerCase == "null") s"$colName IS NULL"
+                          else {
                             val safeValue = token.toLowerCase
                             s"LOWER($colName) RLIKE '.*$safeValue.*'"
-                        }
+                          }
                         }
                         s"(${orConditions.mkString(" OR ")})"
+                      }
+            
+                      if (andConditions.nonEmpty) Some(andConditions.mkString(" AND "))
+                      else None  // <-- avoid empty condition leading to AND ()
                     }
-
-                    Some(andConditions.mkString(" AND "))
-                }
 
                 else if (columnType == StringType) {
                     val conditions = values.map { value =>

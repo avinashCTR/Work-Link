@@ -256,3 +256,5 @@ java.util.concurrent.RejectedExecutionException: Task Future(<not completed>) re
 2025.06.03 12:13:38 INFO  Started: Metals version 1.5.3 in folders '/Users/avinash/Couture-Scala/Work-Link' for client Visual Studio Code 1.98.0.
 2025.06.03 12:13:39 WARN  no build tool detected in workspace '/Users/avinash/Couture-Scala/Work-Link'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
 2025.06.03 12:13:39 WARN  Build server is not auto-connectable.
+Jun 04, 2025 11:30:32 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace

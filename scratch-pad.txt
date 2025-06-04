@@ -1,1 +1,1 @@
-http://10.144.96.175:8080/workflow/graph?dag_id=search_engine_genai_data_update_dev_jiomart&root=
+/data1/archive/avinash/oldHDFSBKP/brands.csv

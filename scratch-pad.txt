@@ -1,1 +1,2 @@
-/data1/archive/avinash/oldHDFSBKP/brands.csv
+/data1/searchengine/processedHistory/jiomart_07012025_15052025/DataSciencePreProcessed/DataSciencePreProcessed_cummulative
+/data1/searchengine/processedHistory/jiomart_07012025_15052025/QueriesWithFrequencies/QueriesWithFrequencies_cumulative

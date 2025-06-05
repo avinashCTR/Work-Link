@@ -258,3 +258,5 @@ java.util.concurrent.RejectedExecutionException: Task Future(<not completed>) re
 2025.06.03 12:13:39 WARN  Build server is not auto-connectable.
 Jun 04, 2025 11:30:32 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+Jun 04, 2025 5:40:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace

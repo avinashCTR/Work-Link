@@ -7,6 +7,7 @@ from CoutureSpark3Plugin import CoutureSpark3Operator as CoutureSparkOperator
 from DagOperatorPlugin import DagOperator
 
 classPath = "ai.couture.discovery.MainClass"
+code_artifact = "couture-discovery-pipelines-1.0.0-avinash.jar"
 
 default_args = {
     "owner": "couture",

@@ -1,5 +1,35 @@
-http://10.128.21.51:18888/tree/getcode/DataEngineering/Asish/gen_reco/etl_files
+# airflow import
+from airflow import DAG
 
-indulo interactions_4, interactions_5 download chesi /data/recommendations/ajio/sampleki upload cheyva
-password: rracou#321
-http://10.144.115.113:8080/
+# custom operators import
+from CouturePythonDockerPlugin import CouturePythonDockerOperator
+from CoutureSpark3Plugin import CoutureSpark3Operator as CoutureSparkOperator
+from DagOperatorPlugin import DagOperator
+
+classPath = "ai.couture.discovery.MainClass"
+
+default_args = {
+    "owner": "couture",
+    "depends_on_past": False,
+    "config_group": "config_group_jiomart_large",
+    "start_date": date,
+    "retries": 0,
+    "retry_delay": timedelta(minutes=1)
+}
+
+Dag = DAG("couture-discovery-test", default_args=default_args, concurrency=4, schedule_interval=None, tags=["couture-discovery"])
+
+discovery-test = CoutureSparkOperator(
+    task_id="discovery-test",
+    dag=Dag,
+    code_artifact=code_artifact,
+    class_path=classPath,
+    method_id="ExtractUserFeatures",
+    method_args_dict={},
+    input_base_dir_path="",
+    output_base_dir_path="",
+    input_filenames_dict={},
+    output_filenames_dict={}
+    description=""
+)
+

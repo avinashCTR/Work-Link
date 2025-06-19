@@ -2,6 +2,7 @@ Search -------------------------------------------------------------------------
 
 Yarn :- https://10.144.97.194:8443/gateway/dev/yarn/cluster/apps/RUNNING
 Sprak3 Yarn :- https://10.144.96.170:8443/gateway/dev/yarn/cluster/apps/RUNNING
+plp_spark :- https://10.144.115.112:8443/gateway/dev/yarn/cluster/apps/NEW_SAVING
 NEW HDFS :- http://10.144.96.170:8888/hue/filebrowser/
 GPU 219 :- http://10.166.181.219:8889/lab/workspaces/auto-R/tree/notebooks/avinash
 DAGS Airflow :- http://10.144.96.175:8080/workflow/

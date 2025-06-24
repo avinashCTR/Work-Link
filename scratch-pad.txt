@@ -1,17 +1,1 @@
-val scoredDF = joinedDF
-      .filter(col("user_id").isNotNull && col(attributeColName).isNotNull && col("interaction_count") =!= 0)
-      .withColumn("weight", getWeight(col("interaction_type")))
-      .withColumn("weeks_ago", floor(datediff(current_date(), col("date")) / 7))
-      .withColumn("decay", expDecay(col("weeks_ago")))
-      .withColumn("raw_score", col("interaction_count") * col("weight"))
-      .withColumn("decayed_score", col("raw_score") * col("decay"))
-      .groupBy(col("user_id"), col(attributeColName))
-      .agg(sum(col("decayed_score")).as("total_weighted_score"))
-      .withColumn("attribute_affinity_struct", struct(
-        col(attributeColName).as("attribute"),
-        round(col("total_weighted_score"), 2).as("affinity_score")
-      ))
-
-    attributeAffinityDF = scoredDF
-      .groupBy("user_id")
-      .agg(collect_list(col("attribute_affinity_struct")).as(outputName))
+http://10.128.21.51:18888/notebooks/getcode/DataEngineering/Asish/gen_reco/RecoETL/Interactions.ipynb

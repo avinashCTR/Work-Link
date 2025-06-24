@@ -1394,3 +1394,11 @@ Jun 24, 2025 11:42:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint noti
 INFO: Unsupported notification method: $/setTrace
 Jun 24, 2025 11:42:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+Jun 24, 2025 4:40:19 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2025.06.24 16:40:31 INFO  Shutting down server
+2025.06.24 16:40:31 INFO  shutting down Metals
+2025.06.24 16:40:31 INFO  Exiting server
+2025.06.24 16:40:40 INFO  Started: Metals version 1.5.3 in folders '/Users/avinash/Couture-Scala/Work-Link' for client Visual Studio Code 1.98.0.
+2025.06.24 16:40:40 WARN  no build tool detected in workspace '/Users/avinash/Couture-Scala/Work-Link'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2025.06.24 16:40:41 WARN  Build server is not auto-connectable.

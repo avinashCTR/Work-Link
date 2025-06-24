@@ -1,1 +1,75 @@
-http://10.128.21.51:18888/notebooks/getcode/DataEngineering/Asish/gen_reco/RecoETL/Interactions.ipynb
+package ai.couture.discovery.legos.UserFeatureExtraction
+
+import ai.couture.obelisk.commons.io.{DFToParquet, ParquetToDF}
+import ai.couture.obelisk.commons.utils.BaseBlocks
+import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.functions._
+
+object AttributeAffinity extends BaseBlocks {
+
+  var interactionsDF: DataFrame = _
+  var productInfoDF: DataFrame = _
+  var attributeAffinityDF: DataFrame = _
+
+  val weightsMap = Map(
+    "product_views" -> -1,
+    "product_clicks" -> 5,
+    "add_to_cart" -> 8,
+    "wishlist" -> 7,
+    "orders" -> 10,
+    "new_purchase" -> 10,
+    "return" -> -5,
+    "exchange" -> -3
+  )
+
+  val lambda = 0.05
+
+  var attributeColName: String = "" 
+  var outputName: String = ""
+
+  override def setArguments(): Unit = {
+    attributeColName = setArgument("attribute_col_name","brandname")
+  }
+
+  def load(): Unit = {
+    interactionsDF = ParquetToDF.getDF(setInputPath("interactions"))
+    productInfoDF = ParquetToDF.getDF(setInputPath("product_info"))
+  }
+
+  def doTransformations(): Unit = {
+
+    val spark: SparkSession = interactionsDF.sparkSession
+
+    outputName = raw"attribute_affinity_${attributeColName}"
+
+    val broadcastWeightsMap = spark.sparkContext.broadcast(weightsMap)
+
+    val getWeight = udf((interactionType: String) => broadcastWeightsMap.value.getOrElse(interactionType, 0))
+    val expDecay = udf((weeksAgo: Long) => math.exp(-lambda * weeksAgo))
+
+    val joinedDF = interactionsDF
+      .join(productInfoDF, interactionsDF("product_id") === productInfoDF("itemid"), "inner")
+
+    val scoredDF = joinedDF
+      .filter(col("user_id").isNotNull && col(attributeColName).isNotNull && col("interaction_count") =!= 0)
+      .withColumn("weight", getWeight(col("interaction_type")))
+      .withColumn("weeks_ago", floor(datediff(current_date(), col("date")) / 7))
+      .withColumn("decay", expDecay(col("weeks_ago")))
+      .withColumn("raw_score", col("interaction_count") * col("weight"))
+      .withColumn("decayed_score", col("raw_score") * col("decay"))
+      .groupBy(col("user_id"), col(attributeColName))
+      .agg(sum(col("decayed_score")).as("total_weighted_score"))
+      .withColumn("attribute_affinity_struct", struct(
+        col(attributeColName).as("attribute"),
+        round(col("total_weighted_score"), 2).as("affinity_score")
+      ))
+
+    attributeAffinityDF = scoredDF
+      .groupBy("user_id")
+      .agg(collect_list(col("attribute_affinity_struct")).as(outputName))
+  }
+
+  def save(): Unit = {
+    DFToParquet.putDF(setOutputPath("affinity", outputName.capitalize), attributeAffinityDF)
+  }
+}
